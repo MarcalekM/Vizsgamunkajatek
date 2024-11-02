@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] int HP = 10;
+    [SerializeField] public int MeeleDamage = 10;
+    [SerializeField] public int MagicDamage = 10;
+
     float horizontalInput;
-    [SerializeField] float movementSpeed = 5f;
+    [SerializeField] float movementSpeed = 15f;
     bool isFacingRight = true;
-    [SerializeField] float jumpPower = 5f;
+    [SerializeField] float jumpPower = 8f;
     bool isJumping = false;
 
     [SerializeField] private Transform Magic;
@@ -20,10 +25,13 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Transform Shield;
 
+    [SerializeField] TextMeshProUGUI UI_HP;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         nextFire = 0f;
+        UI_HP.text = "HP: " + HP;
     }
 
     private void Update()
