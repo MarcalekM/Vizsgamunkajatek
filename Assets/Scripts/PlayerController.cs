@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] int HP = 10;
+    public int Lv = 1;
+    [SerializeField] public int HP = 10;
     [SerializeField] public int MeeleDamage = 10;
     [SerializeField] public int MagicDamage = 10;
+    public int kills = 0;
+    public int SP = 3;
 
     float horizontalInput;
     [SerializeField] float movementSpeed = 15f;
@@ -24,50 +27,47 @@ public class PlayerController : MonoBehaviour
     private float nextFire;
 
     [SerializeField] Transform Shield;
+    public int ShieldHP = 10;
+    private bool ShieldActive = false;
 
     [SerializeField] TextMeshProUGUI UI_HP;
+    [SerializeField] TextMeshProUGUI UI_Kill;
+    [SerializeField] TextMeshProUGUI UI_SP;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         nextFire = 0f;
-        UI_HP.text = "HP: " + HP;
     }
 
     private void Update()
     {
+        UI_HP.text = "HP: " + HP;
+        UI_Kill.text = "Kills: " + kills;
+        UI_SP.text = "SP: " + SP;
         horizontalInput = Input.GetAxis("Horizontal");
 
         FlipCharacter();
 
-        if (Input.GetButtonDown("Jump") && !isJumping)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-            isJumping = true;
-        }
+        if (Input.GetButtonDown("Jump") && !isJumping) Jump();
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Q))
-        {
-            MeeleAttack();
-        }
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !ShieldActive) MeeleAttack();
 
+        if (Input.GetKey(KeyCode.LeftShift)) movementSpeed = 10;
+        else movementSpeed = 5;
+
+        rb.velocity = new Vector2(horizontalInput * movementSpeed, rb.velocity.y);
+
+        if (Time.time >= nextFire && Input.GetKeyDown(KeyCode.Mouse1) && !ShieldActive) SummonFireball();
+
+        if (Input.GetKey(KeyCode.Q)) ActivateShield();
+        else DeactivateShield();
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontalInput * movementSpeed, rb.velocity.y);
-        
-        if (Time.time >= nextFire && Input.GetKeyDown(KeyCode.Mouse1) && !Input.GetKey(KeyCode.Q))
-        {
-            nextFire = Time.time + fireRate;
-            Instantiate(fireball, Magic.position,
-                Quaternion.Euler(x: 0, y: 0, z: isFacingRight ? 0 : 180));
-        }
 
-        if (Input.GetKey(KeyCode.Q)) Shield.gameObject.SetActive(true);
-        else Shield.gameObject.SetActive(false);
     }
-
 
     void FlipCharacter()
     {
@@ -85,8 +85,33 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag.Equals("Ground")) isJumping = false;
     }
 
+    void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+        isJumping = true;
+    }
+
     void MeeleAttack()
     {
         animator.SetTrigger("MeeleAttack");
+    }
+
+    void SummonFireball()
+    {
+        nextFire = Time.time + fireRate;
+        Instantiate(fireball, Magic.position,
+            Quaternion.Euler(x: 0, y: 0, z: isFacingRight ? 0 : 180));
+    }
+
+    void ActivateShield()
+    {
+        Shield.gameObject.SetActive(true);
+        ShieldActive = true;
+    }
+
+    void DeactivateShield()
+    {
+        Shield.gameObject.SetActive(false);
+        ShieldActive = false;
     }
 }

@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] int HP = 10;
+    [SerializeField] int HP = 20;
     [SerializeField] float knockbackForce = 0.5f;
     Rigidbody2D rb;
     [SerializeField] PlayerController  player;
+
 
 
     // Start is called before the first frame update
@@ -25,15 +27,22 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Weapon" || other.tag == "Magic")
+        switch (other.tag)
         {
-            Vector2 difference = (transform.position - other.transform.position).normalized;
-            if (other.tag == "Magic") knockbackForce *= 2;
-            Vector2 force = difference * knockbackForce;
-            rb.AddForce(force, ForceMode2D.Impulse);
-            Debug.Log(player.MeeleDamage);
-            if (other.tag == "Weapon") GetDamage(player.MeeleDamage);
+            case "Weapon":
+                Vector2 difference = (transform.position - other.transform.position).normalized;
+                Vector2 force = difference * knockbackForce;
+                rb.AddForce(force, ForceMode2D.Impulse);
+                GetDamage(player.MeeleDamage);
+                Debug.Log(HP);
+                break;
+            case "Fireball":
+                Debug.Log("Hello");
+                GetDamage(player.MagicDamage);
+                Debug.Log(HP);
+                break;
         }
+        
     }
 
     public void GetDamage(int damage)
@@ -44,6 +53,7 @@ public class EnemyController : MonoBehaviour
 
     private void MakeDead()
     {
+        player.kills++;
         Destroy(gameObject);
     }
 }

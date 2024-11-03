@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SummonFireball : MonoBehaviour
 {
-    [SerializeField] private float projectileSpeed = 15f;
+    [SerializeField] private float projectileSpeed = 1f;
 
     private Rigidbody2D rigidbody2d;
 
