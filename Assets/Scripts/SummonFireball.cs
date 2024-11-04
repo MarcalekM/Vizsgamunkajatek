@@ -18,7 +18,7 @@ public class SummonFireball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        this.gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     public void Stop()

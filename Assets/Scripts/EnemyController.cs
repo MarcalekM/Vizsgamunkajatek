@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] int HP = 20;
     [SerializeField] float knockbackForce = 0.5f;
     Rigidbody2D rb;
-    [SerializeField] PlayerController  player;
+    [SerializeField] PlayerController player;
 
 
 
@@ -34,12 +34,9 @@ public class EnemyController : MonoBehaviour
                 Vector2 force = difference * knockbackForce;
                 rb.AddForce(force, ForceMode2D.Impulse);
                 GetDamage(player.MeeleDamage);
-                Debug.Log(HP);
                 break;
             case "Fireball":
-                Debug.Log("Hello");
                 GetDamage(player.MagicDamage);
-                Debug.Log(HP);
                 break;
         }
         

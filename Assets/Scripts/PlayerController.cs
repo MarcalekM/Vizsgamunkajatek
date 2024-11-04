@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform Shield;
     public int ShieldHP = 10;
     private bool ShieldActive = false;
+    public bool ShieldAlive = true;
 
     [SerializeField] TextMeshProUGUI UI_HP;
     [SerializeField] TextMeshProUGUI UI_Kill;
@@ -60,8 +61,10 @@ public class PlayerController : MonoBehaviour
 
         if (Time.time >= nextFire && Input.GetKeyDown(KeyCode.Mouse1) && !ShieldActive) SummonFireball();
 
-        if (Input.GetKey(KeyCode.Q)) ActivateShield();
-        else DeactivateShield();
+        if(ShieldAlive){
+            if (Input.GetKey(KeyCode.Q)) ActivateShield();
+            else DeactivateShield();
+        }
     }
 
     private void FixedUpdate()
