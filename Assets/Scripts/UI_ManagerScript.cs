@@ -21,11 +21,13 @@ public class UI_ManagerScript : MonoBehaviour
         {
             Stats.gameObject.SetActive(true);
             UI.gameObject.SetActive(false);
+            Time.timeScale = 0;
         }
     }
     public void CloseStats()
     {
         Stats.gameObject.SetActive(false);
         UI.gameObject.SetActive(true);
+        Time.timeScale = 1;
     }
 }

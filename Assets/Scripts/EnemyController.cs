@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] int HP = 20;
+    [SerializeField] float HP = 20;
     [SerializeField] float knockbackForce = 0.5f;
     Rigidbody2D rb;
     [SerializeField] PlayerController player;
@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (HP <= 0) MakeDead();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -35,17 +35,13 @@ public class EnemyController : MonoBehaviour
                 rb.AddForce(force, ForceMode2D.Impulse);
                 GetDamage(player.MeeleDamage);
                 break;
-            case "Fireball":
-                GetDamage(player.MagicDamage);
-                break;
         }
         
     }
 
-    public void GetDamage(int damage)
+    public void GetDamage(float damage)
     {
         HP -= damage;
-        if (HP <= 0) MakeDead();
     }
 
     private void MakeDead()

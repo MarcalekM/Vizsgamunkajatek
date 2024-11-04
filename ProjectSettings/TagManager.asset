@@ -7,8 +7,9 @@ TagManager:
   - Ground
   - Enemy
   - Weapon
-  - Fireball
-  - EnemyAttack
+  - EnemyBullet
+  - Magic
+  - Shield
   layers:
   - Default
   - TransparentFX

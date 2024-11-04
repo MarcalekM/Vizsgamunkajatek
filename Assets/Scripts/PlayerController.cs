@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public int Lv = 1;
-    [SerializeField] public int HP = 10;
-    [SerializeField] public int MeeleDamage = 10;
-    [SerializeField] public int MagicDamage = 10;
-    public int kills = 0;
-    public int SP = 3;
+    public float Lv = 1;
+    [SerializeField] public float HP = 10;
+    [SerializeField] public float MeeleDamage = 10;
+    [SerializeField] public float MagicDamage = 12;
+    public float kills = 0;
+    public float SP = 3;
 
     float horizontalInput;
     [SerializeField] float movementSpeed = 15f;
@@ -27,8 +27,9 @@ public class PlayerController : MonoBehaviour
     private float nextFire;
 
     [SerializeField] Transform Shield;
-    public int ShieldHP = 10;
-    private bool ShieldActive = false;
+    public float MaxShield = 10;
+    public float ShieldHP = 10;
+    public bool ShieldActive = false;
     public bool ShieldAlive = true;
 
     [SerializeField] TextMeshProUGUI UI_HP;
@@ -65,11 +66,18 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.Q)) ActivateShield();
             else DeactivateShield();
         }
+        else DeactivateShield();
+
+        if(HP <= 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void FixedUpdate()
     {
-
+        if (!ShieldAlive) AddShieldHP();
+        if (ShieldAlive && !ShieldActive && ShieldHP != MaxShield) AddShieldHP();
     }
 
     void FlipCharacter()
@@ -116,5 +124,18 @@ public class PlayerController : MonoBehaviour
     {
         Shield.gameObject.SetActive(false);
         ShieldActive = false;
+    }
+
+    void AddShieldHP()
+    {
+        if (ShieldHP + MagicDamage / 100 > MaxShield) ShieldHP = MaxShield;
+        else ShieldHP += MagicDamage / 100;
+        if (ShieldHP == MaxShield) ShieldAlive = true;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        if (HP - damage < 0) HP -= damage;
+        else HP = 0;
     }
 }
