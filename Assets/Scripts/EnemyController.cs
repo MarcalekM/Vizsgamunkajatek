@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] float HP = 20;
+    private float HP = 50;
     [SerializeField] float knockbackForce = 0.5f;
     Rigidbody2D rb;
     [SerializeField] PlayerController player;
+    private float damage = 20;
 
 
 
@@ -27,21 +28,32 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        switch (other.tag)
-        {
-            case "Weapon":
-                Vector2 difference = (transform.position - other.transform.position).normalized;
-                Vector2 force = difference * knockbackForce;
-                rb.AddForce(force, ForceMode2D.Impulse);
-                GetDamage(player.MeeleDamage);
-                break;
+        if (!gameObject.tag.Equals("Enemy")){
+            switch (other.tag)
+            {
+                case "Weapon":
+                    Vector2 difference = (transform.position - other.transform.position).normalized;
+                    Vector2 force = difference * knockbackForce;
+                    rb.AddForce(force, ForceMode2D.Impulse);
+                    GetDamage(player.MeeleDamage);
+                    break;
+                case "Shield":
+                    other.gameObject.GetComponent<Shield_Script>().GetDamage(damage);
+                    break;
+                case "Player":
+                    other.gameObject.GetComponent<PlayerController>().GetDamage(damage);
+                    break;
+            }
         }
-        
     }
 
     public void GetDamage(float damage)
     {
-        HP -= damage;
+        if (gameObject.tag.Equals("Magic"))
+        {
+            HP -= damage * 2;
+        }
+        else HP -= damage;
     }
 
     private void MakeDead()
@@ -49,4 +61,5 @@ public class EnemyController : MonoBehaviour
         player.kills++;
         Destroy(gameObject);
     }
+
 }

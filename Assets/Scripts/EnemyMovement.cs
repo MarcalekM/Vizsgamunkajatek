@@ -4,32 +4,52 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed = 5f; // Mozg�si sebess�g
-    private Vector2 direction = Vector2.left; // Kezdeti ir�ny
-    private float timer = 0f; // Id�z�t�
+    private float speed;
+    private Vector2 direction = Vector2.left; 
+    private float timer = 0f; 
     private Rigidbody2D rb;
-    private bool PlayerSpotted = false;
+    public bool PlayerSpotted = false;
+    private GameObject player;
+    public bool isFacingRight = false;
+
 
     private void Start()
     {
         // Megkeress�k a Rigidbody2D komponenst
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
     {
-        if(PlayerSpotted) speed = 10f;
-        else speed = 5f;
-        // N�velj�k az id�z�t�t a deltaTime-mal (az el�z� frame �ta eltelt id�)
+        if (PlayerSpotted)
+        {
+            if (gameObject.name.Contains("Ghost")) speed = 6f;
+            else if (gameObject.name.Contains("Goblin")) speed = 10f;
+            else speed = 2f;
+        }
+        else
+        {
+            if (gameObject.name.Contains("Ghost")) speed = 3f;
+            else if (gameObject.name.Contains("Goblin")) speed = 5f;
+            else speed = 1f;
+        }
+       
         timer += Time.deltaTime;
 
-        // Ha eltelt 5 m�sodperc, megford�tjuk az ir�nyt �s lenull�zzuk az id�z�t�t
+        
         if(!PlayerSpotted){
             if (timer >= 3f){
                 direction = -direction;
                 Flip();
                 timer = 0f;
             }
+        }
+        else
+        {
+            Vector2 targetPosition = player.transform.position;
+            Vector2 currentPosition = transform.position;
+            direction = (targetPosition - currentPosition).normalized;
         }
         
     }
@@ -44,5 +64,6 @@ public class EnemyMovement : MonoBehaviour
         Vector3 ls = transform.localScale;
                 ls.x *= -1f;
                 transform.localScale = ls;
+        isFacingRight = !isFacingRight;
     }
 }

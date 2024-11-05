@@ -60,10 +60,10 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = new Vector2(horizontalInput * movementSpeed, rb.velocity.y);
 
-        if (Time.time >= nextFire && Input.GetKeyDown(KeyCode.Mouse1) && !ShieldActive) SummonFireball();
+        if (Time.time >= nextFire && Input.GetKeyDown(KeyCode.Q) && !ShieldActive) SummonFireball();
 
         if(ShieldAlive){
-            if (Input.GetKey(KeyCode.Q)) ActivateShield();
+            if (Input.GetKey(KeyCode.Mouse1)) ActivateShield();
             else DeactivateShield();
         }
         else DeactivateShield();
@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
         if (ShieldHP == MaxShield) ShieldAlive = true;
     }
 
-    public void TakeDamage(float damage)
+    public void GetDamage(float damage)
     {
         if (HP - damage < 0) HP -= damage;
         else HP = 0;
