@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed = 5f; // Mozgási sebesség
-    private Vector2 direction = Vector2.right; // Kezdeti irány
-    private float timer = 0f; // Idõzítõ
+    public float speed = 5f; // Mozgï¿½si sebessï¿½g
+    private Vector2 direction = Vector2.right; // Kezdeti irï¿½ny
+    private float timer = 0f; // Idï¿½zï¿½tï¿½
     private Rigidbody2D rb;
 
     private void Start()
     {
-        // Megkeressük a Rigidbody2D komponenst
+        // Megkeressï¿½k a Rigidbody2D komponenst
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        // Növeljük az idõzítõt a deltaTime-mal (az elõzõ frame óta eltelt idõ)
+        // Nï¿½veljï¿½k az idï¿½zï¿½tï¿½t a deltaTime-mal (az elï¿½zï¿½ frame ï¿½ta eltelt idï¿½)
         timer += Time.deltaTime;
 
-        // Ha eltelt 5 másodperc, megfordítjuk az irányt és lenullázzuk az idõzítõt
-        if (timer >= 5f)
+        // Ha eltelt 5 mï¿½sodperc, megfordï¿½tjuk az irï¿½nyt ï¿½s lenullï¿½zzuk az idï¿½zï¿½tï¿½t
+        if (timer >= 3f)
         {
             direction = -direction;
             timer = 0f;
@@ -30,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Mozgatjuk az objektumot a Rigidbody2D-vel az aktuális irányban
+        // Mozgatjuk az objektumot a Rigidbody2D-vel az aktuï¿½lis irï¿½nyban
         rb.velocity = direction * speed;
     }
 }
