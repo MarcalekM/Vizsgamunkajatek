@@ -49,11 +49,7 @@ public class EnemyController : MonoBehaviour
 
     public void GetDamage(float damage)
     {
-        if (gameObject.tag.Equals("Magic"))
-        {
-            HP -= damage * 2;
-        }
-        else HP -= damage;
+            HP -= damage;
     }
 
     private void MakeDead()

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -28,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Transform Shield;
     public float MaxShield = 10;
-    public float ShieldHP = 10;
+    public float ShieldHP;
     public bool ShieldActive = false;
     public bool ShieldAlive = true;
 
@@ -39,6 +41,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        LoadCharacterStats();
+        ShieldHP = MaxShield;
         nextFire = 0f;
     }
 
@@ -137,5 +141,45 @@ public class PlayerController : MonoBehaviour
     {
         if (HP - damage < 0) HP -= damage;
         else HP = 0;
+    }
+
+    void LoadCharacterStats()
+    {
+        string filepath = Application.persistentDataPath + "/stats.txt";
+        using StreamReader sr = new(
+            path: filepath,
+            encoding: System.Text.Encoding.UTF8);
+        string[] text = sr.ReadLine().Split(',');
+        Lv = float.Parse(text[0]);
+        HP = float.Parse(text[1]);
+        MeeleDamage = float.Parse(text[2]);
+        MagicDamage = float.Parse(text[3]);
+        kills = float.Parse(text[4]);
+        SP = float.Parse(text[5]);
+        MaxShield = float.Parse(text[6]);
+        SaveToJson();
+    }
+
+    public class User
+    {
+        public string Name;
+        public string Password;
+    }
+
+    public void SaveToJson()
+    {
+        User newbie = new();
+        newbie.Name = "Sufi";
+        newbie.Password = "12345";
+        User vki = new();
+        vki.Name = "Laci";
+        vki.Password = "67890";
+        string text = "";
+        text += JsonUtility.ToJson(newbie);
+        text += JsonUtility.ToJson(vki);
+        using StreamWriter sw = new(
+            path: @"Assets/src/Users",
+            append: false);
+        sw.Write(text);
     }
 }

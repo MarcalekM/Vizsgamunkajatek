@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterStatScript : MonoBehaviour
 {
-    [SerializeField] PlayerController stats;
+    PlayerController stats;
     [SerializeField] Button HP;
     [SerializeField] Button Meele;
     [SerializeField] Button Magic;
@@ -17,6 +18,11 @@ public class CharacterStatScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI UI_Magic;
     [SerializeField] TextMeshProUGUI UI_Shield;
 
+
+    void Awake()
+    {
+        stats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -74,5 +80,7 @@ public class CharacterStatScript : MonoBehaviour
     {
         stats.Lv++;
     }
+
+    
 
 }
