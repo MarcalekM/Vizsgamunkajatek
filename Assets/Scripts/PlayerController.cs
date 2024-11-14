@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Transform Magic;
     [SerializeField] private GameObject fireball;
+    [SerializeField] private GameObject blow;
     [SerializeField] private float fireRate = .5f;
 
     Rigidbody2D rb;
@@ -64,9 +65,10 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = new Vector2(horizontalInput * movementSpeed, rb.velocity.y);
 
-        if (Time.time >= nextFire && Input.GetKeyDown(KeyCode.Q) && !ShieldActive) SummonFireball();
+        if (Time.time >= nextFire && Input.GetKeyDown(KeyCode.Alpha1) && !ShieldActive) SummonFireball();
+        if (Time.time >= nextFire && Input.GetKeyDown(KeyCode.Alpha2) && !ShieldActive) SummonBlow();
 
-        if(ShieldAlive){
+        if (ShieldAlive){
             if (Input.GetKey(KeyCode.Mouse1)) ActivateShield();
             else DeactivateShield();
         }
@@ -115,6 +117,12 @@ public class PlayerController : MonoBehaviour
     {
         nextFire = Time.time + fireRate;
         Instantiate(fireball, Magic.position,
+            Quaternion.Euler(x: 0, y: 0, z: isFacingRight ? 0 : 180));
+    }
+    void SummonBlow()
+    {
+        nextFire = Time.time + fireRate;
+        Instantiate(blow, Magic.position,
             Quaternion.Euler(x: 0, y: 0, z: isFacingRight ? 0 : 180));
     }
 
@@ -178,7 +186,7 @@ public class PlayerController : MonoBehaviour
         text += JsonUtility.ToJson(newbie);
         text += JsonUtility.ToJson(vki);
         using StreamWriter sw = new(
-            path: @"Assets/src/Users",
+            path: @"Assets/src/Users.json",
             append: false);
         sw.Write(text);
     }

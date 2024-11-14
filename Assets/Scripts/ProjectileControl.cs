@@ -7,6 +7,7 @@ public class SummonFireball : MonoBehaviour
 {
     [SerializeField] private float projectileSpeed = 1f;
     public float damage = 0;
+    public float knockbackForce = 0;
 
     private Rigidbody2D rb;
 
@@ -27,6 +28,7 @@ public class SummonFireball : MonoBehaviour
 
         if (gameObject.name.Contains("Fireball")) damage = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().MagicDamage;
         else if (gameObject.name.Contains("EnemyProjectile")) damage = 30;
+        else if(gameObject.name.Contains("Blow")) knockbackForce = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().MagicDamage;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -37,6 +39,10 @@ public class SummonFireball : MonoBehaviour
                 if (other.gameObject.name.Contains("Ghost")) other.gameObject.GetComponent<EnemyController>().GetDamage(damage * 1.5f);
                 else if (other.gameObject.name.Contains("Golem")) other.gameObject.GetComponent<EnemyController>().GetDamage(damage * 0.5f);
                 else other.gameObject.GetComponent<EnemyController>().GetDamage(damage);
+
+                Vector2 difference = (other.transform.position - transform.position).normalized;
+                Vector2 force = difference * knockbackForce;
+                other.gameObject.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
                 break;
             case "Shield":
                 if (gameObject.name.Contains("EnemyProjectile")) other.gameObject.GetComponent<Shield_Script>().GetDamage(damage);

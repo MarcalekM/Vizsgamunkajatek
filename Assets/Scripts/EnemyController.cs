@@ -7,7 +7,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private float HP = 50;
-    [SerializeField] float knockbackForce = 0.5f;
+    [SerializeField] float knockbackForce = 25f;
     Rigidbody2D rb;
     [SerializeField] PlayerController player;
     private float damage = 20;
