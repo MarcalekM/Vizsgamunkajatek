@@ -8,10 +8,10 @@ public class Menu_UI_Manager : MonoBehaviour
     [SerializeField] Canvas Login;
     [SerializeField] Canvas LoggedIn;
 
-    [SerializeField] Button btnLogin;
-    [SerializeField] Button btnEnter;
-    [SerializeField] Button btnNewEndless;
-    [SerializeField] Button btnLoginEndless;
+    //[SerializeField] Button btnLogin;
+    //[SerializeField] Button btnEnter;
+    //[SerializeField] Button btnNewEndless;
+    //[SerializeField] Button btnLoginEndless;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class Menu_UI_Manager : MonoBehaviour
         
     }
 
-    void LoginActive(){
+    /*void LoginActive(){
         NewPlayer.SetActive(false);
         Login.SetActive(true);
     }
@@ -33,5 +33,5 @@ public class Menu_UI_Manager : MonoBehaviour
     void LoggedInActive(){
         Login.SetActive(false);
         LoggedIn.SetActive(true);
-    }
+    }*/
 }

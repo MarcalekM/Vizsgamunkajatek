@@ -39,10 +39,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] TextMeshProUGUI UI_Kill;
     [SerializeField] TextMeshProUGUI UI_SP;
 
+    [SerializeField] AudioSource Walk;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        LoadCharacterStats();
+        //LoadCharacterStats();
         ShieldHP = MaxShield;
         nextFire = 0f;
     }
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift)) movementSpeed = 10;
         else movementSpeed = 5;
+        if(isJumping || rb.velocity.x == 0)Walk.Play();
 
         rb.velocity = new Vector2(horizontalInput * movementSpeed, rb.velocity.y);
 
@@ -151,7 +154,7 @@ public class PlayerController : MonoBehaviour
         else HP = 0;
     }
 
-    void LoadCharacterStats()
+    /*void LoadCharacterStats()
     {
         string filepath = Application.persistentDataPath + "/stats.txt";
         using StreamReader sr = new(
@@ -166,7 +169,7 @@ public class PlayerController : MonoBehaviour
         SP = float.Parse(text[5]);
         MaxShield = float.Parse(text[6]);
         SaveToJson();
-    }
+    }*/
 
     public class User
     {
