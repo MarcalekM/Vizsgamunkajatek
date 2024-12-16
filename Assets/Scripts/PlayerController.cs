@@ -62,14 +62,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !ShieldActive) MeeleAttack();
 
-        if (Input.GetKey(KeyCode.LeftShift)) movementSpeed = 10;
-        else movementSpeed = 5;
+        if (Input.GetKey(KeyCode.LeftShift)) movementSpeed = 25;
+        else movementSpeed = 15;
         if(isJumping || rb.velocity.x == 0)Walk.Play();
 
         rb.velocity = new Vector2(horizontalInput * movementSpeed, rb.velocity.y);
 
         if (Time.time >= nextFire && Input.GetKeyDown(KeyCode.Alpha1) && !ShieldActive) SummonFireball();
-        if (Time.time >= nextFire && Input.GetKeyDown(KeyCode.Alpha2) && !ShieldActive) SummonBlow();
 
         if (ShieldAlive){
             if (Input.GetKey(KeyCode.Mouse1)) ActivateShield();
@@ -120,12 +119,6 @@ public class PlayerController : MonoBehaviour
     {
         nextFire = Time.time + fireRate;
         Instantiate(fireball, Magic.position,
-            Quaternion.Euler(x: 0, y: 0, z: isFacingRight ? 0 : 180));
-    }
-    void SummonBlow()
-    {
-        nextFire = Time.time + fireRate;
-        Instantiate(blow, Magic.position,
             Quaternion.Euler(x: 0, y: 0, z: isFacingRight ? 0 : 180));
     }
 
