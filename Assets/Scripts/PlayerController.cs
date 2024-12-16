@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float SP = 3;
 
     float horizontalInput;
-    [SerializeField] float movementSpeed = 15f;
+    [SerializeField] float movementSpeed = 6f;
     bool isFacingRight = true;
     [SerializeField] float jumpPower = 8f;
     bool isJumping = false;
@@ -62,8 +62,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !ShieldActive) MeeleAttack();
 
-        if (Input.GetKey(KeyCode.LeftShift)) movementSpeed = 25;
-        else movementSpeed = 15;
+        if (Input.GetKey(KeyCode.LeftShift)) movementSpeed = 10;
+        else movementSpeed = 6;
         if(isJumping || rb.velocity.x == 0)Walk.Play();
 
         rb.velocity = new Vector2(horizontalInput * movementSpeed, rb.velocity.y);
