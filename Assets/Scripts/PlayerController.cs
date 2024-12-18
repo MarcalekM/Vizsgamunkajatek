@@ -55,8 +55,6 @@ public class PlayerController : MonoBehaviour
         UI_SP.text = "SP: " + SP;
         horizontalInput = Input.GetAxis("Horizontal");
 
-        animator.SetFloat("speed", Input.GetAxisRaw("Horizontal") * movementSpeed);
-
         FlipCharacter();
 
         if (Input.GetButtonDown("Jump") && !isJumping) Jump();
@@ -68,6 +66,8 @@ public class PlayerController : MonoBehaviour
         if(isJumping || rb.velocity.x == 0)Walk.Play();
 
         rb.velocity = new Vector2(horizontalInput * movementSpeed, rb.velocity.y);
+        if (!isJumping) animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        else animator.SetFloat("Speed", 0);
 
         if (Time.time >= nextFire && Input.GetKeyDown(KeyCode.Alpha1) && !ShieldActive) SummonFireball();
 
