@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Transform Magic;
     [SerializeField] private GameObject fireball;
-    [SerializeField] private GameObject blow;
     [SerializeField] private float fireRate = .5f;
 
     Rigidbody2D rb;
@@ -55,6 +54,8 @@ public class PlayerController : MonoBehaviour
         UI_Kill.text = "Kills: " + kills;
         UI_SP.text = "SP: " + SP;
         horizontalInput = Input.GetAxis("Horizontal");
+
+        animator.SetFloat("speed", Input.GetAxisRaw("Horizontal") * movementSpeed);
 
         FlipCharacter();
 
