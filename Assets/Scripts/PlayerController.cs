@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     float horizontalInput;
     [SerializeField] float movementSpeed = 6f;
     bool isFacingRight = true;
-    [SerializeField] float jumpPower = 8f;
+    [SerializeField] float jumpPower = 25f;
     bool isJumping = false;
 
     [SerializeField] private Transform Magic;
