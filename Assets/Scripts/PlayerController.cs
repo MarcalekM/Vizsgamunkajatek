@@ -34,9 +34,9 @@ public class PlayerController : MonoBehaviour
     public bool ShieldActive = false;
     public bool ShieldAlive = true;
 
-    [SerializeField] TextMeshProUGUI UI_HP;
-    [SerializeField] TextMeshProUGUI UI_Kill;
-    [SerializeField] TextMeshProUGUI UI_SP;
+    //[SerializeField] TextMeshProUGUI UI_HP;
+    //[SerializeField] TextMeshProUGUI UI_Kill;
+    //[SerializeField] TextMeshProUGUI UI_SP;
 
     [SerializeField] AudioSource Walk;
 
@@ -50,9 +50,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        UI_HP.text = "HP: " + HP;
-        UI_Kill.text = "Kills: " + kills;
-        UI_SP.text = "SP: " + SP;
+        //UI_HP.text = "HP: " + HP;
+        //UI_Kill.text = "Kills: " + kills;
+        //UI_SP.text = "SP: " + SP;
         horizontalInput = Input.GetAxis("Horizontal");
 
         FlipCharacter();
