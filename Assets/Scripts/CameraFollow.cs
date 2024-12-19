@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
         facingRight = true;
         offset = transform.position - target.position;
         offset.x += viewDistance / 2;
-        lowY = transform.position.y;
+        lowY = 0f;
     }
 
 
