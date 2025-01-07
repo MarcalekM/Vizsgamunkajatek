@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
 
     public void GetDamage(float damage)
     {
-        if (HP - damage < 0) HP -= damage;
+        if (HP - damage > 0) HP -= damage;
         else HP = 0;
     }
 

@@ -20,6 +20,6 @@ public class Healthbar : MonoBehaviour
     }
 
     void Update(){
-        _mask.padding = new Vector4(100, 0, 200 - (_maxRightMask / (player.MaxHp - player.HP)), 0) ;
+        _mask.padding = new Vector4(100, 0, 0 + _maxRightMask - (200 *  (player.HP / player.MaxHp)), 0) ;
     }
 }
