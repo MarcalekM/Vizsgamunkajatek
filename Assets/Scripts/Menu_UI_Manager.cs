@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Menu_UI_Manager : MonoBehaviour
@@ -9,7 +10,12 @@ public class Menu_UI_Manager : MonoBehaviour
     [SerializeField] Canvas LoggedIn;
     [SerializeField] Canvas Registration;
 
-
+    [SerializeField] private TextMeshProUGUI LoginUsernameText;
+    [SerializeField] private TextMeshProUGUI LoginPasswordText;
+    
+    [SerializeField] private TextMeshProUGUI RegistrationUsernameText;
+    [SerializeField] private TextMeshProUGUI RegistrationPasswordText;
+    
     // Start is called before the first frame update
     void Start()
     {
