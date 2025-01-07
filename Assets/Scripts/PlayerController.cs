@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public float SP = 3;
 
     float horizontalInput;
+    float verticalInput;
     [SerializeField] float movementSpeed = 6f;
     bool isFacingRight = true;
     [SerializeField] float jumpPower = 25f;
@@ -55,6 +56,8 @@ public class PlayerController : MonoBehaviour
         //UI_Kill.text = "Kills: " + kills;
         //UI_SP.text = "SP: " + SP;
         horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+        animator.SetFloat("VerticalSpeed", rb.velocity.y);
 
         FlipCharacter();
 
