@@ -13,7 +13,7 @@ public class CharacterStatScript : MonoBehaviour
     [SerializeField] Button Magic;
     [SerializeField] Button Shield;
 
-    [SerializeField] TextMeshProUGUI UI_HP;
+    [SerializeField] TextMeshProUGUI UI_MaxHP;
     [SerializeField] TextMeshProUGUI UI_Meele;
     [SerializeField] TextMeshProUGUI UI_Magic;
     [SerializeField] TextMeshProUGUI UI_Shield;
@@ -41,7 +41,7 @@ public class CharacterStatScript : MonoBehaviour
             Shield.gameObject.SetActive(false);
         }
 
-        UI_HP.text = "HP: " + stats.HP;
+        UI_MaxHP.text = "HP: " + stats.HP;
         UI_Meele.text = "Meele: " + stats.MeeleDamage;
         UI_Magic.text = "Magic: " + stats.MagicDamage;
         UI_Shield.text = "MaxShield: " + stats.MaxShield;
@@ -52,7 +52,7 @@ public class CharacterStatScript : MonoBehaviour
     public void Add_HP()
     {
         stats.SP--;
-        stats.HP += 2;
+        stats.MaxHp += 2;
         Add_Lv();
     }
 
