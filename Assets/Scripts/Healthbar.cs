@@ -6,20 +6,30 @@ using UnityEngine.UI;
 public class Healthbar : MonoBehaviour
 { 
     [SerializeField] private PlayerController player;
-    [SerializeField] private RectTransform _barRect;
-    [SerializeField] private RectMask2D _mask;
+    [SerializeField] private Image healthbar;
 
-    private float _maxRightMask;
-    private float _initialRightMask;
+    private float health;
+    private float targetFillAmount;
 
-    void Start()
+    private void Start()
     {
-        _maxRightMask = 200;
-        _initialRightMask = 0;
-        Debug.Log(player.MaxHp);
+        health = player.HP;
+        targetFillAmount = health / player.MaxHp;
+        healthbar.fillAmount = targetFillAmount;
     }
 
-    void Update(){
-        _mask.padding = new Vector4(100, 0, 0 + _maxRightMask - (200 *  (player.HP / player.MaxHp)), 0) ;
+    private void Update()
+    {
+        if (health != player.HP)
+        {
+            health = player.HP;
+        }
+        if (targetFillAmount > health / player.MaxHp)
+        {
+            targetFillAmount -= .01f;
+            healthbar.fillAmount = targetFillAmount;
+        }
+
     }
+
 }
