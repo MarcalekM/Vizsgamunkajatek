@@ -520,6 +520,18 @@ PrefabInstance:
       value: -122.755
       objectReference: {fileID: 0}
     - target: {fileID: 8892396407513320101, guid: 17fc72059f237bb4c9e4fcc97afbaf8c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8396226
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892396407513320101, guid: 17fc72059f237bb4c9e4fcc97afbaf8c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6907918
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892396407513320101, guid: 17fc72059f237bb4c9e4fcc97afbaf8c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.59011215
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892396407513320101, guid: 17fc72059f237bb4c9e4fcc97afbaf8c, type: 3}
       propertyPath: m_Intensity
       value: 0.1
       objectReference: {fileID: 0}
