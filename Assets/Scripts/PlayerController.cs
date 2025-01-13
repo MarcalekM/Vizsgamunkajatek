@@ -131,12 +131,14 @@ public class PlayerController : MonoBehaviour
     {
         Shield.gameObject.SetActive(true);
         ShieldActive = true;
+        animator.SetBool("ActiveShield", true);
     }
 
     void DeactivateShield()
     {
         Shield.gameObject.SetActive(false);
         ShieldActive = false;
+        animator.SetBool("ActiveShield", false);
     }
 
     void AddShieldHP()
