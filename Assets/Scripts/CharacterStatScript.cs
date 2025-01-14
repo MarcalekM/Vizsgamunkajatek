@@ -41,7 +41,7 @@ public class CharacterStatScript : MonoBehaviour
             Shield.gameObject.SetActive(false);
         }
 
-        UI_MaxHP.text = "HP: " + stats.HP;
+        UI_MaxHP.text = "HP: " + stats.MaxHP;
         UI_Meele.text = "Meele: " + stats.MeeleDamage;
         UI_Magic.text = "Magic: " + stats.MagicDamage;
         UI_Shield.text = "MaxShield: " + stats.MaxShield;
@@ -52,7 +52,7 @@ public class CharacterStatScript : MonoBehaviour
     public void Add_HP()
     {
         stats.SP--;
-        stats.MaxHp += 2;
+        stats.MaxHP += 2;
         Add_Lv();
     }
 

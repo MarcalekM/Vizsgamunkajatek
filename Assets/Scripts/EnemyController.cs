@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour
         if (HP <= 0) MakeDead();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollision2D(Collider2D other)
     {
         if (!gameObject.tag.Equals("Enemy")){
             switch (other.tag)
