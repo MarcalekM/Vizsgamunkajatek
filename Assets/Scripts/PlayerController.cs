@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float Lv = 1;
-    [SerializeField] public float MaxHp = 50;
+    [SerializeField] public float MaxHP = 50;
     [SerializeField] public float HP = 25;
     [SerializeField] public float MeeleDamage = 10;
     [SerializeField] public float MagicDamage = 12;

@@ -18,7 +18,7 @@ public class Healthbar : MonoBehaviour
     private void Start()
     {
         health = player.HP;
-        targetFillAmount = Normalize(health, 0,player.MaxHp, 0.322f, 1);
+        targetFillAmount = Normalize(health, 0,player.MaxHP, 0.322f, 1);
         healthbar.fillAmount = targetFillAmount;
     }
 
@@ -28,9 +28,9 @@ public class Healthbar : MonoBehaviour
         {
             health = player.HP;
         }
-        targetFillAmount = Normalize(health, 0,player.MaxHp, 0.322f, 1);
+        targetFillAmount = Normalize(health, 0,player.MaxHP, 0.322f, 1);
         healthbar.fillAmount = Mathf.Lerp(healthbar.fillAmount, targetFillAmount, Time.deltaTime);
-        healthText.text = $"{player.HP}/{player.MaxHp}";
+        healthText.text = $"{player.HP}/{player.MaxHP}";
         skillPointsText.text = $"Skill Points: {player.SP}";
 
     }
