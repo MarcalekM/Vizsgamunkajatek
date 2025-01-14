@@ -1001,6 +1001,10 @@ PrefabInstance:
       value: -122.755
       objectReference: {fileID: 0}
     - target: {fileID: 8892396407513320101, guid: 17fc72059f237bb4c9e4fcc97afbaf8c, type: 3}
+      propertyPath: m_LightType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892396407513320101, guid: 17fc72059f237bb4c9e4fcc97afbaf8c, type: 3}
       propertyPath: m_ShadowIntensity
       value: 0.9
       objectReference: {fileID: 0}
