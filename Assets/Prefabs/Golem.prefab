@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 3
-  player: {fileID: 0}
+  player: {fileID: 2853583930120438168, guid: f0a55e57acdb85b428791a7c2bd82790, type: 3}
 --- !u!70 &1702412765109378851
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
