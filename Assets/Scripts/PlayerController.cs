@@ -97,6 +97,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!ShieldAlive) AddShieldHP();
         if (ShieldAlive && !ShieldActive && ShieldHP != MaxShield) AddShieldHP();
+        if(HP < MaxHP) AddHP();
     }
 
     void FlipCharacter()
@@ -152,6 +153,11 @@ public class PlayerController : MonoBehaviour
         if (ShieldHP + MagicDamage / 100 > MaxShield) ShieldHP = MaxShield;
         else ShieldHP += MagicDamage / 100;
         if (ShieldHP == MaxShield) ShieldAlive = true;
+    }
+    void AddHP()
+    {
+        if (HP + MeeleDamage / 100 > MaxHP) HP = MaxHP;
+        else HP += MeeleDamage / 100;
     }
 
     public void GetDamage(float damage)
