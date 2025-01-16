@@ -2009,7 +2009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lv: 1
-  MaxHp: 10
+  MaxHP: 50
   HP: 10
   MeeleDamage: 10
   MagicDamage: 10
@@ -2745,9 +2745,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6348161030203136731, guid: ce22aad36f6fceb40aed4a2dad39d60d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7526165083094969559, guid: ce22aad36f6fceb40aed4a2dad39d60d, type: 3}
       propertyPath: m_Name
       value: WindowGreenBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872857712653268881, guid: ce22aad36f6fceb40aed4a2dad39d60d, type: 3}
+      propertyPath: m_Intensity
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
