@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 180123221}
   m_Layer: 0
   m_Name: Ground_Cave_Platform
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,6 +313,128 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1eecf3146d35244b81202a8c4ab435b, type: 3}
+--- !u!1001 &766370875
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2302957367010000567, guid: 6ca104bc165f6eb4ebaa429b184bf5a1, type: 3}
+      propertyPath: m_Name
+      value: Tfiws
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191755608113270383, guid: 6ca104bc165f6eb4ebaa429b184bf5a1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1487.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191755608113270383, guid: 6ca104bc165f6eb4ebaa429b184bf5a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6586.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191755608113270383, guid: 6ca104bc165f6eb4ebaa429b184bf5a1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.6868637
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191755608113270383, guid: 6ca104bc165f6eb4ebaa429b184bf5a1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191755608113270383, guid: 6ca104bc165f6eb4ebaa429b184bf5a1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191755608113270383, guid: 6ca104bc165f6eb4ebaa429b184bf5a1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191755608113270383, guid: 6ca104bc165f6eb4ebaa429b184bf5a1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191755608113270383, guid: 6ca104bc165f6eb4ebaa429b184bf5a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191755608113270383, guid: 6ca104bc165f6eb4ebaa429b184bf5a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191755608113270383, guid: 6ca104bc165f6eb4ebaa429b184bf5a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6ca104bc165f6eb4ebaa429b184bf5a1, type: 3}
+--- !u!1001 &790985546
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1058558343476796019, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1700197279523308980, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
+      propertyPath: m_Name
+      value: Torch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1840644058795420247, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244218481021473057, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1466.1979
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244218481021473057, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6591.2856
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244218481021473057, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244218481021473057, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244218481021473057, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244218481021473057, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244218481021473057, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244218481021473057, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244218481021473057, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244218481021473057, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
 --- !u!1 &793168037
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +711,7 @@ GameObject:
   - component: {fileID: 1239529547}
   m_Layer: 0
   m_Name: Ground_Cave_Platform (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1001,6 +1123,10 @@ PrefabInstance:
       value: -122.755
       objectReference: {fileID: 0}
     - target: {fileID: 8892396407513320101, guid: 17fc72059f237bb4c9e4fcc97afbaf8c, type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892396407513320101, guid: 17fc72059f237bb4c9e4fcc97afbaf8c, type: 3}
       propertyPath: m_LightType
       value: 4
       objectReference: {fileID: 0}
@@ -1162,3 +1288,5 @@ SceneRoots:
   - {fileID: 1239529546}
   - {fileID: 1445120660}
   - {fileID: 793168039}
+  - {fileID: 790985546}
+  - {fileID: 766370875}
