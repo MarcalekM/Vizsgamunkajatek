@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         if (HP <= 0) MakeDead();
+        OnTriggerStay2D(null);
     }
 
     private void OnCollision2D(Collider2D other)
@@ -44,6 +45,14 @@ public class EnemyController : MonoBehaviour
                     other.gameObject.GetComponent<PlayerController>().GetDamage(damage);
                     break;
             }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (!gameObject.tag.Equals("Enemy"))
+        {
+            if (other.tag.Equals("Magic")) GetDamage(player.MagicDamage / 10);
         }
     }
 

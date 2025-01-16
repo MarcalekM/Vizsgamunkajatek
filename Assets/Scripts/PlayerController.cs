@@ -42,6 +42,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] AudioSource Walk;
 
+    [SerializeField] ParticleSystem Flamethrower;
+    [SerializeField] GameObject FlamethrowerHitbox;
+    private bool FlamethrowerActived = false;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -63,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && !isJumping) Jump();
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !ShieldActive) MeeleAttack();
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !ShieldActive  && !FlamethrowerActived) MeeleAttack();
 
         if (Input.GetKey(KeyCode.LeftShift)) movementSpeed = 10;
         else movementSpeed = 6;
@@ -73,10 +76,13 @@ public class PlayerController : MonoBehaviour
         if (!isJumping) animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         else animator.SetFloat("Speed", 0);
 
-        if (Time.time >= nextFire && Input.GetKeyDown(KeyCode.Alpha1) && !ShieldActive) SummonFireball();
+        if (Time.time >= nextFire && Input.GetKeyDown(KeyCode.Alpha1) && !ShieldActive && !FlamethrowerActived) SummonFireball();
+
+        if (Input.GetKey(KeyCode.Alpha2) && !ShieldActive) FlamethrowerActive();
+        else FlamethrowerInactive();
 
         if (ShieldAlive){
-            if (Input.GetKey(KeyCode.Mouse1)) ActivateShield();
+            if (Input.GetKey(KeyCode.Mouse1) && !FlamethrowerActived) ActivateShield();
             else DeactivateShield();
         }
         else DeactivateShield();
@@ -91,6 +97,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!ShieldAlive) AddShieldHP();
         if (ShieldAlive && !ShieldActive && ShieldHP != MaxShield) AddShieldHP();
+        if(HP < MaxHP) AddHP();
     }
 
     void FlipCharacter()
@@ -131,14 +138,14 @@ public class PlayerController : MonoBehaviour
     {
         Shield.gameObject.SetActive(true);
         ShieldActive = true;
-        animator.SetBool("ActiveShield", true);
+        animator.SetBool("ShieldActive", true);
     }
 
     void DeactivateShield()
     {
         Shield.gameObject.SetActive(false);
         ShieldActive = false;
-        animator.SetBool("ActiveShield", false);
+        animator.SetBool("ShieldActive", false);
     }
 
     void AddShieldHP()
@@ -147,11 +154,32 @@ public class PlayerController : MonoBehaviour
         else ShieldHP += MagicDamage / 100;
         if (ShieldHP == MaxShield) ShieldAlive = true;
     }
+    void AddHP()
+    {
+        if (HP + MeeleDamage / 100 > MaxHP) HP = MaxHP;
+        else HP += MeeleDamage / 100;
+    }
 
     public void GetDamage(float damage)
     {
         if (HP - damage > 0) HP -= damage;
         else HP = 0;
+    }
+
+    public void FlamethrowerActive()
+    {
+        Flamethrower.Play();
+        FlamethrowerHitbox.SetActive(true);
+        FlamethrowerActived = true;
+        animator.SetBool("FlamethrowerActive", true);
+    }
+
+    public void FlamethrowerInactive()
+    {
+        Flamethrower.Stop();
+        FlamethrowerHitbox.SetActive(false);
+        FlamethrowerActived = false;
+        animator.SetBool("FlamethrowerActive", false);
     }
 
     /*void LoadCharacterStats()
