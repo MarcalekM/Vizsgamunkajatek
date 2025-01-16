@@ -52,12 +52,7 @@ public class EnemyController : MonoBehaviour
     {
         if (!gameObject.tag.Equals("Enemy"))
         {
-            switch (other.tag)
-            {
-                case "Magic":
-                    GetDamage(player.MagicDamage / 10);
-                    break;
-            }
+            if (other.tag.Equals("Magic")) GetDamage(player.MagicDamage / 10);
         }
     }
 
