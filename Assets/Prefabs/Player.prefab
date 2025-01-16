@@ -470,6 +470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lv: 1
+  MaxHP: 10
   HP: 10
   MeeleDamage: 10
   MagicDamage: 10
