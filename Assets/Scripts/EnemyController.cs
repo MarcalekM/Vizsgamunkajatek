@@ -23,8 +23,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (HP <= 0) MakeDead();
-        OnTriggerStay2D(null);
+
     }
 
     private void OnCollision2D(Collider2D other)
@@ -48,17 +47,15 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!gameObject.tag.Equals("Enemy"))
-        {
-            if (other.tag.Equals("Magic")) GetDamage(player.MagicDamage / 10);
-        }
+        if (collision.tag.Equals("Magic2")) GetDamage(player.MagicDamage * 0.05f);
     }
 
     public void GetDamage(float damage)
     {
             HP -= damage;
+            if (HP <= 0) MakeDead();
     }
 
     private void MakeDead()
