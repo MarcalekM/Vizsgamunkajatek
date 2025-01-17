@@ -11,6 +11,7 @@ TagManager:
   - Magic
   - Shield
   - Finder
+  - Magic2
   layers:
   - Default
   - TransparentFX
