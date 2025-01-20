@@ -10,8 +10,13 @@ public class LevelMove : MonoBehaviour
 
     public void TriggerEvent()
     {
-        Debug.Log("Next Level Triggered");
         StartCoroutine(NextSceneTransform());
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+            StartCoroutine(NextSceneTransform());
     }
     private IEnumerator NextSceneTransform()
     {
