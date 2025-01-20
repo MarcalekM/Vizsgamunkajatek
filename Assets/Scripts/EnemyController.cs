@@ -23,7 +23,6 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     private void OnCollision2D(Collider2D other)

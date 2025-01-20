@@ -10,18 +10,19 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D rb;
     public bool PlayerSpotted = false;
     private GameObject player;
+    [SerializeField] PlayerController p;
     public bool isFacingRight = false;
 
 
     private void Start()
     {
-        // Megkeress�k a Rigidbody2D komponenst
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
     {
+        p.PlayerSpotted = PlayerSpotted;
         if (PlayerSpotted)
         {
             if (gameObject.name.Contains("Ghost")) speed = 6f;

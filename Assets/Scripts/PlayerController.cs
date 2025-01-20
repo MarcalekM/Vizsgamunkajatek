@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public float kills = 0;
     public float SP = 3;
 
+    [SerializeField] public bool PlayerSpotted = false;
+
     float horizontalInput;
     float verticalInput;
     [SerializeField] float movementSpeed = 6f;
