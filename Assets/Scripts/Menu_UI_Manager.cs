@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -59,10 +60,25 @@ public class Menu_UI_Manager : MonoBehaviour
         
     }
 
+    private void DelayedCanvasShow(Canvas canvas)
+    {
+        Task.Delay(900).ContinueWith((task) => canvas.gameObject.SetActive(true), TaskScheduler.FromCurrentSynchronizationContext());
+    }
+
+    public void NewPlayerActive()
+    {
+        Login.gameObject.SetActive(false);
+        LoggedIn.gameObject.SetActive(false);
+        Registration.gameObject.SetActive(false);
+        ToggleBackground("ToSmallTrigger");
+
+        DelayedCanvasShow(NewPlayer);
+    }
+
     public void LoginActive(){
         NewPlayer.gameObject.SetActive(false);
-        Login.gameObject.SetActive(true);
         ToggleBackground("ToFullTrigger");
+        DelayedCanvasShow(Login);
     }
 
     public void LoggedInActive()
@@ -71,9 +87,9 @@ public class Menu_UI_Manager : MonoBehaviour
     }
     public void RegistrationActive()
     {
-       NewPlayer.gameObject.SetActive(false);
-       Registration.gameObject.SetActive(true);
-       ToggleBackground("ToFullTrigger");
+        NewPlayer.gameObject.SetActive(false);
+        ToggleBackground("ToFullTrigger");
+        DelayedCanvasShow(Registration);
     }
 
     public void RegisterUser()
@@ -98,7 +114,8 @@ public class Menu_UI_Manager : MonoBehaviour
             LoginToken = res.access_token;
             Debug.Log(LoginToken);
             Registration.gameObject.SetActive(false);
-            LoggedIn.gameObject.SetActive(true);
+            ToggleBackground("ToSmallTrigger");
+            DelayedCanvasShow(LoggedIn);
         }
     }
     IEnumerator ApiPlayerLogin()
@@ -124,7 +141,8 @@ public class Menu_UI_Manager : MonoBehaviour
             var res = JsonUtility.FromJson<ApiUserLoginResponse>(www.downloadHandler.text);
             LoginToken = res.access_token;
             Login.gameObject.SetActive(false);
-            LoggedIn.gameObject.SetActive(true);
+            ToggleBackground("ToSmallTrigger");
+            DelayedCanvasShow(LoggedIn);
         }
     }
 
