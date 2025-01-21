@@ -42,6 +42,8 @@ public class Menu_UI_Manager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI MessageText;
     [SerializeField] private GameObject MessageBox;
 
+    [SerializeField] private Animator BlackBG;
+
     public static string LoginToken;
     
     // Start is called before the first frame update
@@ -60,6 +62,7 @@ public class Menu_UI_Manager : MonoBehaviour
     public void LoginActive(){
         NewPlayer.gameObject.SetActive(false);
         Login.gameObject.SetActive(true);
+        ToggleBackground("ToFullTrigger");
     }
 
     public void LoggedInActive()
@@ -70,6 +73,7 @@ public class Menu_UI_Manager : MonoBehaviour
     {
        NewPlayer.gameObject.SetActive(false);
        Registration.gameObject.SetActive(true);
+       ToggleBackground("ToFullTrigger");
     }
 
     public void RegisterUser()
@@ -127,6 +131,11 @@ public class Menu_UI_Manager : MonoBehaviour
     void DismissBox()
     {
         MessageBox.SetActive(false);
+    }
+
+    private void ToggleBackground(string toggleMode)
+    {
+        BlackBG.SetTrigger(toggleMode);
     }
     
 }
