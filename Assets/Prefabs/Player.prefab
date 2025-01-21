@@ -92,6 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8275888795516538563}
   - component: {fileID: 3439319489176565540}
+  - component: {fileID: 3283485974289146615}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: Magic2
@@ -149,6 +150,18 @@ CapsuleCollider2D:
   m_Offset: {x: 4.708754, y: -0.086397745}
   m_Size: {x: 10.417615, y: 1.3456031}
   m_Direction: 1
+--- !u!114 &3283485974289146615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486985565054075411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5fb656b20b7744c86f9cbc44f98aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4231992901871193347
 GameObject:
   m_ObjectHideFlags: 0
@@ -4990,6 +5003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3567515103757623512}
   - component: {fileID: 6714581690517092747}
+  - component: {fileID: 98340028529093792}
   m_Layer: 0
   m_Name: MeeleWeapon
   m_TagString: Weapon
@@ -5047,6 +5061,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.14208344, y: 0.29989263}
   m_Size: {x: 0.21582715, y: 0.24586831}
   m_Direction: 0
+--- !u!114 &98340028529093792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5587100254610548729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f97bdeba9281cb41b530384d9fb205c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6853353064869209971
 GameObject:
   m_ObjectHideFlags: 0
