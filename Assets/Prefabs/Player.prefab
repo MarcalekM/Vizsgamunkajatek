@@ -5355,7 +5355,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.03
   m_GravityScale: 0.9
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 61931bfd29766e84ca02c115929be236, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5430,6 +5430,7 @@ MonoBehaviour:
   MagicDamage: 10
   kills: 0
   SP: 3
+  PlayerSpotted: 0
   movementSpeed: 5
   jumpPower: 10
   Magic: {fileID: 4936398975501816273}
