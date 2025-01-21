@@ -34,10 +34,10 @@ public class Shield_Script : MonoBehaviour
     public void GetDamage(float damage){
         if(damage < gameObject.GetComponentInParent<PlayerController>().ShieldHP) gameObject.GetComponentInParent<PlayerController>().ShieldHP -= damage; 
         else gameObject.GetComponentInParent<PlayerController>().ShieldHP = 0;
-        AvaibleShield();
+        AvailableShield();
     }
 
-    void AvaibleShield(){
+    private void AvailableShield(){
         if (gameObject.GetComponentInParent<PlayerController>().ShieldHP == 0) gameObject.GetComponentInParent<PlayerController>().ShieldAlive = false;
     }
 

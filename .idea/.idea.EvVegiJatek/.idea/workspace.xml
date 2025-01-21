@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bbd5bed8-9717-4ccd-81b7-ea732e83959f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EvVegiJatek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EvVegiJatek/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu_UI_Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu_UI_Manager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shield_Script.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shield_Script.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +84,8 @@
       <option name="presentableId" value="Default" />
       <updated>1736269871843</updated>
       <workItem from="1736269873927" duration="3073000" />
-      <workItem from="1737392844210" duration="3741000" />
+      <workItem from="1737392844210" duration="7062000" />
+      <workItem from="1737484887947" duration="1417000" />
     </task>
     <servers />
   </component>
