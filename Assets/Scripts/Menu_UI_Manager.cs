@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 class ApiUserLoginData
 {
@@ -25,6 +26,14 @@ class ApiUserRegistrationData
 {
     public string username;
     public string password;
+}
+
+public class ApiUserData
+{
+    public string username;
+    public int id;
+    public long high_score;
+    public string json_save;
 }
 
 public class Menu_UI_Manager : MonoBehaviour
@@ -51,6 +60,7 @@ public class Menu_UI_Manager : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI LoggedInUsernameWelcome;
 
     public static string LoginToken;
+    public static ApiUserData UserData;
     
     // Start is called before the first frame update
     void Start()
@@ -139,7 +149,7 @@ public class Menu_UI_Manager : MonoBehaviour
             MessageBox.SetActive(true);
         }
         else {
-            LoggedInUsernameWelcome.text = $"Üdv, {loginData.username}!";
+            LoggedInUsernameWelcome.text = $"ï¿½dv, {loginData.username}!";
             var res = JsonUtility.FromJson<ApiUserLoginResponse>(www.downloadHandler.text);
             LoginToken = res.access_token;
             Debug.Log(LoginToken);
@@ -168,10 +178,11 @@ public class Menu_UI_Manager : MonoBehaviour
             MessageBox.SetActive(true);
         }
         else {
-            LoggedInUsernameWelcome.text = $"Üdv, {loginData.username}!";
+            LoggedInUsernameWelcome.text = $"ï¿½dv, {loginData.username}!";
             var res = JsonUtility.FromJson<ApiUserLoginResponse>(www.downloadHandler.text);
             LoginToken = res.access_token;
             Debug.Log(LoginToken);
+            StartCoroutine(GetUserInfo());
             Login.gameObject.SetActive(false);
             ToggleBackground("ToSmallTrigger");
             DelayedCanvasShow(LoggedIn);
@@ -186,6 +197,22 @@ public class Menu_UI_Manager : MonoBehaviour
     private void ToggleBackground(string toggleMode)
     {
         BlackBG.SetTrigger(toggleMode);
+    }
+    
+    private IEnumerator GetUserInfo()
+    {
+        UnityWebRequest www = UnityWebRequest.Get("https://api.j4f.teamorange.hu/users/me");
+        www.SetRequestHeader("Authorization", "Bearer " + LoginToken);
+        yield return www.SendWebRequest();
+        if (www.result != UnityWebRequest.Result.Success)
+        {
+            UserData = null;
+        }
+        else
+        {
+            UserData = JsonUtility.FromJson<ApiUserData>(www.downloadHandler.text);
+            Debug.Log(UserData.username);
+        }
     }
     
 }
