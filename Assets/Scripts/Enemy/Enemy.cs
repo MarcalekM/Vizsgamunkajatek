@@ -8,9 +8,17 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] public float HP = 50;
     [SerializeField] public float damage = 20;
+    [SerializeField] public float lenghtToFloor = 0.5f;
+    [SerializeField] public float speed = 10f;
     
     private Rigidbody2D rb;
     private PlayerController player;
+    
+    private float timer = 0f; 
+    
+    public bool PlayerSpotted = false;
+    private Vector2 direction = Vector2.left; 
+    public bool isFacingRight = false;
 
 
     // Start is called before the first frame update
@@ -23,6 +31,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
+        timer += Time.deltaTime;
+        HandleMovement();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -45,14 +55,41 @@ public class Enemy : MonoBehaviour
         if (HP <= 0) MakeDead();
     }
 
-    virtual protected void FollowPlayer()
+    protected virtual void HandleMovement()
     {
-        
+        Debug.Log(IsGrounded());
+        if (!PlayerSpotted && IsGrounded())
+        {
+            if (timer >= 3f){
+                direction = -direction;
+                Flip();
+                timer = 0f;
+            }
+        }
     }
-    virtual protected void MakeDead()
+
+    protected virtual void FixedUpdate()
+    {
+        if (IsGrounded(transform.position + new Vector3(direction.x, direction.y, 0) * speed))
+        rb.velocity = direction * speed;
+    }
+    protected virtual void Flip()
+    {
+        transform.localScale *= -1;
+        isFacingRight = !isFacingRight;
+    }
+
+    protected virtual void MakeDead()
     {
         player.kills++;
         Destroy(gameObject);
+    }
+    public bool IsGrounded(Vector3? nextPosition = null) {
+        RaycastHit hit;
+        if (Physics.Raycast(nextPosition ?? transform.position, Vector3.down, out hit, lenghtToFloor)) {
+            return true;
+        }
+        return false;
     }
 
 }
