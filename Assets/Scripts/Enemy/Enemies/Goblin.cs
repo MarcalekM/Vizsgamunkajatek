@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Goblin : Enemy
-{
-    Vector3 playerLastPosition;
+{ 
     protected override void ApplyMovement()
     {
         if (IsGrounded(transform.position + new Vector3(direction.x, direction.y, 0) * hSpeed) || PlayerSpotted)
