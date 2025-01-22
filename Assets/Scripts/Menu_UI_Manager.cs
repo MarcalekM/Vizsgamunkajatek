@@ -75,6 +75,14 @@ public class Menu_UI_Manager : MonoBehaviour
         DelayedCanvasShow(NewPlayer);
     }
 
+    public void NewPlayerAfterLogOut()
+    {
+        LoggedIn.gameObject.SetActive(false);
+        ToggleBackground("ToFullTrigger");
+        Task.Delay(900).ContinueWith((task) => ToggleBackground("ToSmallTrigger"), TaskScheduler.FromCurrentSynchronizationContext());
+        DelayedCanvasShow(NewPlayer);
+    }
+
     public void LoginActive(){
         NewPlayer.gameObject.SetActive(false);
         ToggleBackground("ToFullTrigger");
