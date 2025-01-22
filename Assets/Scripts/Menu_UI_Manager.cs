@@ -171,6 +171,7 @@ public class Menu_UI_Manager : MonoBehaviour
             LoggedInUsernameWelcome.text = $"Üdv, {loginData.username}!";
             var res = JsonUtility.FromJson<ApiUserLoginResponse>(www.downloadHandler.text);
             LoginToken = res.access_token;
+            Debug.Log(LoginToken);
             Login.gameObject.SetActive(false);
             ToggleBackground("ToSmallTrigger");
             DelayedCanvasShow(LoggedIn);
