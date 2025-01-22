@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] public float HP = 50;
     [SerializeField] public float damage = 20;
-    [SerializeField] public float lenghtToFloor = 0.5f;
-    [SerializeField] public float speed = 10f;
+    [SerializeField] public float hSpeed = 1f;
+    [SerializeField] public float vSpeed = 1f;
     
-    private Rigidbody2D rb;
-    private PlayerController player;
+    protected Rigidbody2D rb;
+    protected PlayerController player;
+    protected Collider2D Collider;
     
-    private float timer = 0f; 
+    protected float timer = 0f; 
     
     public bool PlayerSpotted = false;
-    private Vector2 direction = Vector2.left; 
+    protected Vector2 direction = Vector2.left; 
     public bool isFacingRight = false;
 
 
@@ -26,6 +29,7 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
+        Collider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -57,7 +61,6 @@ public class Enemy : MonoBehaviour
 
     protected virtual void HandleMovement()
     {
-        Debug.Log(IsGrounded());
         if (!PlayerSpotted && IsGrounded())
         {
             if (timer >= 3f){
@@ -66,16 +69,28 @@ public class Enemy : MonoBehaviour
                 timer = 0f;
             }
         }
+        else
+        {
+            direction = (player.transform.position - transform.position).normalized;
+        }
     }
 
     protected virtual void FixedUpdate()
     {
-        if (IsGrounded(transform.position + new Vector3(direction.x, direction.y, 0) * speed))
-        rb.velocity = direction * speed;
+        ApplyMovement();
+    }
+
+    protected virtual void ApplyMovement()
+    {
+        if (IsGrounded(transform.position + new Vector3(direction.x, direction.y, 0) * hSpeed) || PlayerSpotted)
+        {
+            var force = direction * hSpeed;
+            rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, force.x, Time.deltaTime * 100), rb.velocity.y);
+        }
     }
     protected virtual void Flip()
     {
-        transform.localScale *= -1;
+        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         isFacingRight = !isFacingRight;
     }
 
@@ -84,12 +99,16 @@ public class Enemy : MonoBehaviour
         player.kills++;
         Destroy(gameObject);
     }
-    public bool IsGrounded(Vector3? nextPosition = null) {
-        RaycastHit hit;
-        Debug.DrawRay(nextPosition ?? transform.position, Vector3.down * lenghtToFloor, Color.green);  
-        if (Physics.Raycast(nextPosition ?? transform.position, Vector3.down, out hit, lenghtToFloor)) {
-            return true;
-        }
+    public bool IsGrounded(Vector2? nextPosition = null) {
+        List<RaycastHit2D> hits = new();
+        var lenghtToFloor = (Collider.bounds.size.y / 2) + 0.5f;
+        var filter = new ContactFilter2D();
+        filter.NoFilter();
+        filter.layerMask = LayerMask.GetMask("Enemy");
+        //Debug.DrawRay(nextPosition ?? transform.position, Vector2.down * lenghtToFloor, Color.green, 1, false);
+        var hit = Physics2D.Raycast(nextPosition ?? new Vector2(transform.position.x, transform.position.y),
+            Vector2.down, filter, hits, lenghtToFloor);
+        if (hit > 0) return true;
         return false;
     }
 
