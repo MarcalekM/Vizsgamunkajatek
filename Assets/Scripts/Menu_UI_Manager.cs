@@ -9,8 +9,8 @@ using UnityEngine.UI;
 
 class ApiUserLoginData
 {
-    public string felhasznalonev;
-    public string jelszo;
+    public string username;
+    public string password;
 }
 
 class ApiUserLoginResponse
@@ -33,6 +33,10 @@ public class Menu_UI_Manager : MonoBehaviour
     [SerializeField] Canvas Login;
     [SerializeField] Canvas LoggedIn;
     [SerializeField] Canvas Registration;
+    [SerializeField] Canvas Settings;
+    [SerializeField] Canvas Info;
+
+    private Canvas[] canvases;
 
     [SerializeField] private TMP_InputField LoginUsernameText;
     [SerializeField] private TMP_InputField LoginPasswordText;
@@ -44,6 +48,7 @@ public class Menu_UI_Manager : MonoBehaviour
     [SerializeField] private GameObject MessageBox;
 
     [SerializeField] private Animator BlackBG;
+    [SerializeField] private TMPro.TextMeshProUGUI LoggedInUsernameWelcome;
 
     public static string LoginToken;
     
@@ -52,12 +57,19 @@ public class Menu_UI_Manager : MonoBehaviour
     {
         var btn = MessageBox.gameObject.GetComponentInChildren<Button>();
         btn.onClick.AddListener(DismissBox);
+        canvases = new Canvas[] { NewPlayer, Login, LoggedIn, Registration, Settings, Info };
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void SetAllCanvasFalse()
+    {
+        foreach (Canvas c in canvases)
+            c.gameObject.SetActive(false);
     }
 
     private void DelayedCanvasShow(Canvas canvas)
@@ -67,37 +79,46 @@ public class Menu_UI_Manager : MonoBehaviour
 
     public void NewPlayerActive()
     {
-        Login.gameObject.SetActive(false);
-        LoggedIn.gameObject.SetActive(false);
-        Registration.gameObject.SetActive(false);
+        SetAllCanvasFalse();
         ToggleBackground("ToSmallTrigger");
 
         DelayedCanvasShow(NewPlayer);
     }
+    public void LoggedInActive()
+    {
+        SetAllCanvasFalse();
+        StartCoroutine(ApiPlayerLogin());
+    }
+
+    public void GoHome()
+    {
+        SetAllCanvasFalse();
+        if (LoginToken == null)
+        {
+            NewPlayerActive();
+        }
+        else
+        {
+            ToggleBackground("ToSmallTrigger");
+            DelayedCanvasShow(LoggedIn);
+        }
+    }
+
+    
 
     public void NewPlayerAfterLogOut()
     {
-        LoggedIn.gameObject.SetActive(false);
+        LoginToken = null;
+        SetAllCanvasFalse();
         ToggleBackground("ToFullTrigger");
         Task.Delay(900).ContinueWith((task) => ToggleBackground("ToSmallTrigger"), TaskScheduler.FromCurrentSynchronizationContext());
         DelayedCanvasShow(NewPlayer);
     }
-
-    public void LoginActive(){
-        NewPlayer.gameObject.SetActive(false);
-        ToggleBackground("ToFullTrigger");
-        DelayedCanvasShow(Login);
-    }
-
-    public void LoggedInActive()
+    public void SetMenuActive(Canvas canvas)
     {
-        StartCoroutine(ApiPlayerLogin());
-    }
-    public void RegistrationActive()
-    {
-        NewPlayer.gameObject.SetActive(false);
+        SetAllCanvasFalse();
         ToggleBackground("ToFullTrigger");
-        DelayedCanvasShow(Registration);
+        DelayedCanvasShow(canvas);
     }
 
     public void RegisterUser()
@@ -118,6 +139,7 @@ public class Menu_UI_Manager : MonoBehaviour
             MessageBox.SetActive(true);
         }
         else {
+            LoggedInUsernameWelcome.text = $"Üdv, {loginData.username}!";
             var res = JsonUtility.FromJson<ApiUserLoginResponse>(www.downloadHandler.text);
             LoginToken = res.access_token;
             Debug.Log(LoginToken);
@@ -129,8 +151,8 @@ public class Menu_UI_Manager : MonoBehaviour
     IEnumerator ApiPlayerLogin()
     {
         var loginData = new ApiUserLoginData();
-        loginData.felhasznalonev = LoginUsernameText.text;
-        loginData.jelszo = LoginPasswordText.text;
+        loginData.username = LoginUsernameText.text;
+        loginData.password = LoginPasswordText.text;
         UnityWebRequest www = UnityWebRequest.Post("https://api.j4f.teamorange.hu/users/login", JsonUtility.ToJson(loginData), "application/json");
         yield return www.SendWebRequest();
  
@@ -146,6 +168,7 @@ public class Menu_UI_Manager : MonoBehaviour
             MessageBox.SetActive(true);
         }
         else {
+            LoggedInUsernameWelcome.text = $"Üdv, {loginData.username}!";
             var res = JsonUtility.FromJson<ApiUserLoginResponse>(www.downloadHandler.text);
             LoginToken = res.access_token;
             Login.gameObject.SetActive(false);
