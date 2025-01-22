@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 class ApiUserLoginData
 {
@@ -181,6 +182,7 @@ public class Menu_UI_Manager : MonoBehaviour
             var res = JsonUtility.FromJson<ApiUserLoginResponse>(www.downloadHandler.text);
             LoginToken = res.access_token;
             Debug.Log(LoginToken);
+            StartCoroutine(GetUserInfo());
             Login.gameObject.SetActive(false);
             ToggleBackground("ToSmallTrigger");
             DelayedCanvasShow(LoggedIn);
@@ -209,6 +211,7 @@ public class Menu_UI_Manager : MonoBehaviour
         else
         {
             UserData = JsonUtility.FromJson<ApiUserData>(www.downloadHandler.text);
+            Debug.Log(UserData.username);
         }
     }
     
