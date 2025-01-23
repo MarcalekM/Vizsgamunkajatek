@@ -11,10 +11,8 @@ public class Settings : MonoBehaviour
         introToggle.isOn = currentState;
         introToggle.onValueChanged.AddListener(OnToggleValueChanged);
 
-        if (!PlayerPrefs.HasKey("musicVolume"))
-            PlayerPrefs.SetFloat("musicVolume", .5f);
+        
         Load();
-        AudioListener.volume = VolumeSlider.value;
     }
 
     private void OnToggleValueChanged(bool isOn) =>

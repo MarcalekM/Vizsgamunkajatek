@@ -74,7 +74,11 @@ public class Menu_UI_Manager : MonoBehaviour
         SetAllCanvasFalse();
         StartCoroutine(GetUserInfo(true));
 
-        
+        if (!PlayerPrefs.HasKey("musicVolume"))
+            PlayerPrefs.SetFloat("musicVolume", .5f);
+        AudioListener.volume = PlayerPrefs.GetFloat("musicVolume");
+
+
     }
 
     // Update is called once per frame
@@ -228,6 +232,6 @@ public class Menu_UI_Manager : MonoBehaviour
 
     public void StartStoryMode()
     {
-
+        
     }
 }
