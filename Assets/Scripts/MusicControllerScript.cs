@@ -4,27 +4,61 @@ using UnityEngine;
 
 public class MusicControllerScript : MonoBehaviour
 {
-    [SerializeField] AudioSource Source;
-    [SerializeField] AudioClip BackgroundClip;
-    [SerializeField] AudioClip BattleClip;
+    [SerializeField] AudioSource Background;
+    [SerializeField] AudioSource Battle;
     [SerializeField] PlayerController Player;
+
+    private bool spotted;
     // Start is called before the first frame update
     void Start()
     {
-        Source.clip = BackgroundClip;
-        Source.Play();
+        spotted = Player.PlayerSpotted;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Player.PlayerSpotted && Source.clip != BattleClip) {
-            Source.clip = BattleClip;
-            Source.Play();
+        if (spotted != Player.PlayerSpotted)
+        {
+            spotted = Player.PlayerSpotted;
+            SwapMusic();
         }
-        else if(!Player.PlayerSpotted && Source.clip != BackgroundClip) {
-            Source.clip = BackgroundClip;
-            Source.Play();
+    }
+
+    public void SwapMusic()
+    {
+        StopAllCoroutines();
+
+        StartCoroutine(FadeMusic());
+    }
+
+    private IEnumerator FadeMusic()
+    {
+        float timeToFade = 2.5f;
+        float timeElapsed = 0;
+        if (Player.PlayerSpotted)
+        {
+            Battle.Play();
+            while (timeElapsed < timeToFade)
+            {
+                Background.volume = Mathf.Lerp(1, 0, timeElapsed / timeToFade);
+                Battle.volume = Mathf.Lerp(0, 1, timeElapsed / timeToFade);
+                timeElapsed += Time.deltaTime;
+                yield return null;
+            }
+            Background.Stop();
+        }
+        else
+        {
+            Background.Play();
+            while (timeElapsed < timeToFade)
+            {
+                Background.volume = Mathf.Lerp(0, 1, timeElapsed / timeToFade);
+                Battle.volume = Mathf.Lerp(1, 0, timeElapsed / timeToFade);
+                timeElapsed += Time.deltaTime;
+                yield return null;
+            }
+            Battle.Stop();
         }
     }
 }
