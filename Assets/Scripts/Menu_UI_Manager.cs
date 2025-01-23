@@ -71,13 +71,12 @@ public class Menu_UI_Manager : MonoBehaviour
         canvases = new Canvas[] { NewPlayer, Login, LoggedIn, Registration, Settings, Info };
 
         SetAllCanvasFalse();
+        StartCoroutine(GetUserInfo());
+
         if (PlayerPrefs.GetString("LoginToken") == string.Empty)
             NewPlayer.gameObject.SetActive(true);
         else
-        {
-            StartCoroutine(GetUserInfo());
             LoggedIn.gameObject.SetActive(true);
-        }
     }
 
     // Update is called once per frame
@@ -197,7 +196,7 @@ public class Menu_UI_Manager : MonoBehaviour
         BlackBG.SetTrigger(toggleMode);
     }
     
-    private IEnumerator GetUserInfo()
+    private IEnumerator GetUserInfo(bool rerender = false)
     {
         UnityWebRequest www = UnityWebRequest.Get("https://api.j4f.teamorange.hu/users/me");
         www.SetRequestHeader("Authorization", "Bearer " + PlayerPrefs.GetString("LoginToken"));
@@ -205,6 +204,7 @@ public class Menu_UI_Manager : MonoBehaviour
         if (www.result != UnityWebRequest.Result.Success)
         {
             UserData = null;
+            PlayerPrefs.SetString("LoginToken", string.Empty);
         }
         else
         {
