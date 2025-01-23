@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class FindPlayer : MonoBehaviour
 {
-    EnemyMovement Enemy;
+    Enemy Enemy;
     // Start is called before the first frame update
     void Start()
     {
-        Enemy = gameObject.GetComponentInParent<EnemyMovement>();
+        Enemy = gameObject.GetComponentInParent<Enemy>();
     }
 
     // Update is called once per frame

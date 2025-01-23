@@ -182,12 +182,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2601492892475531286}
   - component: {fileID: 6317077714141074285}
-  - component: {fileID: 5145066859127103078}
   - component: {fileID: 8244168799884636099}
-  - component: {fileID: 7058548485643892421}
   - component: {fileID: 1702412765109378851}
-  - component: {fileID: 1463716493769436404}
   - component: {fileID: 5317637633533137693}
+  - component: {fileID: 6441314186873446671}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Enemy
@@ -265,51 +263,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5145066859127103078
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7981647602522919829}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.020005733, y: -0.015764501}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.15483657, y: 0.2744019}
-  m_EdgeRadius: 0
 --- !u!50 &8244168799884636099
 Rigidbody2D:
   serializedVersion: 4
@@ -337,20 +290,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7058548485643892421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7981647602522919829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f97473065cf7d294ea6a04777dc61061, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackForce: 3
-  player: {fileID: 2853583930120438168, guid: f0a55e57acdb85b428791a7c2bd82790, type: 3}
 --- !u!70 &1702412765109378851
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -386,21 +325,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.020890092, y: -0.016400069}
   m_Size: {x: 0.15863419, y: 0.28133804}
   m_Direction: 0
---- !u!114 &1463716493769436404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7981647602522919829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf8a555baae210f4cb39a074924e0a8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerSpotted: 0
-  p: {fileID: 2853583930120438168, guid: f0a55e57acdb85b428791a7c2bd82790, type: 3}
-  isFacingRight: 0
 --- !u!95 &5317637633533137693
 Animator:
   serializedVersion: 5
@@ -422,6 +346,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6441314186873446671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7981647602522919829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1a8e47fd3ae864bbff1acb6c9fe91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 50
+  damage: 20
+  speed: 1
+  PlayerSpotted: 0
+  isFacingRight: 0
 --- !u!1 &8893430197477304944
 GameObject:
   m_ObjectHideFlags: 0
