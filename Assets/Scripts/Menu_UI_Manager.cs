@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -59,15 +60,24 @@ public class Menu_UI_Manager : MonoBehaviour
     [SerializeField] private Animator BlackBG;
     [SerializeField] private TMPro.TextMeshProUGUI LoggedInUsernameWelcome;
 
-    public static string LoginToken;
     public static ApiUserData UserData;
-    
+
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(PlayerPrefs.GetString("LoginToken"));
         var btn = MessageBox.gameObject.GetComponentInChildren<Button>();
         btn.onClick.AddListener(DismissBox);
         canvases = new Canvas[] { NewPlayer, Login, LoggedIn, Registration, Settings, Info };
+
+        SetAllCanvasFalse();
+        if (PlayerPrefs.GetString("LoginToken") == string.Empty)
+            NewPlayer.gameObject.SetActive(true);
+        else
+        {
+            StartCoroutine(GetUserInfo());
+            LoggedIn.gameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -86,14 +96,6 @@ public class Menu_UI_Manager : MonoBehaviour
     {
         Task.Delay(900).ContinueWith((task) => canvas.gameObject.SetActive(true), TaskScheduler.FromCurrentSynchronizationContext());
     }
-
-    public void NewPlayerActive()
-    {
-        SetAllCanvasFalse();
-        ToggleBackground("ToSmallTrigger");
-
-        DelayedCanvasShow(NewPlayer);
-    }
     public void LoggedInActive()
     {
         SetAllCanvasFalse();
@@ -103,22 +105,15 @@ public class Menu_UI_Manager : MonoBehaviour
     public void GoHome()
     {
         SetAllCanvasFalse();
-        if (LoginToken == null)
-        {
-            NewPlayerActive();
-        }
-        else
-        {
-            ToggleBackground("ToSmallTrigger");
-            DelayedCanvasShow(LoggedIn);
-        }
+        ToggleBackground("ToSmallTrigger");
+        DelayedCanvasShow((PlayerPrefs.GetString("LoginToken") == string.Empty ? NewPlayer : LoggedIn));
     }
 
     
 
     public void NewPlayerAfterLogOut()
     {
-        LoginToken = null;
+        PlayerPrefs.SetString("LoginToken", string.Empty);
         SetAllCanvasFalse();
         ToggleBackground("ToFullTrigger");
         Task.Delay(900).ContinueWith((task) => ToggleBackground("ToSmallTrigger"), TaskScheduler.FromCurrentSynchronizationContext());
@@ -149,13 +144,10 @@ public class Menu_UI_Manager : MonoBehaviour
             MessageBox.SetActive(true);
         }
         else {
-            LoggedInUsernameWelcome.text = $"�dv, {loginData.username}!";
+            LoggedInUsernameWelcome.text = $"Üdv, {loginData.username}!";
             var res = JsonUtility.FromJson<ApiUserLoginResponse>(www.downloadHandler.text);
-            LoginToken = res.access_token;
-            Debug.Log(LoginToken);
-            Registration.gameObject.SetActive(false);
-            ToggleBackground("ToSmallTrigger");
-            DelayedCanvasShow(LoggedIn);
+            PlayerPrefs.SetString("LoginToken", res.access_token);
+            AfterSuccessfulLogin();
         }
     }
     IEnumerator ApiPlayerLogin()
@@ -165,8 +157,9 @@ public class Menu_UI_Manager : MonoBehaviour
         loginData.password = LoginPasswordText.text;
         UnityWebRequest www = UnityWebRequest.Post("https://api.j4f.teamorange.hu/users/login", JsonUtility.ToJson(loginData), "application/json");
         yield return www.SendWebRequest();
- 
-        if (www.result != UnityWebRequest.Result.Success) {
+
+        if (www.result != UnityWebRequest.Result.Success)
+        {
             if (www.responseCode == 401)
             {
                 MessageText.text = "The specified username or password is incorrect.";
@@ -177,16 +170,21 @@ public class Menu_UI_Manager : MonoBehaviour
             }
             MessageBox.SetActive(true);
         }
-        else {
-            LoggedInUsernameWelcome.text = $"�dv, {loginData.username}!";
+        else
+        {
+            LoggedInUsernameWelcome.text = $"Üdv, {loginData.username}!";
             var res = JsonUtility.FromJson<ApiUserLoginResponse>(www.downloadHandler.text);
-            LoginToken = res.access_token;
-            Debug.Log(LoginToken);
-            StartCoroutine(GetUserInfo());
-            Login.gameObject.SetActive(false);
-            ToggleBackground("ToSmallTrigger");
-            DelayedCanvasShow(LoggedIn);
+            PlayerPrefs.SetString("LoginToken", res.access_token);
+            AfterSuccessfulLogin();
         }
+    }
+    private void AfterSuccessfulLogin()
+    {
+        Debug.Log(PlayerPrefs.GetString("LoginToken"));
+        StartCoroutine(GetUserInfo());
+        Login.gameObject.SetActive(false);
+        ToggleBackground("ToSmallTrigger");
+        DelayedCanvasShow(LoggedIn);
     }
 
     void DismissBox()
@@ -202,7 +200,7 @@ public class Menu_UI_Manager : MonoBehaviour
     private IEnumerator GetUserInfo()
     {
         UnityWebRequest www = UnityWebRequest.Get("https://api.j4f.teamorange.hu/users/me");
-        www.SetRequestHeader("Authorization", "Bearer " + LoginToken);
+        www.SetRequestHeader("Authorization", "Bearer " + PlayerPrefs.GetString("LoginToken"));
         yield return www.SendWebRequest();
         if (www.result != UnityWebRequest.Result.Success)
         {
@@ -211,7 +209,7 @@ public class Menu_UI_Manager : MonoBehaviour
         else
         {
             UserData = JsonUtility.FromJson<ApiUserData>(www.downloadHandler.text);
-            Debug.Log(UserData.username);
+            LoggedInUsernameWelcome.text = $"Üdv, {UserData.username}!";
         }
     }
     
