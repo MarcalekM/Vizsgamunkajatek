@@ -3003,7 +3003,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074530812}
   m_CullTransparentMesh: 1
---- !u!43 &1425755847
+--- !u!43 &1423947215
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5563,10 +5563,6 @@ PrefabInstance:
     - target: {fileID: 1813421280695976980, guid: f509624d84a89f645905aea2cd4a11f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3510357851400022578, guid: f509624d84a89f645905aea2cd4a11f3, type: 3}
-      propertyPath: m_GravityScale
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

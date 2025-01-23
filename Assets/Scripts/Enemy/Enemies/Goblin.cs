@@ -9,7 +9,6 @@ public class Goblin : Enemy
         if (IsGrounded(transform.position + new Vector3(direction.x, direction.y, 0) * hSpeed) || PlayerSpotted)
         {
             var force = direction * hSpeed;
-            Debug.Log(rb.velocity.magnitude);
             if (PlayerSpotted && rb.velocity.magnitude < 0.001)
             {
                 rb.velocity = new Vector2(rb.velocity.x, hSpeed);
