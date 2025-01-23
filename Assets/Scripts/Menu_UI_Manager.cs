@@ -45,6 +45,7 @@ public class Menu_UI_Manager : MonoBehaviour
     [SerializeField] Canvas Registration;
     [SerializeField] Canvas Settings;
     [SerializeField] Canvas Info;
+    [SerializeField] Canvas ButtonHelp;
 
     private Canvas[] canvases;
 
@@ -68,15 +69,12 @@ public class Menu_UI_Manager : MonoBehaviour
         Debug.Log(PlayerPrefs.GetString("LoginToken"));
         var btn = MessageBox.gameObject.GetComponentInChildren<Button>();
         btn.onClick.AddListener(DismissBox);
-        canvases = new Canvas[] { NewPlayer, Login, LoggedIn, Registration, Settings, Info };
+        canvases = new Canvas[] { NewPlayer, Login, LoggedIn, Registration, Settings, Info, ButtonHelp };
 
         SetAllCanvasFalse();
-        StartCoroutine(GetUserInfo());
+        StartCoroutine(GetUserInfo(true));
 
-        if (PlayerPrefs.GetString("LoginToken") == string.Empty)
-            NewPlayer.gameObject.SetActive(true);
-        else
-            LoggedIn.gameObject.SetActive(true);
+        
     }
 
     // Update is called once per frame
@@ -123,6 +121,11 @@ public class Menu_UI_Manager : MonoBehaviour
         SetAllCanvasFalse();
         ToggleBackground("ToFullTrigger");
         DelayedCanvasShow(canvas);
+    }
+    public void SimpleCanvasChange(Canvas canvas)
+    {
+        SetAllCanvasFalse();
+        canvas.gameObject.SetActive(true);
     }
 
     public void RegisterUser()
@@ -211,6 +214,15 @@ public class Menu_UI_Manager : MonoBehaviour
             UserData = JsonUtility.FromJson<ApiUserData>(www.downloadHandler.text);
             LoggedInUsernameWelcome.text = $"Üdv, {UserData.username}!";
         }
+
+        if (rerender)
+        {
+            if (PlayerPrefs.GetString("LoginToken") == string.Empty)
+                NewPlayer.gameObject.SetActive(true);
+            else
+                LoggedIn.gameObject.SetActive(true);
+        }
     }
     
+    public void OpenLink(string link) => Application.OpenURL(link);
 }
