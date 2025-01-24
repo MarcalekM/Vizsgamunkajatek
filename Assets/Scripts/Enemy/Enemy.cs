@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float damage = 20;
     [SerializeField] public float hSpeed = 1f;
     [SerializeField] public float vSpeed = 1f;
+
+    protected Animator _animator;
     
     protected Rigidbody2D rb;
     protected PlayerController player;
@@ -30,6 +32,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
         Collider = GetComponent<Collider2D>();
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -47,6 +50,7 @@ public class Enemy : MonoBehaviour
                 other.gameObject.GetComponent<Shield_Script>().GetDamage(damage);
                 break;
             case "Player":
+                _animator.SetTrigger("Attack");
                 other.gameObject.GetComponent<PlayerController>().GetDamage(damage);
                 break;
         }

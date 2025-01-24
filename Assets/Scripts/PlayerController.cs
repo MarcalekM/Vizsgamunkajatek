@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!ShieldAlive) AddShieldHP();
         if (ShieldAlive && !ShieldActive && ShieldHP != MaxShield) AddShieldHP();
-        if(HP < MaxHP) AddHP();
+        if(HP < MaxHP && !PlayerSpotted) AddHP();
     }
 
     void FlipCharacter()
