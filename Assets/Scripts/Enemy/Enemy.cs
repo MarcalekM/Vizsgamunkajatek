@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
                 other.gameObject.GetComponent<Shield_Script>().GetDamage(damage);
                 break;
             case "Player":
-                _animator.SetTrigger("Attack");
+                if (_animator is not null) _animator.SetTrigger("Attack");
                 other.gameObject.GetComponent<PlayerController>().GetDamage(damage);
                 break;
         }
