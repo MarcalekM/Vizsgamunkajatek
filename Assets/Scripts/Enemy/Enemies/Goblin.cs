@@ -17,4 +17,12 @@ public class Goblin : Enemy
             
         }
     }
+
+    protected override void AttackHandler()
+    {
+        if ((transform.position - player.transform.position).magnitude < 0.3f)
+        {
+            player.GetDamage(damage);
+        }
+    }
 }

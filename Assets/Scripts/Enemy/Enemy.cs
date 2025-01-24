@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
     {
         timer += Time.deltaTime;
         HandleMovement();
+        AttackHandler();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -63,6 +64,11 @@ public class Enemy : MonoBehaviour
         if (HP <= 0) MakeDead();
     }
 
+    virtual protected void AttackHandler()
+    {
+        
+    }
+    
     protected virtual void HandleMovement()
     {
         if (!PlayerSpotted && IsGrounded())
