@@ -18196,27 +18196,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
-      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
-      propertyPath: m_SizeDelta.y
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 230
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1058181705154125861, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchorMax.y
@@ -18280,27 +18280,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2558962350251227764, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2558962350251227764, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2558962350251227764, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
-      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2558962350251227764, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558962350251227764, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 163.04347
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558962350251227764, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2558962350251227764, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 147.83499
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2558962350251227764, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3334674063896523688, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: player
@@ -18538,7 +18538,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 0
+  m_SelfShadows: 1
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
   - {x: -2.090552, y: -0.10996265, z: 0}
@@ -21119,6 +21119,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 1620321931}
     m_Modifications:
     - target: {fileID: 2601492892475531286, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601492892475531286, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601492892475531286, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
       propertyPath: m_LocalPosition.x
       value: -60.647774
       objectReference: {fileID: 0}
@@ -21504,6 +21512,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1620321931}
     m_Modifications:
+    - target: {fileID: 2601492892475531286, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601492892475531286, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2601492892475531286, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
       propertyPath: m_LocalPosition.x
       value: -96.257774
@@ -21981,7 +21997,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 0
+  m_SelfShadows: 1
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
   - {x: -2.093152, y: -0.11052246, z: 0}
@@ -23680,7 +23696,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 0
+  m_SelfShadows: 1
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
   - {x: -1.0012429, y: -0.111049294, z: 0}
@@ -24104,6 +24120,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1620321931}
     m_Modifications:
+    - target: {fileID: 2601492892475531286, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601492892475531286, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2601492892475531286, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
       propertyPath: m_LocalPosition.x
       value: -32.06981

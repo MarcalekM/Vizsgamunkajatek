@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 1702412765109378851}
   - component: {fileID: 5317637633533137693}
   - component: {fileID: 6441314186873446671}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Golem
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -202,8 +202,8 @@ Transform:
   m_GameObject: {fileID: 7981647602522919829}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.34, y: 7.6, z: 0}
-  m_LocalScale: {x: 40, y: 50, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 207854220777827370}
