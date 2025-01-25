@@ -70,7 +70,9 @@ public class PlayerController : MonoBehaviour
         ShieldHP = MaxShield;
         nextFire = 0f;
         MainCollider = GetComponent<Collider2D>();
-        //Menu_UI_Manager.UserData.json_save = "{\"asd\": 1}";
+        // így lehet menteni
+        // Menu_UI_Manager.UserData.json_save = "{\"asd\": 1}";
+        // Menu_UI_Manager.SaveUserToDB(this);
     }
 
     private void Update()

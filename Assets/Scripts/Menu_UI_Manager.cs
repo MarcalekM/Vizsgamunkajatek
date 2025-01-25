@@ -64,26 +64,13 @@ public class Menu_UI_Manager : MonoBehaviour
 
     [SerializeField] private Animator BlackBG;
     [SerializeField] private TMPro.TextMeshProUGUI LoggedInUsernameWelcome;
-    private static Menu_UI_Manager instance;
+    
+    public static ApiUserData UserData;
 
-    private static ApiUserData _userData;
-    public static ApiUserData UserData
+    public static void SaveUserToDB(MonoBehaviour instance)
+    //azért kell az instance, hogy statikus környezetből elérjük a startcoroutinet
     {
-        get
-        {
-            return _userData;
-        }
-        set
-        {
-            _userData = value;
-            instance.StartCoroutine(UpdateUserInfo(value));
-            
-        }
-    }
-
-    void Awake()
-    {
-        instance = this;
+        instance?.StartCoroutine(UpdateUserInfo(UserData));
     }
     
     // Start is called before the first frame update
@@ -234,8 +221,9 @@ public class Menu_UI_Manager : MonoBehaviour
             updateData.json_save = newData.json_save;
             UnityWebRequest www  = new UnityWebRequest($"https://api.j4f.teamorange.hu/users/{UserData.id}", "PUT");
             byte[] bodyRaw = Encoding.UTF8.GetBytes(JsonUtility.ToJson(updateData));
-            www.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
-            www.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
+            Debug.Log(JsonUtility.ToJson(updateData));
+            www.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            www.downloadHandler =  new DownloadHandlerBuffer();
             www.SetRequestHeader("Authorization", "Bearer " + PlayerPrefs.GetString("LoginToken"));
             www.SetRequestHeader("Content-Type", "application/json");
             www.SetRequestHeader("Content-Type", "application/json");
