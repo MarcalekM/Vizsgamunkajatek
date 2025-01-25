@@ -72,7 +72,8 @@ public class Menu_UI_Manager : MonoBehaviour
         canvases = new Canvas[] { NewPlayer, Login, LoggedIn, Registration, Settings, Info, ButtonHelp };
 
         SetAllCanvasFalse();
-        StartCoroutine(GetUserInfo(true));
+        if (PlayerPrefs.GetString("LoginToken") != string.Empty) 
+            StartCoroutine(GetUserInfo(true));
 
         if (!PlayerPrefs.HasKey("musicVolume"))
             PlayerPrefs.SetFloat("musicVolume", .5f);
