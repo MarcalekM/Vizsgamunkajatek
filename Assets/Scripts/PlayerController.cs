@@ -143,6 +143,7 @@ public class PlayerController : MonoBehaviour
     void MeeleAttack()
     {
         animator.SetTrigger("MeeleAttack");
+        Debug.Log("meelee attack");
     }
 
     void SummonFireball()
