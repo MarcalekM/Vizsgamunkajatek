@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UI_ManagerScript : MonoBehaviour
@@ -67,5 +68,11 @@ public class UI_ManagerScript : MonoBehaviour
             path: filepath,
             append: false);
         sw.Write($"{player.Lv},{player.HP},{player.MeeleDamage},{player.MagicDamage},{player.kills},{player.SP},{player.MaxShield}");
+    }
+
+    public void GoBackToMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Menu");
     }
 }
