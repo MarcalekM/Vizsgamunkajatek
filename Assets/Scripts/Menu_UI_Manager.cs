@@ -188,9 +188,7 @@ public class Menu_UI_Manager : MonoBehaviour
     {
         Debug.Log(PlayerPrefs.GetString("LoginToken"));
         StartCoroutine(GetUserInfo());
-        Login.gameObject.SetActive(false);
-        ToggleBackground("ToSmallTrigger");
-        DelayedCanvasShow(LoggedIn);
+        GoHome();
     }
 
     void DismissBox()
