@@ -2879,7 +2879,6 @@ GameObject:
   - component: {fileID: 8077696370854052634}
   - component: {fileID: 5738033218494097892}
   - component: {fileID: 3237881461847260572}
-  - component: {fileID: 7373931271034522388}
   m_Layer: 0
   m_Name: Home
   m_TagString: Untagged
@@ -2989,9 +2988,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7373931271034522388}
-        m_TargetAssemblyTypeName: LevelMove, Assembly-CSharp
-        m_MethodName: TriggerEvent
+      - m_Target: {fileID: 5304398320042118744}
+        m_TargetAssemblyTypeName: UI_ManagerScript, Assembly-CSharp
+        m_MethodName: GoBackToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3001,20 +3000,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7373931271034522388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7974558484145471869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e7417a0db027ca469cd6eee6feaafe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Menu
-  transitionElement: {fileID: 0}
 --- !u!1 &7998690523690949776
 GameObject:
   m_ObjectHideFlags: 0

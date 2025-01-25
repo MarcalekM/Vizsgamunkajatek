@@ -7,12 +7,14 @@ public class Settings : MonoBehaviour
     [SerializeField] private Slider VolumeSlider;
     private void Start()
     {
-        bool currentState = PlayerPrefs.GetInt("intro", 1) == 1;
-        introToggle.isOn = currentState;
-        introToggle.onValueChanged.AddListener(OnToggleValueChanged);
+        if (introToggle != null)
+        {
+            bool currentState = PlayerPrefs.GetInt("intro", 1) == 1;
+            introToggle.isOn = currentState;
+            introToggle.onValueChanged.AddListener(OnToggleValueChanged);
+        }
 
-        if (VolumeSlider != null)
-            Load();
+        Load();
     }
 
     private void OnToggleValueChanged(bool isOn) =>
