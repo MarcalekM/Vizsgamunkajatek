@@ -185,12 +185,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 10
-  damage: 2
+  damage: 1
   hSpeed: 5
   vSpeed: 1
+  useAttackHandler: 1
   PlayerSpotted: 0
   isFacingRight: 0
-  IsJumping: 0
+  attackRange: 1.2
+  attackFrequency: 0.5
 --- !u!1 &6703052185841147530
 GameObject:
   m_ObjectHideFlags: 0

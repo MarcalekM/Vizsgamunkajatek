@@ -22,7 +22,23 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float movementSpeed = 6f;
     bool isFacingRight = true;
     [SerializeField] float jumpPower = 25f;
-    bool isJumping = false;
+    protected Collider2D MainCollider;
+
+    bool isJumping
+    {
+        get
+        {
+            var lenghtToFloor = (MainCollider.bounds.size.y / 2) + 0.5f;
+            //Debug.DrawRay(nextPosition ?? transform.position, Vector2.down * lenghtToFloor, Color.green, 1, false);
+            var hit = Physics2D.Raycast(
+                transform.position,
+                Vector2.down,
+                lenghtToFloor,
+                LayerMask.GetMask("Ground"));
+            if (hit) return false;
+            return true;
+        }
+    }
 
     [SerializeField] private Transform Magic;
     [SerializeField] private GameObject fireball;
@@ -53,6 +69,7 @@ public class PlayerController : MonoBehaviour
         //LoadCharacterStats();
         ShieldHP = MaxShield;
         nextFire = 0f;
+        MainCollider = GetComponent<Collider2D>();
     }
 
     private void Update()
@@ -114,16 +131,10 @@ public class PlayerController : MonoBehaviour
             transform.localScale = ls;
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Ground")) isJumping = false;
-    }
-
+    
     void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-        isJumping = true;
     }
 
     void MeeleAttack()
@@ -166,7 +177,6 @@ public class PlayerController : MonoBehaviour
 
     public void GetDamage(float damage)
     {
-        Debug.Log($"player damaged: {damage}");
         if (HP - damage > 0) HP -= damage;
         else HP = 0;
     }
