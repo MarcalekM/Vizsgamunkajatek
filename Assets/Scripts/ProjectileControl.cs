@@ -36,9 +36,9 @@ public class SummonFireball : MonoBehaviour
         switch (other.tag)
         {
             case "Enemy":
-                if (other.gameObject.name.Contains("Ghost")) other.gameObject.GetComponent<Enemy>().GetDamage(damage * 1.5f, 0);
-                else if (other.gameObject.name.Contains("Golem")) other.gameObject.GetComponent<Enemy>().GetDamage(damage * 0.5f, 0);
-                else other.gameObject.GetComponent<Enemy>().GetDamage(damage, 0);
+                if (other.gameObject.name.Contains("Ghost")) other.gameObject.GetComponent<Enemy>().GetDamage(0, damage);
+                else if (other.gameObject.name.Contains("Golem")) other.gameObject.GetComponent<Enemy>().GetDamage(0, damage);
+                else other.gameObject.GetComponent<Enemy>().GetDamage(0, damage);
 
                 Vector2 difference = (other.transform.position - transform.position).normalized;
                 Vector2 force = difference * knockbackForce;

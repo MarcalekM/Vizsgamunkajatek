@@ -73,7 +73,7 @@ public class Menu_UI_Manager : MonoBehaviour
 
         SetAllCanvasFalse();
         StartCoroutine(GetUserInfo(true));
-
+        
         if (!PlayerPrefs.HasKey("musicVolume"))
             PlayerPrefs.SetFloat("musicVolume", .5f);
         AudioListener.volume = PlayerPrefs.GetFloat("musicVolume");
@@ -203,20 +203,22 @@ public class Menu_UI_Manager : MonoBehaviour
     
     private IEnumerator GetUserInfo(bool rerender = false)
     {
-        UnityWebRequest www = UnityWebRequest.Get("https://api.j4f.teamorange.hu/users/me");
-        www.SetRequestHeader("Authorization", "Bearer " + PlayerPrefs.GetString("LoginToken"));
-        yield return www.SendWebRequest();
-        if (www.result != UnityWebRequest.Result.Success)
+        if (PlayerPrefs.GetString("LoginToken") != string.Empty)
         {
-            UserData = null;
-            PlayerPrefs.SetString("LoginToken", string.Empty);
+            UnityWebRequest www = UnityWebRequest.Get("https://api.j4f.teamorange.hu/users/me");
+            www.SetRequestHeader("Authorization", "Bearer " + PlayerPrefs.GetString("LoginToken"));
+            yield return www.SendWebRequest();
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                UserData = null;
+                PlayerPrefs.SetString("LoginToken", string.Empty);
+            }
+            else
+            {
+                UserData = JsonUtility.FromJson<ApiUserData>(www.downloadHandler.text);
+                LoggedInUsernameWelcome.text = $"Üdv, {UserData.username}!";
+            }
         }
-        else
-        {
-            UserData = JsonUtility.FromJson<ApiUserData>(www.downloadHandler.text);
-            LoggedInUsernameWelcome.text = $"Üdv, {UserData.username}!";
-        }
-
         if (rerender)
         {
             if (PlayerPrefs.GetString("LoginToken") == string.Empty)
