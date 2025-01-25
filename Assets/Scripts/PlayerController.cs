@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
                 transform.position,
                 Vector2.down,
                 lenghtToFloor,
-                LayerMask.GetMask("Ground"));
+                LayerMask.GetMask("Ground", "Enemy"));
             if (hit) return false;
             return true;
         }
