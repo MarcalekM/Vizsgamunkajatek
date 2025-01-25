@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
                 MovementTimer = 0f;
             }
         }
-        else
+        else if (PlayerSpotted)
         {
             direction = (player.transform.position - transform.position).normalized;
         }
