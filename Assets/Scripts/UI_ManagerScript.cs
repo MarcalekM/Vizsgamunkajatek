@@ -10,12 +10,19 @@ public class UI_ManagerScript : MonoBehaviour
 
     [SerializeField] Canvas UI;
     [SerializeField] Canvas SubMenu;
+    [SerializeField] Canvas Menu;
+    [SerializeField] Canvas Stats;
+    [SerializeField] Button MenuBtn;
+    [SerializeField] Button StatsBtn;
 
     [SerializeField] Button SubMenuClose;
     // Start is called before the first frame update
     void Start()
     {
          player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+
+        MenuBtn.onClick.AddListener(OpenMenu);
+        StatsBtn.onClick.AddListener(OpenStats);
     }
 
     // Update is called once per frame
@@ -37,6 +44,19 @@ public class UI_ManagerScript : MonoBehaviour
         SubMenu.gameObject.SetActive(false);
         UI.gameObject.SetActive(true);
         Time.timeScale = 1;
+    }
+    public void OpenMenu()
+    {
+        Menu.gameObject.SetActive(true);
+        Stats.gameObject.SetActive(false);
+        Time.timeScale = 0;
+    }
+
+    public void OpenStats()
+    {
+        Menu.gameObject.SetActive(false);
+        Stats.gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void SaveGame()
