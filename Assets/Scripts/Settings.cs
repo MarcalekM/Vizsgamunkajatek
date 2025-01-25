@@ -11,8 +11,8 @@ public class Settings : MonoBehaviour
         introToggle.isOn = currentState;
         introToggle.onValueChanged.AddListener(OnToggleValueChanged);
 
-        
-        Load();
+        if (VolumeSlider != null)
+            Load();
     }
 
     private void OnToggleValueChanged(bool isOn) =>

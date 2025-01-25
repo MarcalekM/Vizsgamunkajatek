@@ -9,10 +9,9 @@ public class UI_ManagerScript : MonoBehaviour
     PlayerController player;
 
     [SerializeField] Canvas UI;
-    [SerializeField] Canvas Stats;
-    [SerializeField] Canvas Game;
+    [SerializeField] Canvas SubMenu;
 
-    [SerializeField] Button StatsClose;
+    [SerializeField] Button SubMenuClose;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,27 +23,19 @@ public class UI_ManagerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Stats.gameObject.SetActive(true);
-            UI.gameObject.SetActive(false);
-            Time.timeScale = 0;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Game.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            OpenSubMenu();
         }
     }
-    public void CloseStats()
+    public void OpenSubMenu()
     {
-        Stats.gameObject.SetActive(false);
+        SubMenu.gameObject.SetActive(true);
+        UI.gameObject.SetActive(false);
+        Time.timeScale = 0;
+    }
+    public void CloseSubMenu()
+    {
+        SubMenu.gameObject.SetActive(false);
         UI.gameObject.SetActive(true);
-        Time.timeScale = 1;
-    }
-
-    public void ResumeGame()
-    {
-        Game.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
 
