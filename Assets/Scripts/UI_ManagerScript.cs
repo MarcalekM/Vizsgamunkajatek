@@ -9,14 +9,20 @@ public class UI_ManagerScript : MonoBehaviour
     PlayerController player;
 
     [SerializeField] Canvas UI;
+    [SerializeField] Canvas SubMenu;
+    [SerializeField] Canvas Menu;
     [SerializeField] Canvas Stats;
-    [SerializeField] Canvas Game;
+    [SerializeField] Button MenuBtn;
+    [SerializeField] Button StatsBtn;
 
-    [SerializeField] Button StatsClose;
+    [SerializeField] Button SubMenuClose;
     // Start is called before the first frame update
     void Start()
     {
          player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+
+        MenuBtn.onClick.AddListener(OpenMenu);
+        StatsBtn.onClick.AddListener(OpenStats);
     }
 
     // Update is called once per frame
@@ -24,28 +30,33 @@ public class UI_ManagerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Stats.gameObject.SetActive(true);
-            UI.gameObject.SetActive(false);
-            Time.timeScale = 0;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Game.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            OpenSubMenu();
         }
     }
-    public void CloseStats()
+    public void OpenSubMenu()
     {
-        Stats.gameObject.SetActive(false);
+        SubMenu.gameObject.SetActive(true);
+        UI.gameObject.SetActive(false);
+        Time.timeScale = 0;
+    }
+    public void CloseSubMenu()
+    {
+        SubMenu.gameObject.SetActive(false);
         UI.gameObject.SetActive(true);
         Time.timeScale = 1;
     }
-
-    public void ResumeGame()
+    public void OpenMenu()
     {
-        Game.gameObject.SetActive(false);
-        Time.timeScale = 1;
+        Menu.gameObject.SetActive(true);
+        Stats.gameObject.SetActive(false);
+        Time.timeScale = 0;
+    }
+
+    public void OpenStats()
+    {
+        Menu.gameObject.SetActive(false);
+        Stats.gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void SaveGame()
