@@ -31,6 +31,7 @@ public class MeeleWeaponScript : MonoBehaviour
     IEnumerator DealDamage(Collider2D collision)
     {
         yield return new WaitForSeconds(0.4f);
+        if (collision is null) yield break;
         Vector2 difference = (transform.position - collision.transform.position).normalized;
         Vector2 force = difference * knockbackForce;
         var rb = collision.gameObject.GetComponent<Rigidbody2D>();

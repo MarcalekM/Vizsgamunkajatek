@@ -6,6 +6,9 @@ public class Ghost : Enemy
 {
     [SerializeField] private float playerFollowDistance = 12f;
     [SerializeField] private float preferredDistanceFromGround = 6f;
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private float attackFrequency = 2f;
+    private float AttackTimer = 0f;
     public override void GetDamage(float damageTaken, float magicDamageTaken)
     {
         HP -= magicDamageTaken;
@@ -50,5 +53,15 @@ public class Ghost : Enemy
     public float GetDistanceToPlayer()
     {
         return (transform.position - player.transform.position).magnitude;
+    }
+
+    protected override void AttackHandler()
+    {
+        AttackTimer += Time.deltaTime;
+        if (PlayerSpotted && AttackTimer > attackFrequency)
+        {
+            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            AttackTimer = 0f;
+        }
     }
 }

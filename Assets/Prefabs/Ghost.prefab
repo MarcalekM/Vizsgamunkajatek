@@ -232,7 +232,7 @@ Transform:
   m_GameObject: {fileID: 8936150300521246516}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.09, y: -5.52, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -308,7 +308,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -349,7 +349,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.003959084, y: -0.022950316}
@@ -374,5 +374,7 @@ MonoBehaviour:
   useAttackHandler: 1
   PlayerSpotted: 0
   isFacingRight: 0
-  playerFollowDistance: 4
-  preferredDistanceFromGround: 2
+  playerFollowDistance: 12
+  preferredDistanceFromGround: 6
+  projectilePrefab: {fileID: 4475879152533302956, guid: b85b95d358070d6479a4d4dbf9fed124, type: 3}
+  attackFrequency: 2

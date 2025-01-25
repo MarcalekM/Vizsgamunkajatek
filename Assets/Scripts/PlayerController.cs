@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         get
         {
             var lenghtToFloor = (MainCollider.bounds.size.y / 2) + 0.5f;
-            Debug.DrawRay(transform.position, Vector2.down * lenghtToFloor, Color.green, 1, false);
+            //Debug.DrawRay(transform.position, Vector2.down * lenghtToFloor, Color.green, 1, false);
             var hit = Physics2D.Raycast(
                 transform.position,
                 Vector2.down,
@@ -143,7 +143,6 @@ public class PlayerController : MonoBehaviour
     void MeeleAttack()
     {
         animator.SetTrigger("MeeleAttack");
-        Debug.Log("meelee attack");
     }
 
     void SummonFireball()
