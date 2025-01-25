@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Ghost : Enemy
 {
-    [SerializeField] private float playerFollowDistance = 4f;
-    [SerializeField] private float preferredDistanceFromGround = 2f;
+    [SerializeField] private float playerFollowDistance = 12f;
+    [SerializeField] private float preferredDistanceFromGround = 6f;
     public override void GetDamage(float damageTaken, float magicDamageTaken)
     {
         HP -= magicDamageTaken;
@@ -27,8 +27,7 @@ public class Ghost : Enemy
             direction = (player.transform.position - transform.position).normalized;
         }
         if (GetDistanceToGround() < preferredDistanceFromGround) direction.Set(direction.x, 1f);
-        //if (GetDistanceToPlayer() > playerFollowDistance) direction = -direction;
-        Debug.Log(direction);
+        if (GetDistanceToPlayer() < playerFollowDistance) direction.Set(-direction.x, direction.y);
     }
     
     protected override void ApplyMovement()
@@ -44,13 +43,12 @@ public class Ghost : Enemy
             Vector2.down,
             20,
             LayerMask.GetMask("Ground"));
-        if (hit) Debug.Log(hit.distance);
         if (hit) return hit.distance;
         return -1;
     }
 
     public float GetDistanceToPlayer()
     {
-        return (player.transform.position - transform.position).magnitude;
+        return (transform.position - player.transform.position).magnitude;
     }
 }
