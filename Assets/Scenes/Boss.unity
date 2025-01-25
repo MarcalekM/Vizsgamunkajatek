@@ -3070,7 +3070,7 @@ GameObject:
   - component: {fileID: 1024753226}
   - component: {fileID: 1024753225}
   - component: {fileID: 1024753227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boss_Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3859,27 +3859,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 230
       objectReference: {fileID: 0}
     - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 1058181705154125861, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3943,27 +3943,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2558962350251227764, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2558962350251227764, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2558962350251227764, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 163.04347
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2558962350251227764, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2558962350251227764, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 147.83499
       objectReference: {fileID: 0}
     - target: {fileID: 2558962350251227764, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 3334674063896523688, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: player
@@ -5699,10 +5699,6 @@ PrefabInstance:
     - target: {fileID: 608021061884296227, guid: ddfc8ab5bdbc5084e8731480b73f4ad6, type: 3}
       propertyPath: m_Name
       value: LevelLoader
-      objectReference: {fileID: 0}
-    - target: {fileID: 608021061884296227, guid: ddfc8ab5bdbc5084e8731480b73f4ad6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1882126378856354630, guid: ddfc8ab5bdbc5084e8731480b73f4ad6, type: 3}
       propertyPath: m_LocalPosition.x
