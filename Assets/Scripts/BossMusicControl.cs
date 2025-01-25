@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossMusicControl : MonoBehaviour
 {
+    [SerializeField] public AudioSource bossMusic1;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +17,14 @@ public class BossMusicControl : MonoBehaviour
         
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerExit2D(Collider2D collision)
     {
+        Debug.Log("Collision detected");
         if (collision.gameObject.tag == "Player")
         {
-            GameObject.Find("BossMusic1").GetComponent<AudioSource>().Play();
+            bossMusic1.Play();
         }
+        //this.gameObject.SetActive(false);
+        this.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
     }
 }
