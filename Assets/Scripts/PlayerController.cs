@@ -29,12 +29,12 @@ public class PlayerController : MonoBehaviour
         get
         {
             var lenghtToFloor = (MainCollider.bounds.size.y / 2) + 0.5f;
-            //Debug.DrawRay(nextPosition ?? transform.position, Vector2.down * lenghtToFloor, Color.green, 1, false);
+            Debug.DrawRay(transform.position, Vector2.down * lenghtToFloor, Color.green, 1, false);
             var hit = Physics2D.Raycast(
                 transform.position,
                 Vector2.down,
                 lenghtToFloor,
-                LayerMask.GetMask("Ground"));
+                ~(LayerMask.GetMask("Ground")));
             if (hit) return false;
             return true;
         }
@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
         ShieldHP = MaxShield;
         nextFire = 0f;
         MainCollider = GetComponent<Collider2D>();
+        //Menu_UI_Manager.UserData.json_save = "{\"asd\": 1}";
     }
 
     private void Update()

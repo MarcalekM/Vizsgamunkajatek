@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -29,12 +30,15 @@ class ApiUserRegistrationData
     public string password;
 }
 
-public class ApiUserData
+public class ApiUserUpdateData
 {
-    public string username;
-    public int id;
     public long high_score;
     public string json_save;
+    public string username;
+}
+public class ApiUserData : ApiUserUpdateData
+{
+    public int id;
 }
 
 public class Menu_UI_Manager : MonoBehaviour
@@ -60,9 +64,28 @@ public class Menu_UI_Manager : MonoBehaviour
 
     [SerializeField] private Animator BlackBG;
     [SerializeField] private TMPro.TextMeshProUGUI LoggedInUsernameWelcome;
+    private static Menu_UI_Manager instance;
 
-    public static ApiUserData UserData;
+    private static ApiUserData _userData;
+    public static ApiUserData UserData
+    {
+        get
+        {
+            return _userData;
+        }
+        set
+        {
+            _userData = value;
+            instance.StartCoroutine(UpdateUserInfo(value));
+            
+        }
+    }
 
+    void Awake()
+    {
+        instance = this;
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -199,6 +222,25 @@ public class Menu_UI_Manager : MonoBehaviour
     private void ToggleBackground(string toggleMode)
     {
         BlackBG.SetTrigger(toggleMode);
+    }
+    
+    private static IEnumerator UpdateUserInfo(ApiUserData newData)
+    {
+        if (PlayerPrefs.GetString("LoginToken") != string.Empty)
+        {
+            var updateData = new ApiUserUpdateData();
+            updateData.username = newData.username;
+            updateData.high_score = newData.high_score;
+            updateData.json_save = newData.json_save;
+            UnityWebRequest www  = new UnityWebRequest($"https://api.j4f.teamorange.hu/users/{UserData.id}", "PUT");
+            byte[] bodyRaw = Encoding.UTF8.GetBytes(JsonUtility.ToJson(updateData));
+            www.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
+            www.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
+            www.SetRequestHeader("Authorization", "Bearer " + PlayerPrefs.GetString("LoginToken"));
+            www.SetRequestHeader("Content-Type", "application/json");
+            www.SetRequestHeader("Content-Type", "application/json");
+            yield return www.SendWebRequest();
+        }
     }
     
     private IEnumerator GetUserInfo(bool rerender = false)
