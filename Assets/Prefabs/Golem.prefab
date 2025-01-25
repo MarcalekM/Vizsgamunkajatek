@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 1702412765109378851}
   - component: {fileID: 5317637633533137693}
   - component: {fileID: 6441314186873446671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Golem
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -360,9 +360,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 50
   damage: 20
-  speed: 1
+  hSpeed: 1
+  vSpeed: 1
+  useAttackHandler: 1
   PlayerSpotted: 0
   isFacingRight: 0
+  attackRange: 1.5
+  attackFrequency: 0.2
 --- !u!1 &8893430197477304944
 GameObject:
   m_ObjectHideFlags: 0

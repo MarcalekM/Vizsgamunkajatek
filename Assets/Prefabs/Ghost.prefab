@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 3002669364709681582}
   - component: {fileID: 140984766327182316}
   - component: {fileID: 8695819572779351546}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -371,5 +371,6 @@ MonoBehaviour:
   damage: 10
   hSpeed: 3
   vSpeed: 1
+  useAttackHandler: 1
   PlayerSpotted: 0
   isFacingRight: 0
