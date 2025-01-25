@@ -50,4 +50,11 @@ public class Golem : Enemy
             }
         }
     }
+
+    public override void GetDamage(float damageTaken, float magicDamageTaken)
+    {
+        HP -= magicDamageTaken;
+        HP -= damageTaken * 0.8f;
+        if (HP <= 0) MakeDead();
+    }
 }
