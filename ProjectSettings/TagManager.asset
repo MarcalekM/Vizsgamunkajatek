@@ -12,6 +12,7 @@ TagManager:
   - Shield
   - Finder
   - Magic2
+  - Torch
   layers:
   - Default
   - TransparentFX

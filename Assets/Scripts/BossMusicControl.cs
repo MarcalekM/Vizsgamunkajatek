@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BossMusicControl : MonoBehaviour
 {
     [SerializeField] public AudioSource bossMusic1;
+    [SerializeField] public AudioSource bossMusic2;
+    [SerializeField] public BossStage2 bossStage2;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +17,7 @@ public class BossMusicControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(!bossStage2.Stage2) SwapMusic();
     }
 
     public void OnTriggerExit2D(Collider2D collision)
@@ -26,5 +29,27 @@ public class BossMusicControl : MonoBehaviour
         }
         //this.gameObject.SetActive(false);
         this.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+    }
+
+    public void SwapMusic()
+    {
+        StopAllCoroutines();
+
+        StartCoroutine(FadeMusic());
+    }
+
+    private IEnumerator FadeMusic()
+    {
+        float timeToFade = 2.5f;
+        float timeElapsed = 0;
+        bossMusic2.Play();
+        while (timeElapsed < timeToFade)
+        {
+            bossMusic1.volume = Mathf.Lerp(0.75f, 0, timeElapsed / timeToFade);
+            bossMusic2.volume = Mathf.Lerp(0, 0.75f, timeElapsed / timeToFade);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        bossMusic1.Stop();
     }
 }
