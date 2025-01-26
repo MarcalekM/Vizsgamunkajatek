@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.LowLevel;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,13 +19,14 @@ public class PlayerController : MonoBehaviour
     public float SP = 3;
 
     [SerializeField] public bool PlayerSpotted = false;
-
-    float horizontalInput;
-    float verticalInput;
-    [SerializeField] float movementSpeed = 6f;
+    
+    [SerializeField] private float defaultSpeed = 6f;
+    [SerializeField] private float runningSpeed = 10f;
+    [SerializeField] private float movementSpeed = 6f;
     bool isFacingRight = true;
     [SerializeField] float jumpPower = 25f;
     protected Collider2D MainCollider;
+    public bool canGoToNextLevel = false;
 
     bool isJumping
     {
@@ -70,6 +74,7 @@ public class PlayerController : MonoBehaviour
         ShieldHP = MaxShield;
         nextFire = 0f;
         MainCollider = GetComponent<Collider2D>();
+        FlamethrowerInactive();
         // így lehet menteni
         // Menu_UI_Manager.UserData.json_save = "{\"asd\": 1}";
         // Menu_UI_Manager.SaveUserToDB(this);
@@ -80,41 +85,17 @@ public class PlayerController : MonoBehaviour
         //UI_HP.text = "HP: " + HP;
         //UI_Kill.text = "Kills: " + kills;
         //UI_SP.text = "SP: " + SP;
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
         animator.SetFloat("VerticalSpeed", rb.velocity.y);
-
-        FlipCharacter();
-
-        if (Input.GetButtonDown("Jump") && !isJumping) Jump();
-
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !ShieldActive  && !FlamethrowerActived) MeeleAttack();
-
-        if (Input.GetKey(KeyCode.LeftShift)) movementSpeed = 10;
-        else movementSpeed = 6;
-        if(isJumping || rb.velocity.x == 0)Walk.Play();
-
-        rb.velocity = new Vector2(horizontalInput * movementSpeed, rb.velocity.y);
+        
         if (!isJumping) animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         else animator.SetFloat("Speed", 0);
-
-        if (Time.time >= nextFire && Input.GetKeyDown(KeyCode.Alpha1) && !ShieldActive && !FlamethrowerActived) SummonFireball();
-
-        if (Input.GetKey(KeyCode.Alpha2) && !ShieldActive) FlamethrowerActive();
-        else FlamethrowerInactive();
-
-        if (ShieldAlive){
-            if (Input.GetKey(KeyCode.Mouse1) && !FlamethrowerActived) ActivateShield();
-            else DeactivateShield();
-        }
-        else DeactivateShield();
+        
+        if (!ShieldAlive) DeactivateShield();
 
         if(HP <= 0)
         {
             gameObject.SetActive(false);
         }
-
-        
     }
 
     private void FixedUpdate()
@@ -124,39 +105,71 @@ public class PlayerController : MonoBehaviour
         if(HP < MaxHP && !PlayerSpotted) AddHP();
     }
 
-    void FlipCharacter()
+    void FlipCharacter(bool right)
     {
-        if (isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
-        {
-            isFacingRight = !isFacingRight;
-            Vector3 ls = transform.localScale;
-            ls.x *= -1f;
-            transform.localScale = ls;
-        }
+        isFacingRight = right;
+        Vector3 ls = transform.localScale;
+        if (Math.Abs(ls.x) > ls.x && isFacingRight) ls.x *= -1;
+        else if (Mathf.Approximately(Math.Abs(ls.x), ls.x) && !isFacingRight) ls.x *= -1;
+        transform.localScale = ls;
     }
     
-    void Jump()
+    public void OnJump(InputAction.CallbackContext ctx)
     {
-        rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+        if (!isJumping)
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
     }
 
-    void MeeleAttack()
+    public void OnHorizontalMove(InputAction.CallbackContext ctx)
     {
-        animator.SetTrigger("MeeleAttack");
+        var movement = ctx.ReadValue<float>();
+        rb.velocity = new Vector2(movement * movementSpeed, rb.velocity.y);
+        if (movement > 0.15f) FlipCharacter(true);
+        else if (movement < -0.15f) FlipCharacter(false);
+        Walk.Play();
+        
     }
 
-    void SummonFireball()
+    public void OnRun(InputAction.CallbackContext ctx)
     {
-        nextFire = Time.time + fireRate;
-        Instantiate(fireball, Magic.position,
-            Quaternion.Euler(x: 0, y: 0, z: isFacingRight ? 0 : 180));
+        if (ctx.canceled || ctx.performed) movementSpeed = defaultSpeed;
+        else if(ctx.started) movementSpeed = runningSpeed;
+    }
+    public void OnMeeleAttack(InputAction.CallbackContext ctx)
+    {
+        Debug.Log("meeleattack");
+        if (!ShieldActive && !FlamethrowerActived && ctx.started)
+            animator.SetTrigger("MeeleAttack");
     }
 
+    public void OnSummonFireball(InputAction.CallbackContext ctx)
+    {
+        if (Time.time >= nextFire && !ShieldActive && !FlamethrowerActived)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(fireball, Magic.position,
+                Quaternion.Euler(x: 0, y: 0, z: isFacingRight ? 0 : 180));
+        }
+    }
+
+    public void OnMenu(InputAction.CallbackContext ctx)
+    {
+        FindObjectOfType<UI_ManagerScript>().OpenSubMenu();
+    }
+
+    public void OnActivateShield(InputAction.CallbackContext ctx)
+    {
+        if (ctx.canceled || ctx.performed) DeactivateShield();
+        else if(ctx.started) ActivateShield();
+    }
     void ActivateShield()
     {
-        Shield.gameObject.SetActive(true);
-        ShieldActive = true;
-        animator.SetBool("ShieldActive", true);
+        if (!FlamethrowerActived && ShieldAlive)
+        {
+            Shield.gameObject.SetActive(true);
+            ShieldActive = true;
+            animator.SetBool("ShieldActive", true);
+        }
     }
 
     void DeactivateShield()
@@ -184,12 +197,29 @@ public class PlayerController : MonoBehaviour
         else HP = 0;
     }
 
+    public void OnFlameThrowerActive(InputAction.CallbackContext ctx)
+    {
+        if (ctx.canceled || ctx.performed) FlamethrowerInactive();
+        else if (ctx.started) FlamethrowerActive();
+    }
+
+    public void OnInteract(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started && canGoToNextLevel)
+        {
+            var lvlMove = FindObjectOfType<LevelMove>();
+            lvlMove?.StartCoroutine(lvlMove.NextSceneTransform());
+        }
+    }
     public void FlamethrowerActive()
     {
-        Flamethrower.Play();
-        FlamethrowerHitbox.SetActive(true);
-        FlamethrowerActived = true;
-        animator.SetBool("FlamethrowerActive", true);
+        if (!ShieldActive)
+        {
+            Flamethrower.Play();
+            FlamethrowerHitbox.SetActive(true);
+            FlamethrowerActived = true;
+            animator.SetBool("FlamethrowerActive", true);
+        }
     }
 
     public void FlamethrowerInactive()

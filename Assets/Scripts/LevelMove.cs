@@ -15,10 +15,10 @@ public class LevelMove : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
             StartCoroutine(NextSceneTransform());
     }
-    private IEnumerator NextSceneTransform()
+    public IEnumerator NextSceneTransform()
     {
         StartCoroutine(transitionElement.LoadLevelWithTrasition(sceneName));
 

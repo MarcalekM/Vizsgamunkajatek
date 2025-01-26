@@ -29,10 +29,7 @@ public class UI_ManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            OpenSubMenu();
-        }
+  
     }
     public void OpenSubMenu()
     {
