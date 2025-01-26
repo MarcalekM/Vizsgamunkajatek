@@ -333,7 +333,7 @@
                 {
                     "name": "",
                     "id": "7fcfcd65-9ab8-4785-aff9-bcffc43c23ab",
-                    "path": "<Gamepad>/rightTrigger",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

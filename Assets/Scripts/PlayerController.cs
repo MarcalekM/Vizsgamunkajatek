@@ -137,7 +137,6 @@ public class PlayerController : MonoBehaviour
     }
     public void OnMeeleAttack(InputAction.CallbackContext ctx)
     {
-        Debug.Log("meeleattack");
         if (!ShieldActive && !FlamethrowerActived && ctx.started)
             animator.SetTrigger("MeeleAttack");
     }

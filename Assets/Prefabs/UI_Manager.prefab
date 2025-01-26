@@ -1426,6 +1426,7 @@ GameObject:
   - component: {fileID: 1757477629973173435}
   - component: {fileID: 2716800376807551943}
   - component: {fileID: 8008368879628335747}
+  - component: {fileID: 5051521207226302951}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -1548,6 +1549,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1
+--- !u!114 &5051521207226302951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937916869159184089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Gamepad>/rightTrigger
 --- !u!1 &2139679022398837513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,6 +2777,7 @@ GameObject:
   - component: {fileID: 5983273349365234892}
   - component: {fileID: 4710896153397166282}
   - component: {fileID: 87911105799569880}
+  - component: {fileID: 5227953481989030450}
   m_Layer: 0
   m_Name: FlameThrower
   m_TagString: Untagged
@@ -2885,6 +2900,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1
+--- !u!114 &5227953481989030450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5468937339759029292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Gamepad>/leftTrigger
 --- !u!1 &5589916063981999179
 GameObject:
   m_ObjectHideFlags: 0
@@ -3019,6 +3047,7 @@ GameObject:
   - component: {fileID: 6072328549468849913}
   - component: {fileID: 3532538265105857869}
   - component: {fileID: 204434483127314617}
+  - component: {fileID: 325962965628000954}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -3141,6 +3170,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1
+--- !u!114 &325962965628000954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6162372709148298523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Gamepad>/leftShoulder
 --- !u!1 &6527603455551852587
 GameObject:
   m_ObjectHideFlags: 0
@@ -3422,7 +3464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: <Mouse>/leftButton
+  m_ControlPath: <Gamepad>/rightShoulder
 --- !u!1 &7333072545061079615
 GameObject:
   m_ObjectHideFlags: 0
@@ -4699,7 +4741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2567113214522808460, guid: af612ed829313504b9870bb8700fa272, type: 3}
       propertyPath: m_fontSize
-      value: 18.3
+      value: 21.6
       objectReference: {fileID: 0}
     - target: {fileID: 2567113214522808460, guid: af612ed829313504b9870bb8700fa272, type: 3}
       propertyPath: m_fontAsset
@@ -4715,7 +4757,7 @@ PrefabInstance:
       objectReference: {fileID: -6773366330950938258, guid: baf1aaf2a4a88484f965b77719f7dc74, type: 2}
     - target: {fileID: 3267054528090274240, guid: af612ed829313504b9870bb8700fa272, type: 3}
       propertyPath: m_fontSize
-      value: 30.75
+      value: 36.3
       objectReference: {fileID: 0}
     - target: {fileID: 3267054528090274240, guid: af612ed829313504b9870bb8700fa272, type: 3}
       propertyPath: m_fontAsset
@@ -4903,7 +4945,7 @@ PrefabInstance:
       objectReference: {fileID: 5304398320042118744}
     - target: {fileID: 7953390245233030434, guid: af612ed829313504b9870bb8700fa272, type: 3}
       propertyPath: m_fontSize
-      value: 20.7
+      value: 24.4
       objectReference: {fileID: 0}
     - target: {fileID: 8122779034975571764, guid: af612ed829313504b9870bb8700fa272, type: 3}
       propertyPath: m_Color.b
@@ -5055,7 +5097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca80eab213a33744b1646d4e01cecd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   healthbar: {fileID: 7173766102996994946}
   healthText: {fileID: 1430179513204566815}
   skillPointsText: {fileID: 6780500349030844081}
