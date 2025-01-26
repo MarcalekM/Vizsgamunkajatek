@@ -17,7 +17,7 @@ public class BossMusicControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!bossStage2.Stage2) SwapMusic();
+        if(!bossStage2.Stage2 && bossMusic1.isPlaying) SwapMusic();
     }
 
     public void OnTriggerExit2D(Collider2D collision)
