@@ -1953,7 +1953,7 @@ GameObject:
   - component: {fileID: 443200836}
   - component: {fileID: 443200835}
   - component: {fileID: 443200837}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boss_Conference_Table
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2410,7 +2410,7 @@ GameObject:
   - component: {fileID: 487255464}
   - component: {fileID: 487255463}
   - component: {fileID: 487255465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boss_Table
   m_TagString: Ground
   m_Icon: {fileID: 0}

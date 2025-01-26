@@ -3287,6 +3287,7 @@ GameObject:
   - component: {fileID: 4845750690619767585}
   - component: {fileID: 5036010018502261915}
   - component: {fileID: 3541578608843437133}
+  - component: {fileID: 1846723909773699252}
   m_Layer: 0
   m_Name: Attack
   m_TagString: Untagged
@@ -3409,6 +3410,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1
+--- !u!114 &1846723909773699252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6943657006934125454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Mouse>/leftButton
 --- !u!1 &7333072545061079615
 GameObject:
   m_ObjectHideFlags: 0
