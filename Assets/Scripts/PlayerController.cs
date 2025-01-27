@@ -67,6 +67,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] ParticleSystem Flamethrower;
     [SerializeField] GameObject FlamethrowerHitbox;
     private bool FlamethrowerActived = false;
+    private float horizontalMovementDirection = 0f;
+    private float rawInputDirection = 0f;
+    private bool isRunning = false;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -98,6 +101,15 @@ public class PlayerController : MonoBehaviour
         }
 
         if(isJumping) FlamethrowerInactive();
+        
+       HandleMovement();
+    }
+
+    private void HandleMovement()
+    {
+        rb.velocity = new Vector2(horizontalMovementDirection * movementSpeed, rb.velocity.y);
+        if (rawInputDirection > 0.5f || rawInputDirection < -0.5f || isRunning) movementSpeed = runningSpeed;
+        else movementSpeed = defaultSpeed;
     }
 
     private void FixedUpdate()
@@ -124,25 +136,22 @@ public class PlayerController : MonoBehaviour
 
     public void OnHorizontalMove(InputAction.CallbackContext ctx)
     {
-        if (ctx.started)
-        {
-            var movement = ctx.ReadValue<float>();
-            rb.velocity = new Vector2(movement * movementSpeed, rb.velocity.y);
-            if (movement > 0.15f) FlipCharacter(true);
-            else if (movement < -0.15f) FlipCharacter(false);
-            Walk.Play();
-        }
-        else if (ctx.performed || ctx.canceled)
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            Walk.Stop();
-        }
+        if (ctx.started) Walk.Play();
+        else if (ctx.performed || ctx.canceled) Walk.Stop();
+        rawInputDirection = ctx.ReadValue<float>();
+        // analóg érték konvertálása digitálissá
+        if (rawInputDirection > 0.15f) horizontalMovementDirection = 1;
+        else if (rawInputDirection < -0.15f) horizontalMovementDirection = -1;
+        else horizontalMovementDirection = 0;
+        Debug.Log($"rawInput {rawInputDirection} | horizontalMovementDirection {horizontalMovementDirection}");
+        if (horizontalMovementDirection > 0.15f) FlipCharacter(true);
+        else if (horizontalMovementDirection < -0.15f) FlipCharacter(false);
     }
 
     public void OnRun(InputAction.CallbackContext ctx)
     {
-        if (ctx.canceled || ctx.performed) movementSpeed = defaultSpeed;
-        else if(ctx.started) movementSpeed = runningSpeed;
+        if (ctx.canceled || ctx.performed) isRunning = false;
+        else if(ctx.started) isRunning = true;
     }
     public void OnMeeleAttack(InputAction.CallbackContext ctx)
     {

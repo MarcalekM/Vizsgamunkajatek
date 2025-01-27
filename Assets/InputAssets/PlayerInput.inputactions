@@ -10,8 +10,8 @@
                     "type": "Value",
                     "id": "079d990f-9fc9-4a98-b3c6-addc0b910345",
                     "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "Hold",
+                    "processors": "AxisDeadzone",
+                    "interactions": "",
                     "initialStateCheck": true
                 },
                 {
@@ -89,11 +89,22 @@
             ],
             "bindings": [
                 {
+                    "name": "",
+                    "id": "0327bde0-4285-468f-8f4a-abdb4dbe0747",
+                    "path": "<Gamepad>/leftStick/x",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveHorizontal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "Keyboard",
                     "id": "f26d3eaf-f219-49fc-9584-9fd9252280a0",
                     "path": "1DAxis",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Clamp(min=-0.5,max=0.5)",
                     "groups": "",
                     "action": "MoveHorizontal",
                     "isComposite": true,
@@ -122,44 +133,11 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Gamepad Left Stick",
-                    "id": "5db0dea6-998c-4fb5-b7c3-75d0eb425b86",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveHorizontal",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "19392207-ef3e-48cb-9611-b3705a579a1f",
-                    "path": "<Gamepad>/leftStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveHorizontal",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "3f4026f3-acd0-4657-8a95-ae45f3c8b761",
-                    "path": "<Gamepad>/leftStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveHorizontal",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "Dpad",
                     "id": "b1d689c4-37d7-4457-a718-a2aaa01940b8",
                     "path": "1DAxis",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Clamp(min=-0.5,max=0.5)",
                     "groups": "",
                     "action": "MoveHorizontal",
                     "isComposite": true,
