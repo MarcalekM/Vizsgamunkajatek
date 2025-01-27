@@ -55,6 +55,7 @@ public class Golem : Enemy
     {
         HP -= magicDamageTaken;
         HP -= damageTaken * 0.8f;
+        healthbar.rectTransform.anchorMax = new Vector2(HP / maxHP, healthbar.rectTransform.anchorMax.y);
         if (HP <= 0) MakeDead();
     }
 }

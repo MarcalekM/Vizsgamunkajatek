@@ -11,7 +11,7 @@
                     "id": "079d990f-9fc9-4a98-b3c6-addc0b910345",
                     "expectedControlType": "Axis",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "initialStateCheck": true
                 },
                 {

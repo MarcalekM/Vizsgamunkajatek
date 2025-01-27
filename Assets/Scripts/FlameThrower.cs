@@ -10,12 +10,12 @@ public class FlameThrower : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
     // Start is called before the first frame update
-    void OnCollisionStay2D(Collision2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("Enemy"))
         {
             var enemy = collision.gameObject.GetComponent<Enemy>();
-            enemy.GetDamage(0, player.MagicDamage * 0.05f);
+            enemy.GetDamage(0, player.MagicDamage * 0.1f);
         }
     }
 }
