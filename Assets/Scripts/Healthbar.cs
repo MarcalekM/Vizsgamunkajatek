@@ -32,7 +32,7 @@ public class Healthbar : MonoBehaviour
         targetFillAmount = Normalize(health, 0,player.MaxHP, 0.322f, 1);
         healthbar.fillAmount = Mathf.Lerp(healthbar.fillAmount, targetFillAmount, Time.deltaTime);
         healthText.text = $"{Math.Floor(player.HP)}/{player.MaxHP}";
-        skillPointsText.text = $"K�pess�gpont: {player.SP}";
+        skillPointsText.text = $"Képességpont: {player.SP}";
 
     }
     float Normalize(float val, float valmin, float valmax, float min, float max) 
