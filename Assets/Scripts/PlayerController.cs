@@ -143,7 +143,6 @@ public class PlayerController : MonoBehaviour
         if (rawInputDirection > 0.15f) horizontalMovementDirection = 1;
         else if (rawInputDirection < -0.15f) horizontalMovementDirection = -1;
         else horizontalMovementDirection = 0;
-        Debug.Log($"rawInput {rawInputDirection} | horizontalMovementDirection {horizontalMovementDirection}");
         if (horizontalMovementDirection > 0.15f) FlipCharacter(true);
         else if (horizontalMovementDirection < -0.15f) FlipCharacter(false);
     }

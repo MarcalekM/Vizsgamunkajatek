@@ -786,7 +786,7 @@ MonoBehaviour:
   useAttackHandler: 1
   PlayerSpotted: 0
   isFacingRight: 0
-  attackRange: 1.5
+  attackRange: 3
   attackFrequency: 0.2
 --- !u!1 &8893430197477304944
 GameObject:
