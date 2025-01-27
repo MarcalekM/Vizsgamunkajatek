@@ -124,12 +124,19 @@ public class PlayerController : MonoBehaviour
 
     public void OnHorizontalMove(InputAction.CallbackContext ctx)
     {
-        var movement = ctx.ReadValue<float>();
-        rb.velocity = new Vector2(movement * movementSpeed, rb.velocity.y);
-        if (movement > 0.15f) FlipCharacter(true);
-        else if (movement < -0.15f) FlipCharacter(false);
-        Walk.Play();
-        
+        if (ctx.started)
+        {
+            var movement = ctx.ReadValue<float>();
+            rb.velocity = new Vector2(movement * movementSpeed, rb.velocity.y);
+            if (movement > 0.15f) FlipCharacter(true);
+            else if (movement < -0.15f) FlipCharacter(false);
+            Walk.Play();
+        }
+        else if (ctx.performed || ctx.canceled)
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            Walk.Stop();
+        }
     }
 
     public void OnRun(InputAction.CallbackContext ctx)
