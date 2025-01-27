@@ -9,6 +9,8 @@ using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
+    protected float maxHP;
+    [SerializeField] public UnityEngine.UI.Image healthbar;
     [SerializeField] public float HP = 50;
     [SerializeField] public float damage = 20;
     [SerializeField] public float hSpeed = 1f;
@@ -37,6 +39,8 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         MainCollider = GetComponent<Collider2D>();
         _animator = GetComponent<Animator>();
+        maxHP = HP;
+        healthbar.rectTransform.anchorMax = new Vector2(HP / maxHP, healthbar.rectTransform.anchorMax.y);
     }
 
     // Update is called once per frame
@@ -51,6 +55,9 @@ public class Enemy : MonoBehaviour
     {
         HP -= damageTaken;
         HP -= magicDamageTaken;
+        healthbar.rectTransform.anchorMax = new Vector2(HP / maxHP, healthbar.rectTransform.anchorMax.y);
+
+        Debug.Log(HP);
         if (HP <= 0) MakeDead();
     }
 
@@ -93,6 +100,7 @@ public class Enemy : MonoBehaviour
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         direction = -direction;
         isFacingRight = !isFacingRight;
+        healthbar.transform.localScale = new Vector2(healthbar.transform.localScale.x * -1, healthbar.transform.localScale.y);
     }
 
     protected virtual void MakeDead()
