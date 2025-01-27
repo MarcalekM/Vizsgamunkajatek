@@ -1795,7 +1795,7 @@ MonoBehaviour:
       - m_Target: {fileID: 5304398320042118744}
         m_TargetAssemblyTypeName: UI_ManagerScript, Assembly-CSharp
         m_MethodName: RestartLevel
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
