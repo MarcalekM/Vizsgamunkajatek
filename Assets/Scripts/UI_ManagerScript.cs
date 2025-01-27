@@ -29,6 +29,10 @@ public class UI_ManagerScript : MonoBehaviour
 
         MenuBtn.onClick.AddListener(OpenMenu);
         StatsBtn.onClick.AddListener(OpenStats);
+
+        if (!PlayerPrefs.HasKey("musicVolume"))
+            PlayerPrefs.SetFloat("musicVolume", .5f);
+        AudioListener.volume = PlayerPrefs.GetFloat("musicVolume");
     }
 
     // Update is called once per frame
