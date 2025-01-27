@@ -15,7 +15,7 @@ public class FlameThrower : MonoBehaviour
         if (collision.gameObject.tag.Equals("Enemy"))
         {
             var enemy = collision.gameObject.GetComponent<Enemy>();
-            enemy.GetDamage(0, player.MagicDamage * 0.05f);
+            enemy.GetDamage(0, player.MagicDamage * 0.1f);
         }
     }
 }
