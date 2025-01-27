@@ -78,8 +78,8 @@ public class UI_ManagerScript : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public void RestartLevel(string scene)
+    public void RestartLevel()
     {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

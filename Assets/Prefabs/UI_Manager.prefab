@@ -1792,7 +1792,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5304398320042118744}
         m_TargetAssemblyTypeName: UI_ManagerScript, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 5
@@ -4824,7 +4824,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5304398320042118744}
         m_TargetAssemblyTypeName: UI_ManagerScript, Assembly-CSharp
         m_MethodName: GoBackToMenu
         m_Mode: 1
