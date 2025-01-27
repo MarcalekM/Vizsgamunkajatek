@@ -328,19 +328,19 @@ AnimatorStateMachine:
     m_Position: {x: 260, y: -100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6630346709599105313}
-    m_Position: {x: 310, y: 320, z: 0}
+    m_Position: {x: 320, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -9142324349617204273}
-    m_Position: {x: 610, y: 240, z: 0}
+    m_Position: {x: 610, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7844121000061280324}
     m_Position: {x: 680, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1185986215298982423}
-    m_Position: {x: -70, y: -10, z: 0}
+    m_Position: {x: -40, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -122315728728942197}
-    m_Position: {x: -30, y: -160, z: 0}
+    m_Position: {x: -10, y: -190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4864832039763113432}
     m_Position: {x: 580, y: -290, z: 0}
@@ -907,7 +907,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerJum
+  m_Name: PlayerJump
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

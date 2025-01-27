@@ -12,6 +12,7 @@ public class Ghost : Enemy
     public override void GetDamage(float damageTaken, float magicDamageTaken)
     {
         HP -= magicDamageTaken;
+        healthbar.rectTransform.anchorMax = new Vector2(HP / maxHP, healthbar.rectTransform.anchorMax.y);
         if (HP <= 0) MakeDead();
     }
     

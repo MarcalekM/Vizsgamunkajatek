@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e7ae3662655ea7a409addb22abf0d38e
+guid: 5021722f6c59a1042a9d85f139f6ea48
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boss_Summon-Sheet_0
+      name: Boss_Summon-Sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 150
+        width: 300
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37e58ca0f3959b84eb5b44731694112a
-      internalID: 1054307615
+      spriteID: 959d66ae2128534409ce65674ba9d569
+      internalID: 1160667595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Summon-Sheet_1
+      name: Boss_Summon-Sheet 1_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 300
         y: 0
-        width: 128
-        height: 150
+        width: 300
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e023a3c54de0ed47a6d76e60b786f07
-      internalID: -549392378
+      spriteID: f360f841a2816ea4ba504fd7b520ab0a
+      internalID: 1993508941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Summon-Sheet_2
+      name: Boss_Summon-Sheet 1_2
       rect:
         serializedVersion: 2
-        x: 256
+        x: 600
         y: 0
-        width: 128
-        height: 150
+        width: 300
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dab4469bc0fbf834dafd60e765b7dcd1
-      internalID: 1418383850
+      spriteID: b1f2505e625d2e744ab8e77f6e6a0403
+      internalID: 866992875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Summon-Sheet_3
+      name: Boss_Summon-Sheet 1_3
       rect:
         serializedVersion: 2
-        x: 384
+        x: 900
         y: 0
-        width: 128
-        height: 150
+        width: 300
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c7c29b7cbc3b9c4ea3a5874c64e6a33
-      internalID: -524766408
+      spriteID: 36963bec270d67a468d0ea647304a556
+      internalID: 196916412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Summon-Sheet_4
+      name: Boss_Summon-Sheet 1_4
       rect:
         serializedVersion: 2
-        x: 512
+        x: 1200
         y: 0
-        width: 128
-        height: 150
+        width: 300
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0498f16e823f9c042a2b7a46b5467e27
-      internalID: -2073919303
+      spriteID: 0adfeb6ae50d1274e8b5d90017a2a271
+      internalID: 1626725561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Summon-Sheet_5
+      name: Boss_Summon-Sheet 1_5
       rect:
         serializedVersion: 2
-        x: 640
+        x: 1500
         y: 0
-        width: 128
-        height: 150
+        width: 300
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cba88989a3550741bf76b358d68adc1
-      internalID: -723996605
+      spriteID: 1d581711130dd0949b87a9aec2e95df2
+      internalID: -336770707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Summon-Sheet_6
+      name: Boss_Summon-Sheet 1_6
       rect:
         serializedVersion: 2
-        x: 768
+        x: 1800
         y: 0
-        width: 128
-        height: 150
+        width: 300
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f3fae83b5569a145b1eba37ad4e7ea1
-      internalID: -1057474232
+      spriteID: f0fcaf4f606fe5040bfb539c4b96d4e4
+      internalID: 950494153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Summon-Sheet_7
+      name: Boss_Summon-Sheet 1_7
       rect:
         serializedVersion: 2
-        x: 896
+        x: 2100
         y: 0
-        width: 128
-        height: 150
+        width: 300
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 115c4ef7cea391f45b3e01e141ab3d52
-      internalID: -1214359492
+      spriteID: ed2bc41e50410424c81babb03afceacd
+      internalID: -254695860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Summon-Sheet_8
+      name: Boss_Summon-Sheet 1_8
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 2400
         y: 0
-        width: 128
-        height: 150
+        width: 300
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa9bcf6a00ea56040a6bc46107f661a3
-      internalID: -1637115230
+      spriteID: 0bb28be5fd104a549814536b785fac35
+      internalID: -825822491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Summon-Sheet_9
+      name: Boss_Summon-Sheet 1_9
       rect:
         serializedVersion: 2
-        x: 1152
+        x: 2700
         y: 0
-        width: 128
-        height: 150
+        width: 300
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +313,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6989f69f141f5984fb4a06eb0442069a
-      internalID: -1802504900
+      spriteID: 28759cbcd91ca1546b838dd30621d164
+      internalID: 20611689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Summon-Sheet_10
+      name: Boss_Summon-Sheet 1_10
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 3000
         y: 0
-        width: 128
-        height: 150
+        width: 300
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +334,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c10d146aa5fae4843b6930a03c9f87ec
-      internalID: -877225750
+      spriteID: 6e79a3b2f4cab7a49844147e24e1af01
+      internalID: -1258239914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Summon-Sheet_11
+      name: Boss_Summon-Sheet 1_11
       rect:
         serializedVersion: 2
-        x: 1408
+        x: 3300
         y: 0
-        width: 128
-        height: 150
+        width: 300
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,8 +355,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57a53d7dc51e0204cb2658a9da366345
-      internalID: -1931759140
+      spriteID: 356ac29d1c6a75944a5d68b416e1d2ac
+      internalID: -919534349
       vertices: []
       indices: 
       edges: []
@@ -372,18 +372,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Boss_Summon-Sheet_0: 1054307615
-      Boss_Summon-Sheet_1: -549392378
-      Boss_Summon-Sheet_10: -877225750
-      Boss_Summon-Sheet_11: -1931759140
-      Boss_Summon-Sheet_2: 1418383850
-      Boss_Summon-Sheet_3: -524766408
-      Boss_Summon-Sheet_4: -2073919303
-      Boss_Summon-Sheet_5: -723996605
-      Boss_Summon-Sheet_6: -1057474232
-      Boss_Summon-Sheet_7: -1214359492
-      Boss_Summon-Sheet_8: -1637115230
-      Boss_Summon-Sheet_9: -1802504900
+      Boss_Summon-Sheet 1_0: 1160667595
+      Boss_Summon-Sheet 1_1: 1993508941
+      Boss_Summon-Sheet 1_10: -1258239914
+      Boss_Summon-Sheet 1_11: -919534349
+      Boss_Summon-Sheet 1_2: 866992875
+      Boss_Summon-Sheet 1_3: 196916412
+      Boss_Summon-Sheet 1_4: 1626725561
+      Boss_Summon-Sheet 1_5: -336770707
+      Boss_Summon-Sheet 1_6: 950494153
+      Boss_Summon-Sheet 1_7: -254695860
+      Boss_Summon-Sheet 1_8: -825822491
+      Boss_Summon-Sheet 1_9: 20611689
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

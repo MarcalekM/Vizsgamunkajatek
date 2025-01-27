@@ -26,9 +26,9 @@ public class BossMusicControl : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             bossMusic1.Play();
+            this.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
         }
         //this.gameObject.SetActive(false);
-        this.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
     }
 
     public void SwapMusic()

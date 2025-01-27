@@ -155,7 +155,7 @@ public class Menu_UI_Manager : MonoBehaviour
         yield return www.SendWebRequest();
  
         if (www.result != UnityWebRequest.Result.Success) {
-            MessageText.text = "The specified username is most likely already taken.\n";
+            MessageText.text = "A megadott felhasználónév valószínűleg már foglalt.\n";
             MessageText.text += www.error;
             MessageBox.SetActive(true);
         }
@@ -178,7 +178,7 @@ public class Menu_UI_Manager : MonoBehaviour
         {
             if (www.responseCode == 401)
             {
-                MessageText.text = "The specified username or password is incorrect.";
+                MessageText.text = "A megadott felhasználónév vagy jelszó helytelen.";
             }
             else
             {
