@@ -784,6 +784,7 @@ MonoBehaviour:
   hSpeed: 1
   vSpeed: 1
   useAttackHandler: 1
+  deathFX: {fileID: 5546437215537126934, guid: 6aef239ade605ed48a09dbd09ae15f98, type: 3}
   PlayerSpotted: 0
   isFacingRight: 0
   attackRange: 3
