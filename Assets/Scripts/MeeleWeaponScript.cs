@@ -31,7 +31,7 @@ public class MeeleWeaponScript : MonoBehaviour
     IEnumerator DealDamage(Collider2D collision)
     {
         yield return new WaitForSeconds(0.4f);
-        if (collision is not null)
+        try
         {
             Vector2 difference = (transform.position - collision.transform.position).normalized;
             Vector2 force = difference * knockbackForce;
@@ -39,6 +39,10 @@ public class MeeleWeaponScript : MonoBehaviour
             rb.AddForce(force, ForceMode2D.Impulse);
             var enemy = collision.gameObject.GetComponent<Enemy>();
             enemy.GetDamage(player.MeeleDamage, 0);
+        }
+        catch (UnityEngine.MissingReferenceException e)
+        {
+                
         }
     }
 }

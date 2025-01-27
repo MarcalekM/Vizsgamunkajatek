@@ -14,7 +14,8 @@ public class LevelTransition : MonoBehaviour
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
-
+        var player = FindObjectOfType<PlayerController>();
+        player?.JsonSavePlayer(level);
         SceneManager.LoadScene(level, LoadSceneMode.Single);
     }
 }

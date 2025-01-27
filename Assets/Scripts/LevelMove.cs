@@ -8,6 +8,15 @@ public class LevelMove : MonoBehaviour
     [SerializeField] private string sceneName;
     [SerializeField] private LevelTransition transitionElement;
 
+    public void OnLoadStory()
+    {
+        if (Menu_UI_Manager.UserData is not null && Menu_UI_Manager.UserData.json_save != string.Empty)
+        {
+            JsonSaveData data = JsonUtility.FromJson<JsonSaveData>(Menu_UI_Manager.UserData.json_save);
+            sceneName = data.Scene;
+        }
+        StartCoroutine(NextSceneTransform());
+    }
     public void TriggerEvent()
     {
         StartCoroutine(NextSceneTransform());

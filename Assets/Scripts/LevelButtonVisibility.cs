@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +27,14 @@ public class LevelButtonVisibility : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            button.gameObject.SetActive(false);
+            try
+            {
+                button.gameObject.SetActive(false);
+            }
+            catch (UnityEngine.MissingReferenceException e)
+            {
+                
+            }
             player.canGoToNextLevel = false;
         }
     }

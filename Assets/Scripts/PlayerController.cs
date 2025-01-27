@@ -4,9 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.LowLevel;
+
+public class JsonSaveData
+{
+    public float Lv;
+    public float MaxHP;
+    public float HP;
+    public float MeeleDamage;
+    public float MagicDamage;
+    public float kills;
+    public float SP;
+    public string Scene;
+}
 
 public class PlayerController : MonoBehaviour
 {
@@ -81,6 +94,7 @@ public class PlayerController : MonoBehaviour
         // így lehet menteni
         // Menu_UI_Manager.UserData.json_save = "{\"asd\": 1}";
         // Menu_UI_Manager.SaveUserToDB(this);
+        JsonLoadPlayer();
     }
 
     private void Update()
@@ -246,43 +260,32 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("FlamethrowerActive", false);
     }
 
-    /*void LoadCharacterStats()
+    public void JsonSavePlayer(string scene)
     {
-        string filepath = Application.persistentDataPath + "/stats.txt";
-        using StreamReader sr = new(
-            path: filepath,
-            encoding: System.Text.Encoding.UTF8);
-        string[] text = sr.ReadLine().Split(',');
-        Lv = float.Parse(text[0]);
-        HP = float.Parse(text[1]);
-        MeeleDamage = float.Parse(text[2]);
-        MagicDamage = float.Parse(text[3]);
-        kills = float.Parse(text[4]);
-        SP = float.Parse(text[5]);
-        MaxShield = float.Parse(text[6]);
-        SaveToJson();
-    }*/
-
-    public class User
-    {
-        public string Name;
-        public string Password;
+        if (Menu_UI_Manager.UserData is null) return;
+        JsonSaveData data = new JsonSaveData();
+        data.Scene = scene;
+        data.Lv = Lv;
+        data.MaxHP = MaxHP;
+        data.HP = HP;
+        data.MeeleDamage = MeeleDamage;
+        data.kills = kills;
+        data.SP = SP;
+        data.MagicDamage = MagicDamage;
+        Menu_UI_Manager.UserData.json_save = JsonUtility.ToJson(data);
+        Menu_UI_Manager.SaveUserToDB(this);
     }
 
-    public void SaveToJson()
+    public void JsonLoadPlayer()
     {
-        User newbie = new();
-        newbie.Name = "Sufi";
-        newbie.Password = "12345";
-        User vki = new();
-        vki.Name = "Laci";
-        vki.Password = "67890";
-        string text = "";
-        text += JsonUtility.ToJson(newbie);
-        text += JsonUtility.ToJson(vki);
-        using StreamWriter sw = new(
-            path: @"Assets/src/Users.json",
-            append: false);
-        sw.Write(text);
+        if (Menu_UI_Manager.UserData is null || Menu_UI_Manager.UserData.json_save == string.Empty) return;
+        JsonSaveData data = JsonUtility.FromJson<JsonSaveData>(Menu_UI_Manager.UserData.json_save);
+        Lv = data.Lv;
+        MaxHP = data.MaxHP;
+        HP = data.HP;
+        MeeleDamage = data.MeeleDamage;
+        kills = data.kills;
+        SP = data.SP;
+        MagicDamage = data.MagicDamage;
     }
 }
