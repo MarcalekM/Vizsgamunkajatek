@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5084c41c0821a7947a9918c7f92a7abc
+guid: f5d7ed1b5fe626546ac4395ec302076b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boss_Stage2_Idle-Sheet_0
+      name: Boss_Idle_Stage2-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62d0a1434d61df949a125a32aaf1b1a4
-      internalID: 988996533
+      spriteID: 2f2bf7c1c86797943b601d015d410940
+      internalID: -1639716404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Stage2_Idle-Sheet_1
+      name: Boss_Idle_Stage2-Sheet_1
       rect:
         serializedVersion: 2
         x: 300
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ac216fba40621d46806fdb0948c02d5
-      internalID: -527597091
+      spriteID: b23967b9f15f74e4aa94edbff0d3f39a
+      internalID: 1791414685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Stage2_Idle-Sheet_2
+      name: Boss_Idle_Stage2-Sheet_2
       rect:
         serializedVersion: 2
         x: 600
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c05116078b6e5c248880ed7968d9eb87
-      internalID: 764240682
+      spriteID: 426684842da2ef24daffcf97de44a29e
+      internalID: -819727382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Stage2_Idle-Sheet_3
+      name: Boss_Idle_Stage2-Sheet_3
       rect:
         serializedVersion: 2
         x: 900
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 488b2618a74ffe8428b0856e184daf08
-      internalID: 1404418789
+      spriteID: 7e311e9af3fcd3d4387d4c76172ed04e
+      internalID: 2117825722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Stage2_Idle-Sheet_4
+      name: Boss_Idle_Stage2-Sheet_4
       rect:
         serializedVersion: 2
         x: 1200
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 632fad4a4951fed4ea2e2398350236d6
-      internalID: -718174129
+      spriteID: 2c89e040b2b039a45b6c74fb26aac798
+      internalID: 376109066
       vertices: []
       indices: 
       edges: []
@@ -225,11 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Boss_Stage2_Idle-Sheet_0: 988996533
-      Boss_Stage2_Idle-Sheet_1: -527597091
-      Boss_Stage2_Idle-Sheet_2: 764240682
-      Boss_Stage2_Idle-Sheet_3: 1404418789
-      Boss_Stage2_Idle-Sheet_4: -718174129
+      Boss_Idle_Stage2-Sheet_0: -1639716404
+      Boss_Idle_Stage2-Sheet_1: 1791414685
+      Boss_Idle_Stage2-Sheet_2: -819727382
+      Boss_Idle_Stage2-Sheet_3: 2117825722
+      Boss_Idle_Stage2-Sheet_4: 376109066
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
