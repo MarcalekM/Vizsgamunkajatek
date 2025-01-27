@@ -38,7 +38,11 @@ public class UI_ManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if(player.HP.Equals(0)) Death.gameObject.SetActive(true);
+        if (player.HP.Equals(0))
+        {
+            UI.gameObject.SetActive(false);
+            Death.gameObject.SetActive(true);
+        }
     }
     public void OpenSubMenu()
     {
