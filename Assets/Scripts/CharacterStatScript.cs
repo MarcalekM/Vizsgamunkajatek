@@ -41,10 +41,10 @@ public class CharacterStatScript : MonoBehaviour
             Shield.gameObject.SetActive(false);
         }
 
-        UI_MaxHP.text = "HP: " + stats.MaxHP;
-        UI_Meele.text = "Meele: " + stats.MeeleDamage;
-        UI_Magic.text = "Magic: " + stats.MagicDamage;
-        UI_Shield.text = "MaxShield: " + stats.MaxShield;
+        UI_MaxHP.text = "Élet: " + stats.MaxHP;
+        UI_Meele.text = "Támadópont: " + stats.MeeleDamage;
+        UI_Magic.text = "Mágia: " + stats.MagicDamage;
+        UI_Shield.text = "Pajzs: " + stats.MaxShield;
 
         if (Input.GetKeyDown(KeyCode.E)) gameObject.SetActive(true);
     }
