@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,8 +14,12 @@ public class UI_ManagerScript : MonoBehaviour
     [SerializeField] Canvas SubMenu;
     [SerializeField] Canvas Menu;
     [SerializeField] Canvas Stats;
+    [SerializeField] Canvas Death;
+
     [SerializeField] Button MenuBtn;
     [SerializeField] Button StatsBtn;
+
+
 
     [SerializeField] Button SubMenuClose;
     // Start is called before the first frame update
@@ -24,12 +29,20 @@ public class UI_ManagerScript : MonoBehaviour
 
         MenuBtn.onClick.AddListener(OpenMenu);
         StatsBtn.onClick.AddListener(OpenStats);
+
+        if (!PlayerPrefs.HasKey("musicVolume"))
+            PlayerPrefs.SetFloat("musicVolume", .5f);
+        AudioListener.volume = PlayerPrefs.GetFloat("musicVolume");
     }
 
     // Update is called once per frame
     void Update()
     {
-  
+        if (player.HP.Equals(0))
+        {
+            UI.gameObject.SetActive(false);
+            Death.gameObject.SetActive(true);
+        }
     }
     public void OpenSubMenu()
     {
@@ -71,5 +84,10 @@ public class UI_ManagerScript : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

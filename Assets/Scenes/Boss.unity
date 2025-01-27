@@ -423,7 +423,7 @@ PrefabInstance:
       objectReference: {fileID: 1503656122}
     - target: {fileID: 3627093801187711276, guid: b1eecf3146d35244b81202a8c4ab435b, type: 3}
       propertyPath: m_Name
-      value: Main Camer
+      value: Main Camera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5133,6 +5133,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 206246426439182519, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 82749816}
     - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -5188,6 +5192,10 @@ PrefabInstance:
     - target: {fileID: 4438014390465730808, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5304398320042118744, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
+      propertyPath: Death
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5360762349089698235, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_SizeDelta.x
