@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
+using UnityEngine.PlayerLoop;
 
 public class Enemy : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float hSpeed = 1f;
     [SerializeField] public float vSpeed = 1f;
     [SerializeField] protected bool useAttackHandler = true;
+    [SerializeField] public GameObject deathFX;
 
     protected Animator _animator;
     
@@ -31,6 +33,8 @@ public class Enemy : MonoBehaviour
     protected Vector2 direction = Vector2.left; 
     public bool isFacingRight = false;
     protected float DeltaMovementTime = 0f;
+
+
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -107,6 +111,7 @@ public class Enemy : MonoBehaviour
     {
         player.kills++;
         Destroy(gameObject);
+        Instantiate(deathFX, transform.position, deathFX.transform.localRotation);
     }
     public bool IsGrounded(Vector2? nextPosition = null) {
         var lenghtToFloor = (MainCollider.bounds.size.y / 2) + 0.5f;
