@@ -435,6 +435,11 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 57125501726426011, guid: b1eecf3146d35244b81202a8c4ab435b, type: 3}
   m_PrefabInstance: {fileID: 82749815}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &89390500 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 206246426439182519, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
+  m_PrefabInstance: {fileID: 1107444109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &105766222
 GameObject:
   m_ObjectHideFlags: 0
@@ -5196,7 +5201,7 @@ PrefabInstance:
     - target: {fileID: 5304398320042118744, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: Death
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 89390500}
     - target: {fileID: 5360762349089698235, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
