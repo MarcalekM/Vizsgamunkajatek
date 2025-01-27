@@ -96,6 +96,8 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+
+        if(isJumping) FlamethrowerInactive();
     }
 
     private void FixedUpdate()
@@ -212,7 +214,7 @@ public class PlayerController : MonoBehaviour
     }
     public void FlamethrowerActive()
     {
-        if (!ShieldActive)
+        if (!ShieldActive && !isJumping)
         {
             Flamethrower.Play();
             FlamethrowerHitbox.SetActive(true);
