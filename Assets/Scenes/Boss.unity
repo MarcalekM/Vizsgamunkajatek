@@ -2005,7 +2005,7 @@ GameObject:
   - component: {fileID: 436146202}
   - component: {fileID: 436146201}
   - component: {fileID: 436146203}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boss_ThoreWithStairs
   m_TagString: Ground
   m_Icon: {fileID: 0}
