@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Golem : Enemy
 {
-    [SerializeField] private float attackRange = 1.5f;
+    [SerializeField] private float attackRange = 3f;
     [SerializeField] private float attackFrequency = 0.2f;
     private float damageTimer = 0f;
     protected override void ApplyMovement()

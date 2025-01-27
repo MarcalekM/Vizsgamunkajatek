@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -56,8 +57,7 @@ public class Enemy : MonoBehaviour
         HP -= damageTaken;
         HP -= magicDamageTaken;
         healthbar.rectTransform.anchorMax = new Vector2(HP / maxHP, healthbar.rectTransform.anchorMax.y);
-
-        Debug.Log(HP);
+        
         if (HP <= 0) MakeDead();
     }
 
@@ -102,7 +102,7 @@ public class Enemy : MonoBehaviour
         isFacingRight = !isFacingRight;
         healthbar.transform.localScale = new Vector2(healthbar.transform.localScale.x * -1, healthbar.transform.localScale.y);
     }
-
+    
     protected virtual void MakeDead()
     {
         player.kills++;
@@ -112,7 +112,7 @@ public class Enemy : MonoBehaviour
         var lenghtToFloor = (MainCollider.bounds.size.y / 2) + 0.5f;
         //Debug.DrawRay(nextPosition ?? transform.position, Vector2.down * lenghtToFloor, Color.green, 1, false);
         var hit = Physics2D.Raycast(
-            transform.position,
+            nextPosition ?? transform.position,
             Vector2.down,
             lenghtToFloor,
             LayerMask.GetMask("Ground"));
