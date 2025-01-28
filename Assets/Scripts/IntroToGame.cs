@@ -4,17 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class IntroToGame : MonoBehaviour
 {
-    private void Awake()
+    private void Start()
     {
-        StartCoroutine(LoadLevel("Swamp").GetEnumerator());
+        SceneManager.LoadScene("Swamp");
 
-    }
-    IEnumerable LoadLevel(string sceneName)
-    {
-        //transition.SetTrigger("Start");
-
-        yield return new WaitForSeconds(60.2f);
-
-        SceneManager.LoadScene(sceneName);
     }
 }
