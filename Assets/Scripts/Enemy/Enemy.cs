@@ -110,7 +110,7 @@ public class Enemy : MonoBehaviour
         isFacingRight = !isFacingRight;
     }
     
-    protected virtual void MakeDead()
+    public virtual void MakeDead()
     {
         player.kills++;
         Destroy(gameObject);

@@ -17,7 +17,7 @@ public class GhostProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player = FindObjectOfType<PlayerController>(true);
         shield = FindObjectsOfType<Shield_Script>(true).FirstOrDefault();
         direction = (player.transform.position - transform.position).normalized;
         if (direction.x < 0f) FlipVisual(false);

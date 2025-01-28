@@ -35,7 +35,7 @@ public class ArenaController : MonoBehaviour
         CurrentScoreText.text = $"{playerController.kills}";
     }
 
-private IEnumerator SpawnEnemies()
+    private IEnumerator SpawnEnemies()
     {
         while (Player.activeSelf)
         {

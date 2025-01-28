@@ -1,18 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Boss : Enemy
 {
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private float attackFrequency = 2f;
+    [SerializeField] private float attackFrequencyPhase1 = 10f;
+    [SerializeField] private float attackFrequencyPhase2 = 2f;
+    [SerializeField] private GameObject GhostPrefab;
     private float AttackTimer = 0f;
+    private float AttackTimer2 = 0f;
     private int phase = 1;
     private float healthBarTargetFillAmount = 1f;
     private BossStage2 stage2;
-    private bool finishedSummoning = false;
-    private float summonTimer = 0f;
 
     public override void Start()
     {
@@ -28,17 +30,9 @@ public class Boss : Enemy
         if (phase == 2 && !stage2.Stage2)
         {
             stage2.Stage2 = true;
-            _animator.SetTrigger("Summon");
-        }
-
-        if (phase == 2 && !finishedSummoning)
-        {
-            summonTimer += Time.deltaTime;
-            if (summonTimer > 3.0f)
-            {
-                _animator.SetBool("Stage2", true);
-                finishedSummoning = true;
-            }
+            _animator.SetBool("Stage2", true);
+            FindObjectsOfType<Ghost>().ToList().ForEach(g => g.MakeDead());
+            
         }
     }
 
@@ -87,19 +81,28 @@ public class Boss : Enemy
     protected override void AttackHandler()
     {
         AttackTimer += Time.deltaTime;
+        AttackTimer2 += Time.deltaTime;
         switch (phase)
         {
             case 1:
-                if (AttackTimer > attackFrequency)
+                if (AttackTimer > attackFrequencyPhase2)
                 {
                     Instantiate(projectilePrefab, transform.position - new Vector3(direction.x, direction.y, 0) * 2, Quaternion.identity);
+                    _animator.SetTrigger("Summon");
                     AttackTimer = 0f;
+                }
+
+                if (AttackTimer2 > attackFrequencyPhase1)
+                {
+                    StartCoroutine(SpawnEnemies());
+                    AttackTimer2 = 0f;
                 }
                 break;
             case 2:
-                if (AttackTimer > attackFrequency && finishedSummoning)
+                if (AttackTimer > attackFrequencyPhase2)
                 {
                     _animator.SetTrigger("Stage2Attack");
+                    AttackTimer = 0f;
                 }
 
                 break;
@@ -122,10 +125,48 @@ public class Boss : Enemy
         return (((val - valmin) / (valmax - valmin)) * (max - min)) + min;
     }
 
-    protected override void MakeDead()
+    public override void MakeDead()
     {
         player.kills++;
-        healthbar.fillAmount = 0f;
-        Destroy(gameObject);
+        phase = 0;
+        _animator.SetTrigger("Dead");
+    }
+    
+    private void OnCollisionEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log(transform.name);
+            player.GetDamage(10f);
+        }
+    }
+    
+    private IEnumerator SpawnEnemies()
+    {
+        if (player.gameObject.activeSelf)
+        {
+            yield return new WaitForSeconds(4f);
+
+            for (int i = 0; i < 2; i++)
+            {
+                Vector2 playerPosition = player.GetComponent<BoxCollider2D>().bounds.center;
+
+                float spawnOffsetX = UnityEngine.Random.Range(7f, 9f);
+                bool spawnOnLeft = i == 0;
+
+                if (spawnOnLeft)
+                    spawnOffsetX *= -1;
+
+                Vector2 spawnPosition = new Vector2(playerPosition.x + spawnOffsetX, playerPosition.y);
+
+                GameObject enemyInstance = Instantiate(GhostPrefab, spawnPosition, Quaternion.identity);
+                enemyInstance.transform.localScale = GhostPrefab.transform.localScale;
+
+                if (spawnOnLeft)
+                    enemyInstance.transform.localScale = new Vector3(-enemyInstance.transform.localScale.x,
+                        enemyInstance.transform.localScale.y,
+                        enemyInstance.transform.localScale.z);
+            }
+        }
     }
 }

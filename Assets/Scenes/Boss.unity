@@ -1533,7 +1533,9 @@ MonoBehaviour:
   PlayerSpotted: 0
   isFacingRight: 0
   projectilePrefab: {fileID: 8932086216192947408, guid: 365c1775fd6c81c40a830a236d3fecff, type: 3}
-  attackFrequency: 2
+  attackFrequencyPhase1: 10
+  attackFrequencyPhase2: 2
+  GhostPrefab: {fileID: 8936150300521246516, guid: 68fc780d4a0c02845915b8e04a86b8fa, type: 3}
 --- !u!50 &130411011
 Rigidbody2D:
   serializedVersion: 4
@@ -1607,6 +1609,7 @@ GameObject:
   - component: {fileID: 130993932}
   - component: {fileID: 130993933}
   - component: {fileID: 130993934}
+  - component: {fileID: 130993935}
   m_Layer: 0
   m_Name: Boss_Stage_2_Spike-Sheet_0 (3)
   m_TagString: EnemyBullet
@@ -1716,6 +1719,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.57771355, y: -0.023579758}
   m_Size: {x: 0.12456767, y: 0.35565504}
   m_Direction: 0
+--- !u!114 &130993935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130993931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7555dee1afbf1438dd88d15643f3b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &195364010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4396,6 +4411,7 @@ GameObject:
   - component: {fileID: 722929783}
   - component: {fileID: 722929784}
   - component: {fileID: 722929785}
+  - component: {fileID: 722929786}
   m_Layer: 0
   m_Name: Boss_Stage_2_Spike-Sheet_0
   m_TagString: EnemyBullet
@@ -4505,6 +4521,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.5812593, y: -0.010425473}
   m_Size: {x: 0.117482506, y: 0.331223}
   m_Direction: 0
+--- !u!114 &722929786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722929782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7555dee1afbf1438dd88d15643f3b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &740991555 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8244218481021473057, guid: f6f373c286626ba409a1e6f74d22640d, type: 3}
@@ -4774,6 +4802,7 @@ GameObject:
   - component: {fileID: 785319797}
   - component: {fileID: 785319798}
   - component: {fileID: 785319799}
+  - component: {fileID: 785319800}
   m_Layer: 0
   m_Name: Boss_Stage_2_Spike-Sheet_0 (1)
   m_TagString: EnemyBullet
@@ -4883,6 +4912,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.5800732, y: -0.0023576738}
   m_Size: {x: 0.11984686, y: 0.34150594}
   m_Direction: 0
+--- !u!114 &785319800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785319796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7555dee1afbf1438dd88d15643f3b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &826277248
 GameObject:
   m_ObjectHideFlags: 0
@@ -6442,6 +6483,7 @@ GameObject:
   - component: {fileID: 1041693131}
   - component: {fileID: 1041693132}
   - component: {fileID: 1041693133}
+  - component: {fileID: 1041693134}
   m_Layer: 0
   m_Name: Boss_Stage_2_Spike-Sheet_0 (2)
   m_TagString: EnemyBullet
@@ -6551,6 +6593,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.57771736, y: -0.009431585}
   m_Size: {x: 0.12456691, y: 0.32735834}
   m_Direction: 0
+--- !u!114 &1041693134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041693130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7555dee1afbf1438dd88d15643f3b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1061349127
 GameObject:
   m_ObjectHideFlags: 0
