@@ -9,11 +9,37 @@ public class Boss : Enemy
     [SerializeField] private float attackFrequency = 2f;
     private float AttackTimer = 0f;
     private int phase = 1;
+    private float healthBarTargetFillAmount = 1f;
+    private BossStage2 stage2;
+    private bool finishedSummoning = false;
+    private float summonTimer = 0f;
 
     public override void Start()
     {
         base.Start();
         PlayerSpotted = true;
+        stage2 = FindObjectOfType<BossStage2>();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        healthbar.fillAmount = Mathf.Lerp(healthbar.fillAmount, healthBarTargetFillAmount, Time.deltaTime);
+        if (phase == 2 && !stage2.Stage2)
+        {
+            stage2.Stage2 = true;
+            _animator.SetTrigger("Summon");
+        }
+
+        if (phase == 2 && !finishedSummoning)
+        {
+            summonTimer += Time.deltaTime;
+            if (summonTimer > 3.0f)
+            {
+                _animator.SetBool("Stage2", true);
+                finishedSummoning = true;
+            }
+        }
     }
 
     public override void GetDamage(float damageTaken, float magicDamageTaken)
@@ -21,7 +47,10 @@ public class Boss : Enemy
         HP -= damageTaken;
         HP -= magicDamageTaken;
         if (healthbar is not null)
-            healthbar.rectTransform.anchorMax = new Vector2(HP / maxHP, healthbar.rectTransform.anchorMax.y);
+        {
+            healthBarTargetFillAmount = Normalize(HP, 0,maxHP, 0, 1);
+        }
+        if (HP <= maxHP/2) phase = 2;
         if (HP <= 0) MakeDead();
     }
     
@@ -57,15 +86,22 @@ public class Boss : Enemy
 
     protected override void AttackHandler()
     {
+        AttackTimer += Time.deltaTime;
         switch (phase)
         {
             case 1:
-                AttackTimer += Time.deltaTime;
                 if (AttackTimer > attackFrequency)
                 {
                     Instantiate(projectilePrefab, transform.position - new Vector3(direction.x, direction.y, 0) * 2, Quaternion.identity);
                     AttackTimer = 0f;
                 }
+                break;
+            case 2:
+                if (AttackTimer > attackFrequency && finishedSummoning)
+                {
+                    _animator.SetTrigger("Stage2Attack");
+                }
+
                 break;
         }
        
@@ -79,5 +115,17 @@ public class Boss : Enemy
         if (!right && transform.rotation.eulerAngles.y == 0)transform.RotateAround(transform.parent.position, Vector3.up, 180);
         else if (right && transform.rotation.eulerAngles.y == 180)transform.RotateAround(transform.parent.position, Vector3.up, 180);
         //transform.localScale = ls;
+    }
+    
+    float Normalize(float val, float valmin, float valmax, float min, float max) 
+    {
+        return (((val - valmin) / (valmax - valmin)) * (max - min)) + min;
+    }
+
+    protected override void MakeDead()
+    {
+        player.kills++;
+        healthbar.fillAmount = 0f;
+        Destroy(gameObject);
     }
 }
