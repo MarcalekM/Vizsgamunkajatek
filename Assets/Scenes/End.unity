@@ -483,7 +483,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "A Kalandort nem tal\xE1lt\xE1k meg. Att\xF3l a napt\xF3l kezdve megpecs\xE9tel\u0151d\xF6tt
     a koboldok, g\xF3lemek, az \xC1tkozottak f\xF6ldj\xE9n \xE9l\u0151 szellemek
-    \xE9s a t\xF6bbi l\xE9nyek sorsa. Ez a t\xF6rt\xE9net m\xE1r csak a legend\xE1kban
+    \xE9s a t\xF6bbi l\xE9ny sorsa. Ez a t\xF6rt\xE9net m\xE1r csak a legend\xE1kban
     \xE9l tov\xE1bb. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baf1aaf2a4a88484f965b77719f7dc74, type: 2}
@@ -712,7 +712,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
