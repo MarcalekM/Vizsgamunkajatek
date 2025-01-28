@@ -45,7 +45,8 @@ public class Enemy : MonoBehaviour
         MainCollider = GetComponent<Collider2D>();
         _animator = GetComponent<Animator>();
         maxHP = HP;
-        healthbar.rectTransform.anchorMax = new Vector2(HP / maxHP, healthbar.rectTransform.anchorMax.y);
+        if (healthbar is not null)
+            healthbar.rectTransform.anchorMax = new Vector2(HP / maxHP, healthbar.rectTransform.anchorMax.y);
     }
 
     // Update is called once per frame
@@ -60,7 +61,8 @@ public class Enemy : MonoBehaviour
     {
         HP -= damageTaken;
         HP -= magicDamageTaken;
-        healthbar.rectTransform.anchorMax = new Vector2(HP / maxHP, healthbar.rectTransform.anchorMax.y);
+        if (healthbar is not null)
+            healthbar.rectTransform.anchorMax = new Vector2(HP / maxHP, healthbar.rectTransform.anchorMax.y);
         
         if (HP <= 0) MakeDead();
     }
@@ -102,7 +104,8 @@ public class Enemy : MonoBehaviour
     protected virtual void Flip()
     {
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-        healthbar.transform.parent.localScale = new Vector2(healthbar.transform.parent.localScale.x * -1, healthbar.transform.parent.localScale.y);
+        if (healthbar is not null)
+            healthbar.transform.parent.localScale = new Vector2(healthbar.transform.parent.localScale.x * -1, healthbar.transform.parent.localScale.y);
         direction = -direction;
         isFacingRight = !isFacingRight;
     }
