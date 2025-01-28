@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalMovementDirection = 0f;
     private float rawInputDirection = 0f;
     private bool isRunning = false;
+    private float killCheck;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -95,6 +96,7 @@ public class PlayerController : MonoBehaviour
         // Menu_UI_Manager.UserData.json_save = "{\"asd\": 1}";
         // Menu_UI_Manager.SaveUserToDB(this);
         JsonLoadPlayer();
+        killCheck = kills;
     }
 
     private void Update()
@@ -117,6 +119,8 @@ public class PlayerController : MonoBehaviour
         if(isJumping) FlamethrowerInactive();
         
        HandleMovement();
+
+       if(kills != killCheck) GetSkillSpoint();
     }
 
     private void HandleMovement()
@@ -131,6 +135,11 @@ public class PlayerController : MonoBehaviour
         if (!ShieldAlive) AddShieldHP();
         if (ShieldAlive && !ShieldActive && ShieldHP != MaxShield) AddShieldHP();
         if(HP < MaxHP && !PlayerSpotted) AddHP();
+    }
+
+    public void GetSkillSpoint(){
+        killCheck = kills;
+        if(kills % 10 == 0)SP++;
     }
 
     void FlipCharacter(bool right)
