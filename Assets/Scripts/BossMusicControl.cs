@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -27,6 +28,7 @@ public class BossMusicControl : MonoBehaviour
         {
             bossMusic1.Play();
             this.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+            GameObject.FindObjectsOfType<Ghost>(true).ToList().ForEach(g => g.gameObject.SetActive(true));
         }
         //this.gameObject.SetActive(false);
     }

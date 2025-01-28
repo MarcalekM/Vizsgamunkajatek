@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ghost : Enemy
 {
     [SerializeField] private float playerFollowDistance = 12f;
-    [SerializeField] private float preferredDistanceFromGround = 6f;
+    [SerializeField] private float preferredDistanceFromGround = 4f;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float attackFrequency = 2f;
     private float AttackTimer = 0f;

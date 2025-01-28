@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
         if(kills % 10 == 0)SP++;
     }
 
-    void FlipCharacter(bool right)
+    void FlipVisual(bool right)
     {
         isFacingRight = right;
         Vector3 ls = transform.localScale;
@@ -166,8 +166,8 @@ public class PlayerController : MonoBehaviour
         if (rawInputDirection > 0.15f) horizontalMovementDirection = 1;
         else if (rawInputDirection < -0.15f) horizontalMovementDirection = -1;
         else horizontalMovementDirection = 0;
-        if (horizontalMovementDirection > 0.15f) FlipCharacter(true);
-        else if (horizontalMovementDirection < -0.15f) FlipCharacter(false);
+        if (horizontalMovementDirection > 0.15f) FlipVisual(true);
+        else if (horizontalMovementDirection < -0.15f) FlipVisual(false);
     }
 
     public void OnRun(InputAction.CallbackContext ctx)

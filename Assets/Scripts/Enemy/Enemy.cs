@@ -102,6 +102,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Flip()
     {
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        healthbar.transform.parent.localScale = new Vector2(healthbar.transform.parent.localScale.x * -1, healthbar.transform.parent.localScale.y);
         direction = -direction;
         isFacingRight = !isFacingRight;
     }
