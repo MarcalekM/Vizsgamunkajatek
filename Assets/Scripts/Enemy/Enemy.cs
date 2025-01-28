@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
         _animator = GetComponent<Animator>();
         maxHP = HP;
         if (healthbar is not null)
-            healthbar.rectTransform.anchorMax = new Vector2(HP / maxHP, healthbar.rectTransform.anchorMax.y);
+            healthbar.fillAmount = HP / maxHP;
     }
 
     // Update is called once per frame
@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
         HP -= damageTaken;
         HP -= magicDamageTaken;
         if (healthbar is not null)
-            healthbar.rectTransform.anchorMax = new Vector2(HP / maxHP, healthbar.rectTransform.anchorMax.y);
+            healthbar.fillAmount = HP / maxHP;
         
         if (HP <= 0) MakeDead();
     }
