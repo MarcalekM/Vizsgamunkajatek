@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12085,10 +12084,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 206246426439182519, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 44227713}
     - target: {fileID: 601577032864631376, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2284131371553114504, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 44227713}
     - target: {fileID: 2461991860021220457, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.244746
