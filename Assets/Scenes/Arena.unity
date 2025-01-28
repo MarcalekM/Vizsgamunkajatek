@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -133,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1175998569872069763, guid: f0a55e57acdb85b428791a7c2bd82790, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.8866048
+      value: 15.8
       objectReference: {fileID: 0}
     - target: {fileID: 1175998569872069763, guid: f0a55e57acdb85b428791a7c2bd82790, type: 3}
       propertyPath: m_LocalPosition.y
@@ -403,7 +402,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 693d51e919f9d1842b59711a3b99d104, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -456,7 +455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 939173991777195852, guid: b1eecf3146d35244b81202a8c4ab435b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.23
+      value: 16.456606
       objectReference: {fileID: 0}
     - target: {fileID: 939173991777195852, guid: b1eecf3146d35244b81202a8c4ab435b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -992,8 +991,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8091054587423041238, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1905686017}
   m_SourcePrefab: {fileID: 100100000, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
+--- !u!1 &1905686016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8091054587423041238, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
+  m_PrefabInstance: {fileID: 1905686015}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1905686017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905686016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e81c447fa274e48a0736425e48224c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 2022721153}
+  Goblin: {fileID: 611561079424439440, guid: f509624d84a89f645905aea2cd4a11f3, type: 3}
+  Ghost: {fileID: 8936150300521246516, guid: 68fc780d4a0c02845915b8e04a86b8fa, type: 3}
+  Golem: {fileID: 7981647602522919829, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
 --- !u!1 &1992801374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1101,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2022721153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9052071717890650898, guid: f0a55e57acdb85b428791a7c2bd82790, type: 3}
+  m_PrefabInstance: {fileID: 279372759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
