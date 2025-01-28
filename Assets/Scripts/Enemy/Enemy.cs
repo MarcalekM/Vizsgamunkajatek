@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player = FindObjectOfType<PlayerController>(true);
         shield = FindObjectsOfType<Shield_Script>(true).FirstOrDefault();
         rb = GetComponent<Rigidbody2D>();
         MainCollider = GetComponent<Collider2D>();
