@@ -668,6 +668,6 @@ MonoBehaviour:
   PlayerSpotted: 0
   isFacingRight: 0
   playerFollowDistance: 12
-  preferredDistanceFromGround: 6
+  preferredDistanceFromGround: 4
   projectilePrefab: {fileID: 4475879152533302956, guid: b85b95d358070d6479a4d4dbf9fed124, type: 3}
   attackFrequency: 2
