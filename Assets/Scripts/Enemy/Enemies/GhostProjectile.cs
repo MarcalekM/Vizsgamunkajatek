@@ -20,8 +20,8 @@ public class GhostProjectile : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         shield = FindObjectsOfType<Shield_Script>(true).FirstOrDefault();
         direction = (player.transform.position - transform.position).normalized;
-        if (direction.x < 0f) Flip(false);
-        else if (direction.x > 0f) Flip(true);
+        if (direction.x < 0f) FlipVisual(false);
+        else if (direction.x > 0f) FlipVisual(true);
         var rb = GetComponent<Rigidbody2D>();
         rb.velocity = direction * speed;
     }
@@ -47,7 +47,7 @@ public class GhostProjectile : MonoBehaviour
         Destroy(gameObject);
     }
     
-    void Flip(bool right)
+    void FlipVisual(bool right)
     {
         isFacingRight = right;
         Vector3 ls = transform.localScale;
