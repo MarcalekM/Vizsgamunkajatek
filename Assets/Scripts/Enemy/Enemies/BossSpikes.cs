@@ -19,7 +19,6 @@ public class BossSpikes : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (player is not null) player.GetDamage(0.2f * Time.deltaTime);
-        Debug.Log(player.HP);
+        if (player is not null) player.GetDamage(10f * Time.deltaTime);
     }
 }

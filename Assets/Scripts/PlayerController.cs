@@ -158,6 +158,12 @@ public class PlayerController : MonoBehaviour
         if(kills % 10 == 0)SP++;
     }
 
+    public void TriggerEnding()
+    {
+        GetComponent<PlayerInput>().enabled = false;
+        animator.SetTrigger("Ending");
+    }
+
     void FlipVisual(bool right)
     {
         isFacingRight = right;
@@ -276,7 +282,6 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("FlamethrowerActive", true);
         }
     }
-
     public void FlamethrowerInactive()
     {
         Flamethrower.Stop();

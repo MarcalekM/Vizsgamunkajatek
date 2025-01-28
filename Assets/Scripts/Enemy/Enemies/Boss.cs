@@ -12,14 +12,17 @@ public class Boss : Enemy
     [SerializeField] private GameObject GhostPrefab;
     private float AttackTimer = 0f;
     private float AttackTimer2 = 0f;
+    private float EndTimer = 0f;
     private int phase = 1;
     private float healthBarTargetFillAmount = 1f;
     private BossStage2 stage2;
+    private bool isDead = false;
 
     public override void Start()
     {
         base.Start();
         PlayerSpotted = true;
+        player.PlayerSpotted = true;
         stage2 = FindObjectOfType<BossStage2>();
     }
 
@@ -33,6 +36,12 @@ public class Boss : Enemy
             _animator.SetBool("Stage2", true);
             FindObjectsOfType<Ghost>().ToList().ForEach(g => g.MakeDead());
             
+        }
+        if (isDead) EndTimer += Time.deltaTime;
+        if (EndTimer > 4f && phase != 3)
+        {
+            phase = 3;
+            player.TriggerEnding();
         }
     }
 
@@ -56,6 +65,7 @@ public class Boss : Enemy
     
     protected override void ApplyMovement()
     {
+        if (isDead) return;
         var force = direction * 0;
         if (direction.x > 0f) FlipVisual(true);
         else if (direction.x < 0f) FlipVisual(false);
@@ -129,12 +139,14 @@ public class Boss : Enemy
     {
         player.kills++;
         phase = 0;
+        isDead = true;
         _animator.SetTrigger("Dead");
     }
     
-    private void OnCollisionEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        int numOfCollidersActive = GetComponents<Collider2D>().Count(g => g.isActiveAndEnabled);
+        if (other.gameObject.CompareTag("Player") && numOfCollidersActive == 2)
         {
             Debug.Log(transform.name);
             player.GetDamage(10f);
@@ -143,10 +155,8 @@ public class Boss : Enemy
     
     private IEnumerator SpawnEnemies()
     {
-        if (player.gameObject.activeSelf)
+        if (player.gameObject.activeSelf && phase == 1)
         {
-            yield return new WaitForSeconds(4f);
-
             for (int i = 0; i < 2; i++)
             {
                 Vector2 playerPosition = player.GetComponent<BoxCollider2D>().bounds.center;
@@ -168,5 +178,6 @@ public class Boss : Enemy
                         enemyInstance.transform.localScale.z);
             }
         }
+        yield break;
     }
 }

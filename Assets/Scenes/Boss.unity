@@ -379,7 +379,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 939173991777195852, guid: b1eecf3146d35244b81202a8c4ab435b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 366
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 939173991777195852, guid: b1eecf3146d35244b81202a8c4ab435b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1592,7 +1592,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.35471955, y: -0.43466416}
@@ -8055,7 +8055,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1175998569872069763, guid: f0a55e57acdb85b428791a7c2bd82790, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 365.96
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1175998569872069763, guid: f0a55e57acdb85b428791a7c2bd82790, type: 3}
       propertyPath: m_LocalPosition.y
