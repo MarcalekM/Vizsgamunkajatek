@@ -114,7 +114,8 @@ public class Enemy : MonoBehaviour
     {
         player.kills++;
         Destroy(gameObject);
-        Instantiate(deathFX, transform.position, deathFX.transform.localRotation);
+        if (deathFX is not null) 
+            Instantiate(deathFX, transform.position, deathFX.transform.localRotation);
     }
     public bool IsGrounded(Vector2? nextPosition = null) {
         var lenghtToFloor = (MainCollider.bounds.size.y / 2) + 0.5f;
