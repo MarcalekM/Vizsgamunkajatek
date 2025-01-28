@@ -33,7 +33,7 @@ public class LevelButtonVisibility : MonoBehaviour
             }
             catch (UnityEngine.MissingReferenceException e)
             {
-                
+                Debug.Log(e);
             }
             player.canGoToNextLevel = false;
         }
