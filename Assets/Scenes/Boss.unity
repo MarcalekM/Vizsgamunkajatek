@@ -216,7 +216,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &31031539
 SpriteRenderer:
@@ -300,7 +300,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &70989609
 SpriteRenderer:
@@ -428,13 +428,726 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3627093801187711276, guid: b1eecf3146d35244b81202a8c4ab435b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 82749818}
   m_SourcePrefab: {fileID: 100100000, guid: b1eecf3146d35244b81202a8c4ab435b, type: 3}
 --- !u!20 &82749816 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 57125501726426011, guid: b1eecf3146d35244b81202a8c4ab435b, type: 3}
   m_PrefabInstance: {fileID: 82749815}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &82749817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3627093801187711276, guid: b1eecf3146d35244b81202a8c4ab435b, type: 3}
+  m_PrefabInstance: {fileID: 82749815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &82749818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82749817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af099596ff07dc43bd676329c000d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 987659476}
+  - {fileID: 239994276}
+  - {fileID: 2081966558}
+  - {fileID: 765757507}
+  - {fileID: 31031538}
+  - {fileID: 1216170386}
+  - {fileID: 1323126370}
+  - {fileID: 302435213}
+  - {fileID: 468174624}
+  - {fileID: 249281933}
+  - {fileID: 1699394371}
+  - {fileID: 991786580}
+  - {fileID: 1407950411}
+  - {fileID: 1580785272}
+  - {fileID: 764456872}
+  - {fileID: 1023057038}
+  - {fileID: 1425109031}
+  - {fileID: 1729526868}
+  - {fileID: 917214426}
+  - {fileID: 479440525}
+  - {fileID: 1499813853}
+  - {fileID: 632622449}
+  - {fileID: 1216798261}
+  - {fileID: 302022518}
+  - {fileID: 70989608}
+  - {fileID: 1842250522}
+  - {fileID: 1865321738}
+  - {fileID: 977216474}
+  - {fileID: 443200834}
+  - {fileID: 436146200}
+  - {fileID: 487255462}
+  - {fileID: 1752981702}
+  - {fileID: 918960219}
+  - {fileID: 105766222}
+  - {fileID: 1922509330}
+  - {fileID: 602263866}
+  - {fileID: 279468043}
+  - {fileID: 1435820192}
+  objectsSettings:
+  - title: Boss_Mountain_MidG
+    theGameObject: {fileID: 987659476}
+    theRenderer: {fileID: 987659477}
+    sized: {x: 32, y: 16}
+    center: {x: 176.6, y: 12.3}
+    TopRight: {x: 208.6, y: 28.3}
+    TopLeft: {x: 144.6, y: 28.3}
+    BottomLeft: {x: 144.6, y: -3.6999998}
+    BottomRight: {x: 208.6, y: -3.6999998}
+    right: 208.6
+    left: 144.6
+    top: 28.3
+    bottom: -3.6999998
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Mountain_Downer_MidG
+    theGameObject: {fileID: 239994276}
+    theRenderer: {fileID: 239994277}
+    sized: {x: 32, y: 16}
+    center: {x: 234.59, y: 18.19}
+    TopRight: {x: 266.59, y: 34.190002}
+    TopLeft: {x: 202.59, y: 34.190002}
+    BottomLeft: {x: 202.59, y: 2.1900005}
+    BottomRight: {x: 266.59, y: 2.1900005}
+    right: 266.59
+    left: 202.59
+    top: 34.190002
+    bottom: 2.1900005
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Mountain_Downer_MidG (1)
+    theGameObject: {fileID: 2081966558}
+    theRenderer: {fileID: 2081966559}
+    sized: {x: 32, y: 16}
+    center: {x: 145.15, y: 15.2}
+    TopRight: {x: 177.15, y: 31.2}
+    TopLeft: {x: 113.149994, y: 31.2}
+    BottomLeft: {x: 113.149994, y: -0.8000002}
+    BottomRight: {x: 177.15, y: -0.8000002}
+    right: 177.15
+    left: 113.149994
+    top: 31.2
+    bottom: -0.8000002
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Window_Wall
+    theGameObject: {fileID: 765757507}
+    theRenderer: {fileID: 765757508}
+    sized: {x: 151.86136, y: 4.799999}
+    center: {x: 281.2558, y: 7.4999995}
+    TopRight: {x: 433.11716, y: 12.299999}
+    TopLeft: {x: 129.39444, y: 12.299999}
+    BottomLeft: {x: 129.39444, y: 2.7000003}
+    BottomRight: {x: 433.11716, y: 2.7000003}
+    right: 433.11716
+    left: 129.39444
+    top: 12.299999
+    bottom: 2.7000003
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Wall
+    theGameObject: {fileID: 31031538}
+    theRenderer: {fileID: 31031539}
+    sized: {x: 151.86069, y: 3.6305363}
+    center: {x: 281.25482, y: -0.93000007}
+    TopRight: {x: 433.1155, y: 2.7005363}
+    TopLeft: {x: 129.39413, y: 2.7005363}
+    BottomLeft: {x: 129.39413, y: -4.5605364}
+    BottomRight: {x: 433.1155, y: -4.5605364}
+    right: 433.1155
+    left: 129.39413
+    top: 2.7005363
+    bottom: -4.5605364
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Wall (1)
+    theGameObject: {fileID: 1216170386}
+    theRenderer: {fileID: 1216170387}
+    sized: {x: 151.86069, y: 3.630537}
+    center: {x: 281.25482, y: 15.6}
+    TopRight: {x: 433.1155, y: 19.230537}
+    TopLeft: {x: 129.39413, y: 19.230537}
+    BottomLeft: {x: 129.39413, y: 11.969463}
+    BottomRight: {x: 433.1155, y: 11.969463}
+    right: 433.1155
+    left: 129.39413
+    top: 19.230537
+    bottom: 11.969463
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Window_Sky_BG
+    theGameObject: {fileID: 1323126370}
+    theRenderer: {fileID: 1323126371}
+    sized: {x: 255.00978, y: 9.279462}
+    center: {x: 178.2231, y: 2.0818}
+    TopRight: {x: 433.23288, y: 11.361261}
+    TopLeft: {x: -76.78668, y: 11.361261}
+    BottomLeft: {x: -76.78668, y: -7.197662}
+    BottomRight: {x: 433.23288, y: -7.197662}
+    right: 433.23288
+    left: -76.78668
+    top: 11.361261
+    bottom: -7.197662
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Candle
+    theGameObject: {fileID: 302435213}
+    theRenderer: {fileID: 302435214}
+    sized: {x: 2.4589996, y: 4.4}
+    center: {x: 221.53699, y: 0.83000016}
+    TopRight: {x: 223.99599, y: 5.2300005}
+    TopLeft: {x: 219.07799, y: 5.2300005}
+    BottomLeft: {x: 219.07799, y: -3.57}
+    BottomRight: {x: 223.99599, y: -3.57}
+    right: 223.99599
+    left: 219.07799
+    top: 5.2300005
+    bottom: -3.57
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Candle (1)
+    theGameObject: {fileID: 468174624}
+    theRenderer: {fileID: 468174625}
+    sized: {x: 2.4589996, y: 4.4}
+    center: {x: 192.25699, y: 0.83000016}
+    TopRight: {x: 194.71599, y: 5.2300005}
+    TopLeft: {x: 189.79799, y: 5.2300005}
+    BottomLeft: {x: 189.79799, y: -3.57}
+    BottomRight: {x: 194.71599, y: -3.57}
+    right: 194.71599
+    left: 189.79799
+    top: 5.2300005
+    bottom: -3.57
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Candle (2)
+    theGameObject: {fileID: 249281933}
+    theRenderer: {fileID: 249281934}
+    sized: {x: 2.4589996, y: 4.4}
+    center: {x: 163.45699, y: 0.83000016}
+    TopRight: {x: 165.91599, y: 5.2300005}
+    TopLeft: {x: 160.99799, y: 5.2300005}
+    BottomLeft: {x: 160.99799, y: -3.57}
+    BottomRight: {x: 165.91599, y: -3.57}
+    right: 165.91599
+    left: 160.99799
+    top: 5.2300005
+    bottom: -3.57
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Candle (3)
+    theGameObject: {fileID: 1699394371}
+    theRenderer: {fileID: 1699394372}
+    sized: {x: 2.4589996, y: 4.4}
+    center: {x: 249.75699, y: 0.83000016}
+    TopRight: {x: 252.21599, y: 5.2300005}
+    TopLeft: {x: 247.29799, y: 5.2300005}
+    BottomLeft: {x: 247.29799, y: -3.57}
+    BottomRight: {x: 252.21599, y: -3.57}
+    right: 252.21599
+    left: 247.29799
+    top: 5.2300005
+    bottom: -3.57
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Candle (4)
+    theGameObject: {fileID: 991786580}
+    theRenderer: {fileID: 991786581}
+    sized: {x: 2.4589844, y: 4.4}
+    center: {x: 278.95697, y: 0.83000016}
+    TopRight: {x: 281.41595, y: 5.2300005}
+    TopLeft: {x: 276.498, y: 5.2300005}
+    BottomLeft: {x: 276.498, y: -3.57}
+    BottomRight: {x: 281.41595, y: -3.57}
+    right: 281.41595
+    left: 276.498
+    top: 5.2300005
+    bottom: -3.57
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Candle (5)
+    theGameObject: {fileID: 1407950411}
+    theRenderer: {fileID: 1407950412}
+    sized: {x: 2.4589844, y: 4.4}
+    center: {x: 297.45697, y: 0.83000016}
+    TopRight: {x: 299.91595, y: 5.2300005}
+    TopLeft: {x: 294.998, y: 5.2300005}
+    BottomLeft: {x: 294.998, y: -3.57}
+    BottomRight: {x: 299.91595, y: -3.57}
+    right: 299.91595
+    left: 294.998
+    top: 5.2300005
+    bottom: -3.57
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Candle (6)
+    theGameObject: {fileID: 1580785272}
+    theRenderer: {fileID: 1580785273}
+    sized: {x: 2.4589844, y: 4.4}
+    center: {x: 316.15698, y: 0.83000016}
+    TopRight: {x: 318.61597, y: 5.2300005}
+    TopLeft: {x: 313.698, y: 5.2300005}
+    BottomLeft: {x: 313.698, y: -3.57}
+    BottomRight: {x: 318.61597, y: -3.57}
+    right: 318.61597
+    left: 313.698
+    top: 5.2300005
+    bottom: -3.57
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Candle (7)
+    theGameObject: {fileID: 764456872}
+    theRenderer: {fileID: 764456873}
+    sized: {x: 2.4589844, y: 4.4}
+    center: {x: 336.25696, y: 0.83000016}
+    TopRight: {x: 338.71594, y: 5.2300005}
+    TopLeft: {x: 333.79797, y: 5.2300005}
+    BottomLeft: {x: 333.79797, y: -3.57}
+    BottomRight: {x: 338.71594, y: -3.57}
+    right: 338.71594
+    left: 333.79797
+    top: 5.2300005
+    bottom: -3.57
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Candle (8)
+    theGameObject: {fileID: 1023057038}
+    theRenderer: {fileID: 1023057039}
+    sized: {x: 2.4589844, y: 4.4}
+    center: {x: 336.25696, y: 0.83000016}
+    TopRight: {x: 338.71594, y: 5.2300005}
+    TopLeft: {x: 333.79797, y: 5.2300005}
+    BottomLeft: {x: 333.79797, y: -3.57}
+    BottomRight: {x: 338.71594, y: -3.57}
+    right: 338.71594
+    left: 333.79797
+    top: 5.2300005
+    bottom: -3.57
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Pillar
+    theGameObject: {fileID: 1425109031}
+    theRenderer: {fileID: 1425109032}
+    sized: {x: 2.975006, y: 11.2}
+    center: {x: 206.7274, y: 7.451024}
+    TopRight: {x: 209.70241, y: 18.651024}
+    TopLeft: {x: 203.7524, y: 18.651024}
+    BottomLeft: {x: 203.7524, y: -3.7489758}
+    BottomRight: {x: 209.70241, y: -3.7489758}
+    right: 209.70241
+    left: 203.7524
+    top: 18.651024
+    bottom: -3.7489758
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Pillar (1)
+    theGameObject: {fileID: 1729526868}
+    theRenderer: {fileID: 1729526869}
+    sized: {x: 2.975006, y: 11.2}
+    center: {x: 186.7274, y: 7.451024}
+    TopRight: {x: 189.70241, y: 18.651024}
+    TopLeft: {x: 183.7524, y: 18.651024}
+    BottomLeft: {x: 183.7524, y: -3.7489758}
+    BottomRight: {x: 189.70241, y: -3.7489758}
+    right: 189.70241
+    left: 183.7524
+    top: 18.651024
+    bottom: -3.7489758
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Pillar (8)
+    theGameObject: {fileID: 917214426}
+    theRenderer: {fileID: 917214428}
+    sized: {x: 2.975006, y: 11.2}
+    center: {x: 166.7274, y: 7.451024}
+    TopRight: {x: 169.70241, y: 18.651024}
+    TopLeft: {x: 163.7524, y: 18.651024}
+    BottomLeft: {x: 163.7524, y: -3.7489758}
+    BottomRight: {x: 169.70241, y: -3.7489758}
+    right: 169.70241
+    left: 163.7524
+    top: 18.651024
+    bottom: -3.7489758
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Pillar (9)
+    theGameObject: {fileID: 479440525}
+    theRenderer: {fileID: 479440527}
+    sized: {x: 2.975006, y: 11.2}
+    center: {x: 146.7274, y: 7.451024}
+    TopRight: {x: 149.70241, y: 18.651024}
+    TopLeft: {x: 143.7524, y: 18.651024}
+    BottomLeft: {x: 143.7524, y: -3.7489758}
+    BottomRight: {x: 149.70241, y: -3.7489758}
+    right: 149.70241
+    left: 143.7524
+    top: 18.651024
+    bottom: -3.7489758
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Pillar (5)
+    theGameObject: {fileID: 1499813853}
+    theRenderer: {fileID: 1499813855}
+    sized: {x: 2.975006, y: 11.2}
+    center: {x: 286.72742, y: 7.451024}
+    TopRight: {x: 289.70242, y: 18.651024}
+    TopLeft: {x: 283.7524, y: 18.651024}
+    BottomLeft: {x: 283.7524, y: -3.7489758}
+    BottomRight: {x: 289.70242, y: -3.7489758}
+    right: 289.70242
+    left: 283.7524
+    top: 18.651024
+    bottom: -3.7489758
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Pillar (4)
+    theGameObject: {fileID: 632622449}
+    theRenderer: {fileID: 632622451}
+    sized: {x: 2.975006, y: 11.2}
+    center: {x: 306.72742, y: 7.451024}
+    TopRight: {x: 309.70242, y: 18.651024}
+    TopLeft: {x: 303.7524, y: 18.651024}
+    BottomLeft: {x: 303.7524, y: -3.7489758}
+    BottomRight: {x: 309.70242, y: -3.7489758}
+    right: 309.70242
+    left: 303.7524
+    top: 18.651024
+    bottom: -3.7489758
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Pillar (2)
+    theGameObject: {fileID: 1216798261}
+    theRenderer: {fileID: 1216798262}
+    sized: {x: 2.975006, y: 11.2}
+    center: {x: 226.7274, y: 7.451024}
+    TopRight: {x: 229.70241, y: 18.651024}
+    TopLeft: {x: 223.7524, y: 18.651024}
+    BottomLeft: {x: 223.7524, y: -3.7489758}
+    BottomRight: {x: 229.70241, y: -3.7489758}
+    right: 229.70241
+    left: 223.7524
+    top: 18.651024
+    bottom: -3.7489758
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Pillar (6)
+    theGameObject: {fileID: 302022518}
+    theRenderer: {fileID: 302022520}
+    sized: {x: 2.975006, y: 11.2}
+    center: {x: 326.72742, y: 7.451024}
+    TopRight: {x: 329.70242, y: 18.651024}
+    TopLeft: {x: 323.7524, y: 18.651024}
+    BottomLeft: {x: 323.7524, y: -3.7489758}
+    BottomRight: {x: 329.70242, y: -3.7489758}
+    right: 329.70242
+    left: 323.7524
+    top: 18.651024
+    bottom: -3.7489758
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Pillar (3)
+    theGameObject: {fileID: 70989608}
+    theRenderer: {fileID: 70989609}
+    sized: {x: 2.975006, y: 11.2}
+    center: {x: 246.7274, y: 7.451024}
+    TopRight: {x: 249.70241, y: 18.651024}
+    TopLeft: {x: 243.7524, y: 18.651024}
+    BottomLeft: {x: 243.7524, y: -3.7489758}
+    BottomRight: {x: 249.70241, y: -3.7489758}
+    right: 249.70241
+    left: 243.7524
+    top: 18.651024
+    bottom: -3.7489758
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Pillar (7)
+    theGameObject: {fileID: 1842250522}
+    theRenderer: {fileID: 1842250524}
+    sized: {x: 2.975006, y: 11.2}
+    center: {x: 346.72742, y: 7.451024}
+    TopRight: {x: 349.70242, y: 18.651024}
+    TopLeft: {x: 343.7524, y: 18.651024}
+    BottomLeft: {x: 343.7524, y: -3.7489758}
+    BottomRight: {x: 349.70242, y: -3.7489758}
+    right: 349.70242
+    left: 343.7524
+    top: 18.651024
+    bottom: -3.7489758
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Bastion
+    theGameObject: {fileID: 1865321738}
+    theRenderer: {fileID: 1865321739}
+    sized: {x: 8.580002, y: 16.64}
+    center: {x: 127.399994, y: 7.12}
+    TopRight: {x: 135.98, y: 23.759998}
+    TopLeft: {x: 118.81999, y: 23.759998}
+    BottomLeft: {x: 118.81999, y: -9.5199995}
+    BottomRight: {x: 135.98, y: -9.5199995}
+    right: 135.98
+    left: 118.81999
+    top: 23.759998
+    bottom: -9.5199995
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Bastion_Border
+    theGameObject: {fileID: 977216474}
+    theRenderer: {fileID: 977216476}
+    sized: {x: 8.580002, y: 16.64}
+    center: {x: -42.79, y: 7.12}
+    TopRight: {x: -34.21, y: 23.759998}
+    TopLeft: {x: -51.370003, y: 23.759998}
+    BottomLeft: {x: -51.370003, y: -9.5199995}
+    BottomRight: {x: -34.21, y: -9.5199995}
+    right: -34.21
+    left: -51.370003
+    top: 23.759998
+    bottom: -9.5199995
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Conference_Table
+    theGameObject: {fileID: 443200834}
+    theRenderer: {fileID: 443200835}
+    sized: {x: 8, y: 3.1999998}
+    center: {x: 263.7304, y: -0.84000015}
+    TopRight: {x: 271.7304, y: 2.3599997}
+    TopLeft: {x: 255.73041, y: 2.3599997}
+    BottomLeft: {x: 255.73041, y: -4.04}
+    BottomRight: {x: 271.7304, y: -4.04}
+    right: 271.7304
+    left: 255.73041
+    top: 2.3599997
+    bottom: -4.04
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_ThoreWithStairs
+    theGameObject: {fileID: 436146200}
+    theRenderer: {fileID: 436146201}
+    sized: {x: 4.799988, y: 5.25}
+    center: {x: 378.83, y: 1.71}
+    TopRight: {x: 383.62997, y: 6.96}
+    TopLeft: {x: 374.03, y: 6.96}
+    BottomLeft: {x: 374.03, y: -3.54}
+    BottomRight: {x: 383.62997, y: -3.54}
+    right: 383.62997
+    left: 374.03
+    top: 6.96
+    bottom: -3.54
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Table
+    theGameObject: {fileID: 487255462}
+    theRenderer: {fileID: 487255463}
+    sized: {x: 16.96997, y: 5.3199997}
+    center: {x: 386.16998, y: 1.19}
+    TopRight: {x: 403.13995, y: 6.5099998}
+    TopLeft: {x: 369.2, y: 6.5099998}
+    BottomLeft: {x: 369.2, y: -4.1299996}
+    BottomRight: {x: 403.13995, y: -4.1299996}
+    right: 403.13995
+    left: 369.2
+    top: 6.5099998
+    bottom: -4.1299996
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Table_Cup
+    theGameObject: {fileID: 1752981702}
+    theRenderer: {fileID: 1752981703}
+    sized: {x: 0.7999878, y: 0.79999995}
+    center: {x: 264.3, y: 0.49}
+    TopRight: {x: 265.09998, y: 1.29}
+    TopLeft: {x: 263.5, y: 1.29}
+    BottomLeft: {x: 263.5, y: -0.30999994}
+    BottomRight: {x: 265.09998, y: -0.30999994}
+    right: 265.09998
+    left: 263.5
+    top: 1.29
+    bottom: -0.30999994
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Picture_Frame
+    theGameObject: {fileID: 918960219}
+    theRenderer: {fileID: 918960220}
+    sized: {x: 4.799988, y: 2.4}
+    center: {x: 263.61, y: 6.43}
+    TopRight: {x: 268.40997, y: 8.83}
+    TopLeft: {x: 258.81, y: 8.83}
+    BottomLeft: {x: 258.81, y: 4.0299997}
+    BottomRight: {x: 268.40997, y: 4.0299997}
+    right: 268.40997
+    left: 258.81
+    top: 8.83
+    bottom: 4.0299997
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Boss_Outside_Wall
+    theGameObject: {fileID: 105766222}
+    theRenderer: {fileID: 105766223}
+    sized: {x: 82.38588, y: 4.7999997}
+    center: {x: 38.9141, y: 1}
+    TopRight: {x: 121.29998, y: 5.7999997}
+    TopLeft: {x: -43.47178, y: 5.7999997}
+    BottomLeft: {x: -43.47178, y: -3.7999997}
+    BottomRight: {x: 121.29998, y: -3.7999997}
+    right: 121.29998
+    left: -43.47178
+    top: 5.7999997
+    bottom: -3.7999997
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Tree4 (1)
+    theGameObject: {fileID: 1922509330}
+    theRenderer: {fileID: 1922509332}
+    sized: {x: 6.3999977, y: 9.599999}
+    center: {x: 32.2, y: 5.6900005}
+    TopRight: {x: 38.6, y: 15.29}
+    TopLeft: {x: 25.800003, y: 15.29}
+    BottomLeft: {x: 25.800003, y: -3.909999}
+    BottomRight: {x: 38.6, y: -3.909999}
+    right: 38.6
+    left: 25.800003
+    top: 15.29
+    bottom: -3.909999
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Tree4
+    theGameObject: {fileID: 602263866}
+    theRenderer: {fileID: 602263867}
+    sized: {x: 6.3999996, y: 9.599999}
+    center: {x: 13.089996, y: 5.6900005}
+    TopRight: {x: 19.489996, y: 15.29}
+    TopLeft: {x: 6.6899967, y: 15.29}
+    BottomLeft: {x: 6.6899967, y: -3.909999}
+    BottomRight: {x: 19.489996, y: -3.909999}
+    right: 19.489996
+    left: 6.6899967
+    top: 15.29
+    bottom: -3.909999
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Golem (1)
+    theGameObject: {fileID: 279468043}
+    theRenderer: {fileID: 279468044}
+    sized: {x: 4.800003, y: 5.385}
+    center: {x: 101.58569, y: 1.6950002}
+    TopRight: {x: 106.3857, y: 7.0800004}
+    TopLeft: {x: 96.78569, y: 7.0800004}
+    BottomLeft: {x: 96.78569, y: -3.69}
+    BottomRight: {x: 106.3857, y: -3.69}
+    right: 106.3857
+    left: 96.78569
+    top: 7.0800004
+    bottom: -3.69
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  - title: Golem
+    theGameObject: {fileID: 1435820192}
+    theRenderer: {fileID: 1435820193}
+    sized: {x: 4.800003, y: 5.3849993}
+    center: {x: 81.93588, y: 1.6331773}
+    TopRight: {x: 86.735886, y: 7.0181766}
+    TopLeft: {x: 77.13588, y: 7.0181766}
+    BottomLeft: {x: 77.13588, y: -3.751822}
+    BottomRight: {x: 86.735886, y: -3.751822}
+    right: 86.735886
+    left: 77.13588
+    top: 7.0181766
+    bottom: -3.751822
+    additiveSize: {x: 0, y: 0}
+    showBorders: 1
+    drawColor: {r: 1, g: 1, b: 1, a: 1}
+    isStatic: 1
+  updateRateInSeconds: 0.1
+  additiveSizeAll: {x: 0, y: 0}
+  overrideAllObjectsSettings: 1
+  overridingShowBordersAll: 1
+  overridingDrawColorAll: {r: 1, g: 1, b: 1, a: 1}
+  overridingIsStaticAll: 1
+  isInitialized: 1
 --- !u!223 &89390500 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 206246426439182519, guid: 598b9d2f3dffbe04db82730c9812f069, type: 3}
@@ -455,7 +1168,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &105766223
 SpriteRenderer:
@@ -666,16 +1379,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130411005}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 376.7, y: 1.51, z: -0.36076415}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.0019989, y: 0.122, z: -0.36076415}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 722929783}
   - {fileID: 785319797}
   - {fileID: 1041693131}
   - {fileID: 130993932}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 487255464}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &130411007
 SpriteRenderer:
@@ -1086,7 +1799,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &239994277
 SpriteRenderer:
@@ -1170,7 +1883,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &249281934
 SpriteRenderer:
@@ -1384,6 +2097,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7981647602522919829, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1392,6 +2109,16 @@ PrefabInstance:
 --- !u!4 &279468042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2601492892475531286, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
+  m_PrefabInstance: {fileID: 279468041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &279468043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7981647602522919829, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
+  m_PrefabInstance: {fileID: 279468041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &279468044 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6317077714141074285, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
   m_PrefabInstance: {fileID: 279468041}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &292265238
@@ -1491,7 +2218,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &302022519
 Transform:
@@ -1575,7 +2302,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &302435214
 SpriteRenderer:
@@ -2133,13 +2860,12 @@ GameObject:
   m_Component:
   - component: {fileID: 436146202}
   - component: {fileID: 436146201}
-  - component: {fileID: 436146203}
   m_Layer: 6
   m_Name: Boss_ThoreWithStairs
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &436146201
 SpriteRenderer:
@@ -2208,51 +2934,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &436146203
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 436146200}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0010192096, y: -0.2762466}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.7}
-    newSize: {x: 0.64, y: 0.7}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.63184565, y: 0.14750671}
-  m_EdgeRadius: 0
 --- !u!1 &443200834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,7 +2950,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &443200835
 SpriteRenderer:
@@ -2476,7 +3157,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &468174625
 SpriteRenderer:
@@ -2641,7 +3322,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &479440526
 Transform:
@@ -2726,7 +3407,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &487255463
 SpriteRenderer:
@@ -2792,7 +3473,8 @@ Transform:
   m_LocalPosition: {x: 396.74, y: -0.93, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 130411006}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &487255465
@@ -3094,7 +3776,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &602263867
 SpriteRenderer:
@@ -3289,7 +3971,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &632622450
 Transform:
@@ -3724,7 +4406,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &764456873
 SpriteRenderer:
@@ -3811,7 +4493,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &765757508
 SpriteRenderer:
@@ -4487,7 +5169,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &917214427
 Transform:
@@ -4571,7 +5253,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &918960220
 SpriteRenderer:
@@ -4656,7 +5338,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &950014810
 BoxCollider2D:
@@ -4786,7 +5468,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &977216475
 BoxCollider2D:
@@ -4915,7 +5597,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &987659477
 SpriteRenderer:
@@ -4999,7 +5681,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &991786581
 SpriteRenderer:
@@ -5086,7 +5768,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1023057039
 SpriteRenderer:
@@ -5174,7 +5856,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1024753225
 SpriteRenderer:
@@ -5891,7 +6573,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1216170387
 SpriteRenderer:
@@ -5975,7 +6657,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1216798262
 SpriteRenderer:
@@ -6092,7 +6774,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1323126371
 SpriteRenderer:
@@ -6258,7 +6940,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1407950412
 SpriteRenderer:
@@ -6423,7 +7105,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1425109032
 SpriteRenderer:
@@ -6544,6 +7226,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem
       objectReference: {fileID: 0}
+    - target: {fileID: 7981647602522919829, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6552,6 +7238,16 @@ PrefabInstance:
 --- !u!4 &1435820191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2601492892475531286, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
+  m_PrefabInstance: {fileID: 1435820190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1435820192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7981647602522919829, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
+  m_PrefabInstance: {fileID: 1435820190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1435820193 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6317077714141074285, guid: a758c9789fb19b54784cd6789bbe5070, type: 3}
   m_PrefabInstance: {fileID: 1435820190}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1438483240
@@ -6800,7 +7496,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1499813854
 Transform:
@@ -7055,7 +7751,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1580785273
 SpriteRenderer:
@@ -7470,7 +8166,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1699394372
 SpriteRenderer:
@@ -7639,7 +8335,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1729526869
 SpriteRenderer:
@@ -7804,7 +8500,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1752981703
 SpriteRenderer:
@@ -7867,7 +8563,7 @@ Transform:
   m_GameObject: {fileID: 1752981702}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 399.03, y: 0.38, z: 0}
+  m_LocalPosition: {x: 264.3, y: 0.49, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8306,7 +9002,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1842250523
 Transform:
@@ -8452,7 +9148,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1865321739
 SpriteRenderer:
@@ -8716,7 +9412,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1922509331
 Transform:
@@ -9200,7 +9896,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &2081966559
 SpriteRenderer:
@@ -9381,7 +10077,6 @@ SceneRoots:
   - {fileID: 487255464}
   - {fileID: 1752981704}
   - {fileID: 1308588489}
-  - {fileID: 130411006}
   - {fileID: 918960221}
   - {fileID: 105766224}
   - {fileID: 117961095}
