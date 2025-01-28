@@ -1,18 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IntroToGame : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
-    }
+        StartCoroutine(LoadLevel("Swamp").GetEnumerator());
 
-    // Update is called once per frame
-    void Update()
+    }
+    IEnumerable LoadLevel(string sceneName)
     {
-        
+        //transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(60.2f);
+
+        SceneManager.LoadScene(sceneName);
     }
 }
