@@ -42,7 +42,7 @@ public class MeeleWeaponScript : MonoBehaviour
         }
         catch (UnityEngine.MissingReferenceException e)
         {
-                
+                Debug.Log(e);
         }
     }
 }
