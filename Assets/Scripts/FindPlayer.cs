@@ -10,7 +10,7 @@ public class FindPlayer : MonoBehaviour
     void Start()
     {
         _enemy = gameObject.GetComponentInParent<Enemy>();
-        _player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        _player = FindObjectOfType<PlayerController>(true);
     }
 
     // Update is called once per frame

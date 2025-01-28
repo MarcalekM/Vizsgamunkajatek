@@ -16,7 +16,7 @@ public class JsonSaveData
     public float HP;
     public float MeeleDamage;
     public float MagicDamage;
-    public float kills;
+    public long kills;
     public float SP;
     public string Scene;
 }
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float HP = 25;
     [SerializeField] public float MeeleDamage = 10;
     [SerializeField] public float MagicDamage = 12;
-    public float kills = 0;
+    public long kills = 0;
     public float SP = 3;
 
     [SerializeField] public bool PlayerSpotted = false;
@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
     public float ShieldHP;
     public bool ShieldActive = false;
     public bool ShieldAlive = true;
+    public bool inArena = false;
 
     //[SerializeField] TextMeshProUGUI UI_HP;
     //[SerializeField] TextMeshProUGUI UI_Kill;
@@ -113,6 +114,21 @@ public class PlayerController : MonoBehaviour
 
         if(HP <= 0)
         {
+            if (PlayerPrefs.GetString("LoginToken") != string.Empty && Menu_UI_Manager.UserData != null)
+            {
+                if (kills > Menu_UI_Manager.UserData.high_score)
+                {
+                    Menu_UI_Manager.UserData.high_score = kills;
+                    Menu_UI_Manager.SaveUserToDB(this);
+                }
+                
+            }
+            else
+            {
+                int highscore = PlayerPrefs.GetInt("Highscore", 0);
+                if (kills > highscore)
+                    PlayerPrefs.SetInt("Highscore", (int)kills);
+            }
             gameObject.SetActive(false);
         }
 

@@ -1,20 +1,41 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class ArenaController : MonoBehaviour
 {
     [SerializeField] private GameObject Player;
+    private PlayerController playerController;
 
     [SerializeField] private GameObject Goblin;
     [SerializeField] private GameObject Ghost;
     [SerializeField] private GameObject Golem;
 
+    [SerializeField] private TMP_Text HighscoreText;
+    [SerializeField] private TMP_Text CurrentScoreText;
+
     private void Start()
     {
+        playerController = Player.GetComponent<PlayerController>();
+        playerController.inArena = true;
         StartCoroutine(SpawnEnemies());
+        if (PlayerPrefs.GetString("LoginToken") != string.Empty && Menu_UI_Manager.UserData != null)
+        {
+            HighscoreText.text = $"Legtöbb pont: {Menu_UI_Manager.UserData.high_score}";
+        }
+        else
+        {
+            int highscore = PlayerPrefs.GetInt("Highscore", 0);
+            HighscoreText.text = $"Legtöbb pont: {highscore}";
+        }
     }
 
-    private IEnumerator SpawnEnemies()
+    private void Update()
+    {
+        CurrentScoreText.text = $"{playerController.kills}";
+    }
+
+private IEnumerator SpawnEnemies()
     {
         while (Player.activeSelf)
         {
@@ -50,8 +71,6 @@ public class ArenaController : MonoBehaviour
                                                                      enemyInstance.transform.localScale.y,
                                                                      enemyInstance.transform.localScale.z);
             }
-
-
         }
     }
 }
