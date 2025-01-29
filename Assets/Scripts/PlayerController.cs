@@ -125,7 +125,6 @@ public class PlayerController : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        if(isJumping) FlamethrowerInactive();
         
        HandleMovement();
 
@@ -272,7 +271,7 @@ public class PlayerController : MonoBehaviour
     }
     public void FlamethrowerActive()
     {
-        if (!ShieldActive && !isJumping)
+        if (!ShieldActive)
         {
             Flamethrower.Play();
             FlamethrowerHitbox.SetActive(true);
