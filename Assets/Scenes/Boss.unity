@@ -1524,7 +1524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbar: {fileID: 996203481}
-  HP: 50
+  HP: 150
   damage: 20
   hSpeed: 1
   vSpeed: 1
