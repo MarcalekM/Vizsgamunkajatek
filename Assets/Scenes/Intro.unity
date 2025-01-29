@@ -379,7 +379,7 @@ MonoBehaviour:
   MeeleDamage: 10
   MagicDamage: 12
   kills: 0
-  SP: 3
+  SP: 0
   PlayerSpotted: 0
   defaultSpeed: 6
   runningSpeed: 10
