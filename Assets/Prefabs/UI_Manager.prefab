@@ -5812,7 +5812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5140200975796348515, guid: af612ed829313504b9870bb8700fa272, type: 3}
       propertyPath: m_UseIsolatedInputActions
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5140200975796348515, guid: af612ed829313504b9870bb8700fa272, type: 3}
       propertyPath: m_PointerDownAction.m_Name
