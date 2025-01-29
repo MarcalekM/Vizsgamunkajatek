@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Ghost : Enemy
@@ -59,8 +60,15 @@ public class Ghost : Enemy
         AttackTimer += Time.deltaTime;
         if (PlayerSpotted && AttackTimer > attackFrequency)
         {
-            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            _animator.SetTrigger("Attack");
+            StartCoroutine(SpawnProjectile());
             AttackTimer = 0f;
         }
+    }
+
+    private IEnumerator SpawnProjectile()
+    {
+        yield return new WaitForSeconds(0.4f);
+        Instantiate(projectilePrefab, transform.position, Quaternion.identity);
     }
 }
