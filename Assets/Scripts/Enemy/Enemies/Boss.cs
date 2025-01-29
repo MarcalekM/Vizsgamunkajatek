@@ -38,6 +38,7 @@ public class Boss : Enemy
             
         }
         if (isDead) EndTimer += Time.deltaTime;
+        if ((transform.position - player.transform.position).magnitude < 25f) player.PlayerSpotted = true;
         if (EndTimer > 4f && phase != 3)
         {
             phase = 3;

@@ -160,6 +160,11 @@ public class PlayerController : MonoBehaviour
 
     public void TriggerEnding()
     {
+        if (Menu_UI_Manager.UserData is not null)
+        {
+            Menu_UI_Manager.UserData.json_save = null;
+            Menu_UI_Manager.SaveUserToDB(this);
+        }
         GetComponent<PlayerInput>().enabled = false;
         animator.SetTrigger("Ending");
     }
