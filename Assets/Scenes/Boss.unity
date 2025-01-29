@@ -1524,7 +1524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbar: {fileID: 996203481}
-  HP: 50
+  HP: 150
   damage: 20
   hSpeed: 1
   vSpeed: 1
@@ -1536,6 +1536,7 @@ MonoBehaviour:
   attackFrequencyPhase1: 10
   attackFrequencyPhase2: 2
   GhostPrefab: {fileID: 8936150300521246516, guid: 68fc780d4a0c02845915b8e04a86b8fa, type: 3}
+  healthBarOutside: {fileID: 837808542}
 --- !u!50 &130411011
 Rigidbody2D:
   serializedVersion: 4

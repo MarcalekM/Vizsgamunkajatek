@@ -8,6 +8,7 @@ public class Boss : Enemy
     [SerializeField] private float attackFrequencyPhase1 = 10f;
     [SerializeField] private float attackFrequencyPhase2 = 2f;
     [SerializeField] private GameObject GhostPrefab;
+    [SerializeField] private GameObject healthBarOutside;
     private float AttackTimer = 0f;
     private float AttackTimer2 = 0f;
     private float EndTimer = 0f;
@@ -19,11 +20,18 @@ public class Boss : Enemy
     public override void Start()
     {
         base.Start();
-        PlayerSpotted = true;
-        player.PlayerSpotted = true;
+        PlayerSpotted = false;
         stage2 = FindObjectOfType<BossStage2>();
+        if (healthBarOutside is not null) healthBarOutside.SetActive(false);
+        if (healthbar is not null) healthbar.gameObject.SetActive(false);
     }
 
+    public void ActivateBoss()
+    {
+        PlayerSpotted = true;
+        if (healthBarOutside is not null) healthBarOutside.SetActive(true);
+        if (healthbar is not null) healthbar.gameObject.SetActive(true);
+    }
     public override void Update()
     {
         base.Update();
@@ -36,7 +44,7 @@ public class Boss : Enemy
             
         }
         if (isDead) EndTimer += Time.deltaTime;
-        if ((transform.position - player.transform.position).magnitude < 25f) player.PlayerSpotted = true;
+        if ((transform.position - player.transform.position).magnitude < 25f && PlayerSpotted) player.PlayerSpotted = true;
         if (EndTimer > 4f && phase != 3)
         {
             phase = 3;
@@ -91,6 +99,7 @@ public class Boss : Enemy
     {
         AttackTimer += Time.deltaTime;
         AttackTimer2 += Time.deltaTime;
+        if (PlayerSpotted)
         switch (phase)
         {
             case 1:
