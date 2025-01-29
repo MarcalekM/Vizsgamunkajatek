@@ -7,6 +7,7 @@ public class Boss : Enemy
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float attackFrequencyPhase1 = 10f;
     [SerializeField] private float attackFrequencyPhase2 = 2f;
+    [SerializeField] private float attackFrequencyProjectile = 4f;
     [SerializeField] private GameObject GhostPrefab;
     [SerializeField] private GameObject healthBarOutside;
     private float AttackTimer = 0f;
@@ -103,7 +104,7 @@ public class Boss : Enemy
         switch (phase)
         {
             case 1:
-                if (AttackTimer > attackFrequencyPhase2)
+                if (AttackTimer > attackFrequencyProjectile)
                 {
                     Instantiate(projectilePrefab, transform.position - new Vector3(direction.x, direction.y, 0) * 2, Quaternion.identity);
                     _animator.SetTrigger("Summon");

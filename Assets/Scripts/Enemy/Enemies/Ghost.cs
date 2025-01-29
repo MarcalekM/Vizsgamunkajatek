@@ -8,6 +8,14 @@ public class Ghost : Enemy
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float attackFrequency = 2f;
     private float AttackTimer = 0f;
+    private Boss boss;
+
+    public override void Start()
+    {
+        base.Start();
+        boss = FindObjectOfType<Boss>();
+    }
+
     public override void GetDamage(float damageTaken, float magicDamageTaken)
     {
         HP -= magicDamageTaken;
@@ -70,5 +78,11 @@ public class Ghost : Enemy
     {
         yield return new WaitForSeconds(0.4f);
         Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+    }
+
+    public override void MakeDead()
+    {
+        if (boss is not null && boss.PlayerSpotted) boss.HP -= 5f;
+        base.MakeDead();
     }
 }
