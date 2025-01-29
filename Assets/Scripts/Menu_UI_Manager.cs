@@ -1,13 +1,9 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
 
 class ApiUserLoginData
@@ -259,9 +255,4 @@ public class Menu_UI_Manager : MonoBehaviour
     }
     
     public void OpenLink(string link) => Application.OpenURL(link);
-
-    public void StartStoryMode()
-    {
-        
-    }
 }

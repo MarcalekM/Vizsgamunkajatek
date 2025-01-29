@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -270,6 +271,7 @@ GameObject:
   - component: {fileID: 290293908}
   - component: {fileID: 290293907}
   - component: {fileID: 290293906}
+  - component: {fileID: 290293910}
   m_Layer: 5
   m_Name: Wrapper
   m_TagString: Untagged
@@ -360,6 +362,44 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &290293910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290293905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bacccdf940ac35e45b982bdf00250cfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lv: 1
+  MaxHP: 10
+  HP: 10
+  MeeleDamage: 10
+  MagicDamage: 12
+  kills: 0
+  SP: 3
+  PlayerSpotted: 0
+  defaultSpeed: 6
+  runningSpeed: 10
+  movementSpeed: 6
+  jumpPower: 25
+  canGoToNextLevel: 0
+  Magic: {fileID: 0}
+  fireball: {fileID: 0}
+  fireRate: 0.5
+  animator: {fileID: 0}
+  Shield: {fileID: 0}
+  MaxShield: 10
+  ShieldHP: 0
+  ShieldActive: 0
+  ShieldAlive: 1
+  inArena: 0
+  Walk: {fileID: 0}
+  Flamethrower: {fileID: 0}
+  FlamethrowerHitbox: {fileID: 0}
 --- !u!1 &362013097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,12 +1252,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &2080031366
 GameObject:
   m_ObjectHideFlags: 0

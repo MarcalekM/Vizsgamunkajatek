@@ -15,6 +15,11 @@ public class LevelMove : MonoBehaviour
             JsonSaveData data = JsonUtility.FromJson<JsonSaveData>(Menu_UI_Manager.UserData.json_save);
             sceneName = data.Scene;
         }
+        else
+        {
+            if (PlayerPrefs.GetInt("intro") == 1) sceneName = "Intro";
+            else sceneName = "Swamp";
+        }
         StartCoroutine(NextSceneTransform());
     }
     public void TriggerEvent()
