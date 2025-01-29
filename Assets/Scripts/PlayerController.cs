@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour
 
     public void GetSkillSpoint(){
         killCheck = kills;
-        if(kills % 10 == 0 && !inArena)SP++;
+        if(kills % 6 == 0 && !inArena)SP++;
         if (kills % 3 == 0 && inArena) SP++;
     }
 
