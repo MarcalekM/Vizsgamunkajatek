@@ -1704,7 +1704,6 @@ MonoBehaviour:
   - {fileID: 1114132272}
   - {fileID: 1553364051}
   - {fileID: 1607814253}
-  - {fileID: 15279326}
   - {fileID: 1917869216}
   - {fileID: 209439593}
   - {fileID: 1302994843}
@@ -2357,23 +2356,6 @@ MonoBehaviour:
     left: 1459.0021
     top: 6574.7446
     bottom: 6571.5444
-    additiveSize: {x: 0, y: 0}
-    showBorders: 1
-    drawColor: {r: 1, g: 1, b: 1, a: 1}
-    isStatic: 1
-  - title: Respawn
-    theGameObject: {fileID: 15279326}
-    theRenderer: {fileID: 0}
-    sized: {x: 0.5, y: 0.5}
-    center: {x: 1552.32, y: 6546.87}
-    TopRight: {x: 1552.82, y: 6547.37}
-    TopLeft: {x: 1551.82, y: 6547.37}
-    BottomLeft: {x: 1551.82, y: 6546.37}
-    BottomRight: {x: 1552.82, y: 6546.37}
-    right: 1552.82
-    left: 1551.82
-    top: 6547.37
-    bottom: 6546.37
     additiveSize: {x: 0, y: 0}
     showBorders: 1
     drawColor: {r: 1, g: 1, b: 1, a: 1}
