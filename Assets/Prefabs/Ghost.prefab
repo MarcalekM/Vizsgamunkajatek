@@ -506,6 +506,7 @@ GameObject:
   - component: {fileID: 3002669364709681582}
   - component: {fileID: 140984766327182316}
   - component: {fileID: 8695819572779351546}
+  - component: {fileID: 6532572639277681190}
   m_Layer: 7
   m_Name: Ghost
   m_TagString: Enemy
@@ -671,3 +672,24 @@ MonoBehaviour:
   preferredDistanceFromGround: 4
   projectilePrefab: {fileID: 4475879152533302956, guid: b85b95d358070d6479a4d4dbf9fed124, type: 3}
   attackFrequency: 2
+--- !u!95 &6532572639277681190
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936150300521246516}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be8ea624a1b322a4fa4723241b73a2b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
