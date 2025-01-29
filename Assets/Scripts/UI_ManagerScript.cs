@@ -81,7 +81,7 @@ public class UI_ManagerScript : MonoBehaviour
     {
         if (Menu_UI_Manager.UserData is not null)
         {
-            if (player.inArena)
+            if (player.inArena && player.kills > Menu_UI_Manager.UserData.high_score)
             {
                 Menu_UI_Manager.UserData.high_score = player.kills;
                 Menu_UI_Manager.SaveUserToDB(this);

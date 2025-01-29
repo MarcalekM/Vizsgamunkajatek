@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Just4Fun
-  productName: "CurseFire // A kalandor \xE1tkozott napl\xF3ja"
+  productName: "A kalandor \xE1tkozott napl\xF3ja"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -163,7 +163,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.Just4Fun.CurseFireAkalandortkozottnaplja
+    Android: com.Just4Fun.Akalandortkozottnaplja
     Standalone: com.Just4Fun.CurseFire----A-kalandor---tkozott-napl--ja
   buildNumber:
     Standalone: 0

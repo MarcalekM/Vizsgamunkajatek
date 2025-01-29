@@ -82,7 +82,7 @@ public class Ghost : Enemy
 
     public override void MakeDead()
     {
-        if (boss is not null && boss.PlayerSpotted) boss.HP -= 5f;
+        if (boss is not null && boss.PlayerSpotted) boss.GetDamage(5f, 0f);
         base.MakeDead();
     }
 }

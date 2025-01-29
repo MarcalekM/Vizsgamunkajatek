@@ -46,9 +46,9 @@ public class ArenaController : MonoBehaviour
                 GameObject enemyPrefab = null;
                 int rnd = Random.Range(0, 9);
 
-                if (rnd <= 3)
+                if (rnd <= 5)
                     enemyPrefab = Goblin;
-                else if (rnd > 3 && rnd <= 6)
+                else if (rnd > 5 && rnd <= 8)
                     enemyPrefab = Ghost;
                 else
                     enemyPrefab = Golem;
