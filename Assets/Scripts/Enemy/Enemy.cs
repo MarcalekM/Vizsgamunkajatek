@@ -1,13 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UIElements;
-using UnityEngine.PlayerLoop;
 
 public class Enemy : MonoBehaviour
 {
