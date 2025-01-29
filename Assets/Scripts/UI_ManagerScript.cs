@@ -24,7 +24,7 @@ public class UI_ManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player = FindObjectOfType<PlayerController>();
 
         MenuBtn.onClick.AddListener(OpenMenu);
         StatsBtn.onClick.AddListener(OpenStats);
@@ -81,6 +81,18 @@ public class UI_ManagerScript : MonoBehaviour
 
     public void GoBackToMenu()
     {
+        if (Menu_UI_Manager.UserData is not null)
+        {
+            if (player.inArena)
+            {
+                Menu_UI_Manager.UserData.high_score = player.kills;
+                Menu_UI_Manager.SaveUserToDB(this);
+            }
+            else
+            {
+                player.JsonSavePlayer(SceneManager.GetActiveScene().name);
+            }
+        }
         Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
     }
