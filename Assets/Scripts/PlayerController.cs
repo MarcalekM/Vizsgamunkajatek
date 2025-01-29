@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float MeeleDamage = 10;
     [SerializeField] public float MagicDamage = 12;
     public long kills = 0;
-    public float SP = 3;
+    public float SP = 0;
 
     [SerializeField] public bool PlayerSpotted = false;
     
