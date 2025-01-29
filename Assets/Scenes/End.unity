@@ -573,6 +573,7 @@ GameObject:
   - component: {fileID: 1178627148}
   - component: {fileID: 1178627147}
   - component: {fileID: 1178627146}
+  - component: {fileID: 1178627149}
   m_Layer: 5
   m_Name: Story
   m_TagString: Untagged
@@ -662,6 +663,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178627144}
   m_CullTransparentMesh: 1
+--- !u!114 &1178627149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178627144}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51fc528cb88e4a4a9b0900ccc7c093e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1345485079
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,7 +893,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.75
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
