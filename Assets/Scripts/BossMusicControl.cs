@@ -7,6 +7,8 @@ public class BossMusicControl : MonoBehaviour
     [SerializeField] public AudioSource bossMusic1;
     [SerializeField] public AudioSource bossMusic2;
     [SerializeField] public BossStage2 bossStage2;
+
+    [SerializeField] public GameObject blockGoingBack;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +21,20 @@ public class BossMusicControl : MonoBehaviour
         if(!bossStage2.Stage2 && bossMusic1.isPlaying) SwapMusic();
     }
 
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            blockGoingBack.GetComponent<Collider2D>().enabled = true;
+        }
+    }
     public void OnTriggerExit2D(Collider2D collision)
     {
         Debug.Log("Collision detected");
         if (collision.gameObject.tag == "Player")
         {
             bossMusic1.Play();
-            this.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+            this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             GameObject.FindObjectsOfType<Ghost>(true).ToList().ForEach(g => g.gameObject.SetActive(true));
         }
         FindObjectOfType<Boss>()?.ActivateBoss();
