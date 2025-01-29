@@ -15,7 +15,7 @@ public class LevelMove : MonoBehaviour
         }
         else
         {
-            if (PlayerPrefs.GetInt("intro") == 1) sceneName = "Intro";
+            if (PlayerPrefs.GetInt("intro", 1) == 1) sceneName = "Intro";
             else sceneName = "Swamp";
         }
         StartCoroutine(NextSceneTransform());
