@@ -255,4 +255,5 @@ public class Menu_UI_Manager : MonoBehaviour
     }
     
     public void OpenLink(string link) => Application.OpenURL(link);
+    public void ExitGame() => Application.Quit();
 }
