@@ -186,8 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbar: {fileID: 4455328951980657554}
-  HP: 10
-  damage: 1
+  HP: 20
+  damage: 2
   hSpeed: 5
   vSpeed: 1
   useAttackHandler: 1
