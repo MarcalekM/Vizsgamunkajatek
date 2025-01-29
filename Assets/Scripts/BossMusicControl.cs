@@ -28,6 +28,7 @@ public class BossMusicControl : MonoBehaviour
             this.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
             GameObject.FindObjectsOfType<Ghost>(true).ToList().ForEach(g => g.gameObject.SetActive(true));
         }
+        FindObjectOfType<Boss>()?.ActivateBoss();
         //this.gameObject.SetActive(false);
     }
 
