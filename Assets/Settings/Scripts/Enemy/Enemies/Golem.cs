@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class Golem : Enemy
@@ -23,6 +24,11 @@ public class Golem : Enemy
     {
         damageTimer += Time.deltaTime;
         if (damageTimer < attackFrequency) return;
+        StartCoroutine(DoAttack());
+    }
+
+    private IEnumerator DoAttack()
+    {
         List<RaycastHit2D> hits = new();
         Debug.DrawRay(transform.position, direction * attackRange, Color.green, 1, false);
         var filter = new ContactFilter2D();
@@ -37,12 +43,15 @@ public class Golem : Enemy
                 {
                     case "Shield":
                         if (_animator is not null) _animator.SetTrigger("Attack");
+                        yield return new WaitForSeconds(0.5f);
                         shield.GetDamage(damage);
                         damageTimer = 0;
                         break;
                     case "Player":
                         if (_animator is not null) _animator.SetTrigger("Attack");
-                        player.GetDamage(damage);
+                        yield return new WaitForSeconds(0.5f);
+                        if (player.ShieldActive) shield.GetDamage(damage);
+                        else player.GetDamage(damage);
                         damageTimer = 0;
                         break;
                 }
