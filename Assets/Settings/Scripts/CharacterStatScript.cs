@@ -38,9 +38,9 @@ public class CharacterStatScript : MonoBehaviour
             Shield.gameObject.SetActive(false);
         }
 
-        UI_MaxHP.text = "Élet: " + stats.MaxHP;
-        UI_Meele.text = "Támadópont: " + stats.MeeleDamage;
-        UI_Magic.text = "Mágia: " + stats.MagicDamage;
+        UI_MaxHP.text = "Ã‰let: " + stats.MaxHP;
+        UI_Meele.text = "TÃ¡madÃ¡spont: " + stats.MeeleDamage;
+        UI_Magic.text = "MÃ¡gia: " + stats.MagicDamage;
         UI_Shield.text = "Pajzs: " + stats.MaxShield;
 
         if (Input.GetKeyDown(KeyCode.E)) gameObject.SetActive(true);
@@ -77,7 +77,4 @@ public class CharacterStatScript : MonoBehaviour
     {
         stats.Lv++;
     }
-
-    
-
 }
