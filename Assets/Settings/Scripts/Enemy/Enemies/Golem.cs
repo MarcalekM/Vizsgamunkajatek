@@ -52,8 +52,8 @@ public class Golem : Enemy
 
     public override void GetDamage(float damageTaken, float magicDamageTaken)
     {
-        HP -= magicDamageTaken;
-        HP -= damageTaken * 0.8f;
+        HP -= magicDamageTaken * 0.25f;
+        HP -= damageTaken;
         healthbar.fillAmount = HP / maxHP;
         if (HP <= 0) MakeDead();
     }

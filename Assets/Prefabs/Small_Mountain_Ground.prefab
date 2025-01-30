@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7213739558121235223}
   - component: {fileID: 5113680422794562684}
   - component: {fileID: 4746739565479356939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Small_Mountain_Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00048203766, y: 0}
+  m_Offset: {x: 0.00011070073, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -129,7 +129,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9626479, y: 0.26}
+  m_Size: {x: 0.9681504, y: 0.26}
   m_EdgeRadius: 0
 --- !u!114 &4746739565479356939
 MonoBehaviour:
@@ -290,7 +290,7 @@ MonoBehaviour:
   - {x: -0.47362477, y: 0.010354512, z: 0}
   m_ShapePathHash: 230087893
   m_Mesh: {fileID: 0}
-  m_InstanceId: 191650
+  m_InstanceId: 48258
   m_LocalBounds:
     m_Center: {x: 0.00067067146, y: 0.031081617, z: 0}
     m_Extent: {x: 0.4848469, y: 0.13088354, z: 0}

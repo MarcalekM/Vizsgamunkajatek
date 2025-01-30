@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
         
         if (!ShieldAlive) DeactivateShield();
 
-        if(HP <= 0)
+        if(HP < 1)
         {
             if (PlayerPrefs.GetString("LoginToken") != string.Empty && Menu_UI_Manager.UserData != null)
             {
@@ -155,8 +155,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Menu_UI_Manager.UserData is not null)
         {
-            Menu_UI_Manager.UserData.json_save = null;
-            Menu_UI_Manager.SaveUserToDB(this);
+            JsonSavePlayer(String.Empty);
         }
         GetComponent<PlayerInput>().enabled = false;
         animator.SetTrigger("Ending");
