@@ -41,7 +41,7 @@ public class Boss : Enemy
         {
             stage2.Stage2 = true;
             _animator.SetBool("Stage2", true);
-            FindObjectsOfType<Ghost>().ToList().ForEach(g => g.MakeDead());
+            FindObjectsOfType<Ghost>().ToList().ForEach(g => g.gameObject.SetActive(false));
             
         }
         if (isDead) EndTimer += Time.deltaTime;
