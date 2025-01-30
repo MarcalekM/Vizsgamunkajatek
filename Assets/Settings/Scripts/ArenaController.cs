@@ -44,7 +44,7 @@ public class ArenaController : MonoBehaviour
             for (int i = 0; i < 2; i++)
             {
                 GameObject enemyPrefab = null;
-                int rnd = Random.Range(0, 9);
+                int rnd = Random.Range(0, 11);
 
                 if (rnd <= 5)
                     enemyPrefab = Goblin;
