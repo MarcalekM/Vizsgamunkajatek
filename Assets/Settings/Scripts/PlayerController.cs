@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpPower = 25f;
     protected Collider2D MainCollider;
     public bool canGoToNextLevel = false;
+    private UI_ManagerScript _uiManagerScript;
 
     bool isJumping
     {
@@ -80,6 +81,7 @@ public class PlayerController : MonoBehaviour
     private float killCheck;
     private void Start()
     {
+        _uiManagerScript = FindObjectOfType<UI_ManagerScript>();
         rb = GetComponent<Rigidbody2D>();
         //LoadCharacterStats();
         ShieldHP = MaxShield;
@@ -122,6 +124,7 @@ public class PlayerController : MonoBehaviour
                 if (kills > highscore)
                     PlayerPrefs.SetInt("Highscore", (int)kills);
             }
+            _uiManagerScript.ShowDeathScreen();
             gameObject.SetActive(false);
         }
 
