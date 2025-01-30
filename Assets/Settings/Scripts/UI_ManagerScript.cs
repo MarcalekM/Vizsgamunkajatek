@@ -86,7 +86,7 @@ public class UI_ManagerScript : MonoBehaviour
                 Menu_UI_Manager.UserData.high_score = player.kills;
                 Menu_UI_Manager.SaveUserToDB(this);
             }
-            else
+            else if (!player.inArena)
             {
                 player.JsonSavePlayer(SceneManager.GetActiveScene().name);
             }

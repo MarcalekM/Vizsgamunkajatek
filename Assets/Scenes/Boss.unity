@@ -1535,6 +1535,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8932086216192947408, guid: 365c1775fd6c81c40a830a236d3fecff, type: 3}
   attackFrequencyPhase1: 10
   attackFrequencyPhase2: 2
+  attackFrequencyProjectile: 4
   GhostPrefab: {fileID: 8936150300521246516, guid: 68fc780d4a0c02845915b8e04a86b8fa, type: 3}
   healthBarOutside: {fileID: 837808542}
 --- !u!50 &130411011
@@ -9753,7 +9754,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 50
   m_Sprite: {fileID: 21300000, guid: a2d443e9f70cd8147b8e65b58c0a3f31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
