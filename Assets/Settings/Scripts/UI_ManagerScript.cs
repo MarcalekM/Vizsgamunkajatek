@@ -85,6 +85,7 @@ public class UI_ManagerScript : MonoBehaviour
         {
             if (player.inArena && player.kills > Menu_UI_Manager.UserData.high_score)
             {
+                player.kills = player.backupKills;
                 Menu_UI_Manager.UserData.high_score = player.kills;
                 Menu_UI_Manager.SaveUserToDB(this);
             }
@@ -92,6 +93,12 @@ public class UI_ManagerScript : MonoBehaviour
             {
                 player.JsonSavePlayer(SceneManager.GetActiveScene().name);
             }
+        }
+        else if (player.inArena)
+        {
+            int highscore = PlayerPrefs.GetInt("Highscore", 0);
+            if (player.kills > highscore)
+                PlayerPrefs.SetInt("Highscore", (int)player.kills);
         }
         Time.timeScale = 1;
         SceneManager.LoadScene("Menu");

@@ -5683,6 +5683,7 @@ MonoBehaviour:
   MeeleDamage: 10
   MagicDamage: 10
   kills: 0
+  backupKills: 0
   SP: 0
   PlayerSpotted: 0
   defaultSpeed: 6
@@ -5701,7 +5702,7 @@ MonoBehaviour:
   ShieldAlive: 1
   inArena: 0
   Walk: {fileID: 4670949685850199344}
-  Flamethrower: {fileID: 3512514502510858133}
+  Flamethrower: {fileID: 8782996867037670870}
   FlamethrowerHitbox: {fileID: 2486985565054075411}
 --- !u!82 &4670949685850199344
 AudioSource:

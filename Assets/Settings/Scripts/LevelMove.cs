@@ -12,6 +12,7 @@ public class LevelMove : MonoBehaviour
         {
             JsonSaveData data = JsonUtility.FromJson<JsonSaveData>(Menu_UI_Manager.UserData.json_save);
             if (PlayerPrefs.GetInt("intro", 1) == 1 && data.Scene == string.Empty) sceneName = "Intro";
+            else if (data.Scene == string.Empty) sceneName = "Swamp";
             else sceneName = data.Scene;
         }
         else

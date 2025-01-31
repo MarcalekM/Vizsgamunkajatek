@@ -18,6 +18,8 @@ public class ArenaController : MonoBehaviour
     {
         playerController = Player.GetComponent<PlayerController>();
         playerController.inArena = true;
+        playerController.backupKills = playerController.kills;
+        playerController.kills = 0;
         StartCoroutine(SpawnEnemies());
         if (PlayerPrefs.GetString("LoginToken") != string.Empty && Menu_UI_Manager.UserData != null)
         {

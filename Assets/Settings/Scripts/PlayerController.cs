@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float MeeleDamage = 10;
     [SerializeField] public float MagicDamage = 12;
     public long kills = 0;
+    public long backupKills = 0;
     public float SP = 0;
 
     [SerializeField] public bool PlayerSpotted = false;
@@ -72,7 +73,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] AudioSource Walk;
 
-    [SerializeField] ParticleSystem Flamethrower;
+    [SerializeField] GameObject Flamethrower;
     [SerializeField] GameObject FlamethrowerHitbox;
     private bool FlamethrowerActived = false;
     private float horizontalMovementDirection = 0f;
@@ -109,21 +110,22 @@ public class PlayerController : MonoBehaviour
 
         if(HP < 1)
         {
-            if (PlayerPrefs.GetString("LoginToken") != string.Empty && Menu_UI_Manager.UserData != null)
+            if (inArena && PlayerPrefs.GetString("LoginToken") != string.Empty && Menu_UI_Manager.UserData != null)
             {
                 if (kills > Menu_UI_Manager.UserData.high_score)
                 {
                     Menu_UI_Manager.UserData.high_score = kills;
+                    kills = backupKills;
                     Menu_UI_Manager.SaveUserToDB(this);
                 }
-                
             }
-            else
+            else if (inArena)
             {
                 int highscore = PlayerPrefs.GetInt("Highscore", 0);
                 if (kills > highscore)
                     PlayerPrefs.SetInt("Highscore", (int)kills);
             }
+           
             _uiManagerScript.ShowDeathScreen();
             gameObject.SetActive(false);
         }
@@ -276,7 +278,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!ShieldActive)
         {
-            Flamethrower.Play();
+            Flamethrower.SetActive(true);
             FlamethrowerHitbox.SetActive(true);
             FlamethrowerActived = true;
             animator.SetBool("FlamethrowerActive", true);
@@ -284,7 +286,7 @@ public class PlayerController : MonoBehaviour
     }
     public void FlamethrowerInactive()
     {
-        Flamethrower.Stop();
+        Flamethrower.SetActive(false);
         FlamethrowerHitbox.SetActive(false);
         FlamethrowerActived = false;
         animator.SetBool("FlamethrowerActive", false);
