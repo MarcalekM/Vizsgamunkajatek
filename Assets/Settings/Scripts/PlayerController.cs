@@ -93,6 +93,11 @@ public class PlayerController : MonoBehaviour
         // Menu_UI_Manager.UserData.json_save = "{\"asd\": 1}";
         // Menu_UI_Manager.SaveUserToDB(this);
         JsonLoadPlayer();
+        if (inArena)
+        {
+            backupKills = kills;
+            kills = 0;
+        }
         killCheck = kills;
     }
 
