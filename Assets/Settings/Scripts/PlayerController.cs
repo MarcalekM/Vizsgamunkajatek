@@ -317,12 +317,15 @@ public class PlayerController : MonoBehaviour
     {
         if (Menu_UI_Manager.UserData is null || Menu_UI_Manager.UserData.json_save == string.Empty) return;
         JsonSaveData data = JsonUtility.FromJson<JsonSaveData>(Menu_UI_Manager.UserData.json_save);
-        Lv = data.Lv;
-        MaxHP = data.MaxHP;
-        HP = data.HP;
-        MeeleDamage = data.MeeleDamage;
-        kills = data.kills;
-        SP = data.SP;
-        MagicDamage = data.MagicDamage;
+        if (!inArena)
+        {
+            Lv = data.Lv;
+            MaxHP = data.MaxHP;
+            HP = data.HP;
+            MeeleDamage = data.MeeleDamage;
+            kills = data.kills;
+            SP = data.SP;
+            MagicDamage = data.MagicDamage;
+        }
     }
 }
