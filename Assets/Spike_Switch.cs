@@ -14,7 +14,7 @@ public class Spike_Switch : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        timer -= 1.0f;
+        timer -= Time.deltaTime;
         if (timer <= 0.0f)
         {
             Switch();
